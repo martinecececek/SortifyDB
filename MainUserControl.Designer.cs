@@ -180,7 +180,7 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(12, 155);
+            btnBack.Location = new Point(11, 155);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(80, 80);
             btnBack.TabIndex = 13;
