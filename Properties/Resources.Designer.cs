@@ -93,6 +93,7 @@ namespace SortifyDB.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        /// Search
         internal static System.Drawing.Bitmap Search1 {
             get {
                 object obj = ResourceManager.GetObject("Search1", resourceCulture);
