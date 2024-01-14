@@ -173,7 +173,7 @@
             // 
             BtnBack.BackColor = Color.FromArgb(0, 142, 255);
             BtnBack.BackgroundColor = Color.FromArgb(0, 142, 255);
-            BtnBack.BackgroundImage = (Image)resources.GetObject("BtnBack.BackgroundImage");
+            BtnBack.BackgroundImage = Properties.Resources.back;
             BtnBack.BackgroundImageLayout = ImageLayout.Zoom;
             BtnBack.BorderColor = Color.Black;
             BtnBack.BorderRadius = 40;
