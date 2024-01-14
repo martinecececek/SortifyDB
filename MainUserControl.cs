@@ -12,10 +12,12 @@ namespace SortifyDB
 {
     public partial class MainUserControl : UserControl
     {
+        //Vzled
         public MainUserControl()
         {
             InitializeComponent();
         }
+
         private void btnProjekty_Click(object sender, EventArgs e)
         {
 
