@@ -136,7 +136,7 @@ namespace TechnoWizz.ManualAddingForm.Add
 
         private void bntDeleteMaterial_Click(object sender, System.EventArgs e)
         {
-            DeleteMaterialFromProject deleteMaterialFromProject = new(new Material());
+            DeleteMaterialFromProject deleteMaterialFromProject = new();
             deleteMaterialFromProject.ShowDialog();
 
             if (deleteMaterialFromProject.materials != null)
