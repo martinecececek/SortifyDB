@@ -67,10 +67,10 @@ namespace SortifyDB.Ms_Todo
 
                             #region Dialog dir name
 
-                            GetDirNameDialog dirNameDialog = new GetDirNameDialog();
+                            GetDirName dirNameDialog = new();
                             dirNameDialog.ShowDialog();
 
-                            DirName = dirNameDialog.DirName;
+                            DirName = dirNameDialog.dirName;
 
                             #endregion
 
@@ -84,12 +84,12 @@ namespace SortifyDB.Ms_Todo
                     case "ne-ano":
                         {
                             #region Dialog Connect to todo
-                            ConnectToTodoDialog todoDialog = new ConnectToTodoDialog();
+                            ConnectToDoDialog todoDialog = new();
 
                             todoDialog.ShowDialog();
 
                             bool connectToTodo = todoDialog.connect;
-                            bool showAgain = todoDialog.showAgain;
+                            bool showAgain = todoDialog.ShowAgain;
 
                             #endregion
 
@@ -108,11 +108,11 @@ namespace SortifyDB.Ms_Todo
 
                             #region Dialog dir name
 
-                            GetDirNameDialog dirNameDialog = new GetDirNameDialog();
+                            GetDirName dirNameDialog = new();
 
                             dirNameDialog.ShowDialog();
 
-                            DirName = dirNameDialog.DirName;
+                            DirName = dirNameDialog.dirName;
 
                             #endregion
 
@@ -124,12 +124,12 @@ namespace SortifyDB.Ms_Todo
                     case "ano-ano":
                         {
                             #region Dialog Connect to todo
-                            ConnectToTodoDialog todoDialog = new ConnectToTodoDialog();
+                            ConnectToDoDialog todoDialog = new();
 
                             todoDialog.ShowDialog();
 
                             bool connectToTodo = todoDialog.connect;
-                            bool showAgain = todoDialog.showAgain;
+                            bool showAgain = todoDialog.ShowAgain;
 
                             #endregion
 
@@ -150,11 +150,11 @@ namespace SortifyDB.Ms_Todo
 
                             #region Dialog dir name
 
-                            GetDirNameDialog dirNameDialog = new GetDirNameDialog();
+                            GetDirName dirNameDialog = new();
 
                             dirNameDialog.ShowDialog();
 
-                            DirName = dirNameDialog.DirName;
+                            DirName = dirNameDialog.dirName;
 
                             #endregion
 
@@ -177,12 +177,12 @@ namespace SortifyDB.Ms_Todo
             else
             {
                 #region Dialog connect to todo
-                ConnectToTodoDialog todoDialog = new ConnectToTodoDialog();
+                ConnectToDoDialog todoDialog = new();
 
                 todoDialog.ShowDialog();
 
                 bool connectToTodo = todoDialog.connect;
-                bool showAgain = todoDialog.showAgain;
+                bool showAgain = todoDialog.ShowAgain;
                 #endregion
 
                 if (!connectToTodo)
@@ -192,10 +192,10 @@ namespace SortifyDB.Ms_Todo
                 }
 
                 #region Dialog dir name
-                GetDirNameDialog dirNameDialog = new GetDirNameDialog();
+                GetDirName dirNameDialog = new();
                 dirNameDialog.ShowDialog();
 
-                DirName = dirNameDialog.DirName;
+                DirName = dirNameDialog.dirName;
                 #endregion
 
                 await Connect();
