@@ -18,9 +18,84 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ManualAddingInterface\Delete\" />
-    <Folder Include="ManualAddingInterface\Edit\" />
-    <Folder Include="ManualAddingInterface\Select\" />
+    <Compile Update="ManualAddingInterface\Add\CisticAktivatorAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\GranulatAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\KluzkyLakAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\MaterialAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\ProjectAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\ToProject\AddMaterialToProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Add\ToProject\DeleteMaterialFromProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Delete\CisticAktivatorDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Delete\GranulatDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Delete\KluzkyLakDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Delete\MaterialDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Delete\ProjetkyDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Edit\CisticAktivatorEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Edit\GranulatEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Edit\KluzkyLakEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Edit\MaterialEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Edit\ProjektyEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Select\CisticAktivatorSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Select\GranulatySelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Select\KluzkyLakSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Select\MaterialSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManualAddingInterface\Select\ProjektySelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
