@@ -1,5 +1,4 @@
 using MaterialSkin.Controls;
-using Microsoft.Graph.Models;
 using SortifyDB.Objects;
 
 namespace SortifyDB
