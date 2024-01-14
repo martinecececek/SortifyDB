@@ -1,27 +1,15 @@
 ﻿namespace SortifyDB.Objects
 {
-    class Projekt
+    class Projekt(string tl, string nazev, List<Material> materials, string zkracenyPopis, string sklo, string temp, string trh, string imds)
     {
-        public Projekt(string tl, string nazev, List<Material> materials, string zkracenyPopis, string sklo, string temp, string trh, string imds)
-        {
-            TL = tl;
-            Nazev = nazev;
-            Materials = materials;
-            ZkracenyPopis = zkracenyPopis;
-            Sklo = sklo;
-            Temp = temp;
-            Trh = trh;
-            IMDS = imds;
-        }
-
-        public String TL { get; set; }
-        public String Nazev { get; set; }
-        public List<Material> Materials { get; set; }
-        public String ZkracenyPopis { get; set; }
-        public String Sklo { get; set; }
-        public String Temp { get; set; }
-        public String Trh { get; set; }
-        public String IMDS { get; set; }
+        public String TL { get; set; } = tl;
+        public String Nazev { get; set; } = nazev;
+        public List<Material> Materials { get; set; } = materials;
+        public String ZkracenyPopis { get; set; } = zkracenyPopis;
+        public String Sklo { get; set; } = sklo;
+        public String Temp { get; set; } = temp;
+        public String Trh { get; set; } = trh;
+        public String IMDS { get; set; } = imds;
 
     }
 }

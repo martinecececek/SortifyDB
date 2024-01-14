@@ -1,30 +1,17 @@
 ﻿namespace SortifyDB.Objects
 {
-    class CisiticAktivator
+    class CisiticAktivator(string sap, string nazev, string typ, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
     {
-        public CisiticAktivator(string sap, string nazev, string typ, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
-        {
-            SAP = sap;
-            Nazev = nazev;
-            Typ = typ;
-            JeAktivni = jeAktivni;
-            Vyrobce = vyrobce;
-            Pouziti = pouziti;
-            NevhodneKombinace = nevhodneKombinace;
-            SlozeniDle = slozeniDle;
-            Slozeni = slozeni;
-        }
-
-        public String SAP { get; set; }
-        public String Nazev { get; set; }
-        public String Typ { get; set; }
-        public String JeAktivni { get; set; }
-        public String Vyrobce { get; set; }
-        public String Pouziti { get; set; }
-        public String NevhodneKombinace { get; set; }
-        public String SlozeniDle { get; set; }
+        public String SAP { get; set; } = sap;
+        public String Nazev { get; set; } = nazev;
+        public String Typ { get; set; } = typ;
+        public String JeAktivni { get; set; } = jeAktivni;
+        public String Vyrobce { get; set; } = vyrobce;
+        public String Pouziti { get; set; } = pouziti;
+        public String NevhodneKombinace { get; set; } = nevhodneKombinace;
+        public String SlozeniDle { get; set; } = slozeniDle;
 
         //key = nazev, value = procenta
-        public Dictionary<string, string> Slozeni { get; set; }
+        public Dictionary<string, string> Slozeni { get; set; } = slozeni;
     }
 }
