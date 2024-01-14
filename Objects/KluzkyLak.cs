@@ -1,10 +1,9 @@
 ﻿namespace SortifyDB.Objects
 {
-    public class KluzkyLak(string sap, string nazev, string typ, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
+    public class KluzkyLak(string sap, string nazev, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
     {
         public String SAP { get; set; } = sap;
         public String Nazev { get; set; } = nazev;
-        public String Typ { get; set; }
         public String JeAktivni { get; set; } = jeAktivni;
         public String Vyrobce { get; set; } = vyrobce;
         public String Pouziti { get; set; } = pouziti;
