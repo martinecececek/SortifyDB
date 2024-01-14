@@ -1,6 +1,6 @@
 ﻿namespace SortifyDB.Objects
 {
-    class Material(string SAP, string nazev, string typPripravku)
+    public class Material(string SAP, string nazev, string typPripravku)
     {
         public String SAP { get; set; } = SAP;
         public String Nazev { get; set; } = nazev;

@@ -1,6 +1,6 @@
 ﻿namespace SortifyDB.Objects
 {
-    class Granulat(string sap, string nazev, string typ, string xk, string jeAktivni, string vyrobce, string pouziti, string kombinaveS, string cisteni, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
+    public class Granulat(string sap, string nazev, string typ, string xk, string jeAktivni, string vyrobce, string pouziti, string kombinaveS, string cisteni, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
     {
         public String Nazev { get; set; } = nazev;
         public String Typ { get; set; } = typ;
