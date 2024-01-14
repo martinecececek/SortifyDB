@@ -1,45 +1,55 @@
 ﻿using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
+using TechnoWizz.ManualAddingForm.Select;
 
-
-namespace TechnoWizz.ManualAddingForm.Add
+namespace TechnoWizz.ManualAddingForm.Edit
 {
-    public partial class MaterialAdd : UserControl
+    public partial class MaterialEdit : UserControl
     {
-
-        public MaterialAdd()
+        public MaterialEdit(Material material)
         {
             InitializeComponent();
+
+            Material = material;
         }
 
-        private void MaterialAdd_Load(object sender, EventArgs e)
+        public Material Material { get; set; }
+
+        private void MaterialEdit_Load(object sender, System.EventArgs e)
         {
+            txtBoxSap.Text = Material.SAP;
+
+            txtBoxNazev.Text = Material.Nazev;
+
+            switch (Material.TypPripravku)
+            {
+                case "Díl":
+                    BtnDíl_Click(sender, e);
+                    break;
+                case "Polymer":
+                    BtnPolymer_Click(sender, e);
+                    break;
+                case "Primer":
+                    BtnPrimer_Click(sender, e);
+                    break;
+                case "Aktivátor":
+                    BtnAktivator_Click(sender, e);
+                    break;
+                case "Kluzký lak":
+                    BtnLak_Click(sender, e);
+                    break;
+                case "Ředidlo":
+                    BtnRedidlo_Click(sender, e);
+                    break;
+                case "Inkoust":
+                    BtnInkoust_Click(sender, e);
+                    break;
+            }
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            if (txtBoxNazev.Text == string.Empty && txtBoxSap.Text == string.Empty && btnSelecterTyp.Text == btnSelecterPlaceholder)
-            {
-                MainManualAdding mainManualForm = new();
-
-                mainManualForm.ClearUserControl();
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Opravdu chcete zrušit přidávání materiálu?", "Zrušit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    MainManualAdding mainManualForm = new();
-
-                    mainManualForm.ClearUserControl();
-                }
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, System.EventArgs e)
         {
             //metod
             #region check if there is empty textboxes
@@ -69,21 +79,52 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 Material material = new(txtBoxSap.Text, txtBoxNazev.Text, btnSelecterTyp.Text);
 
+
                 #region push into database
 
-                DatabaseConnection databaseConnection = new();
-                _ = databaseConnection.PushMaterialToDatabase(material);
+                DatabaseConnection dbC = new();
+                dbC.UpdateMaterial(material);
 
                 #endregion
 
                 MessageBox.Show("Materiál byl úspěšně přidán", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                foreach (Control c in this.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        c.Text = string.Empty;
+                    }
+                }
+
                 MainManualAdding mainManualForm = new();
+                MaterialSelect materialSelect = new();
+
+                mainManualForm.ChangeUI(materialSelect);
+            }
+
+            return;
+        }
+
+        private void BtnCancel_Click(object sender, System.EventArgs e)
+        {
+            if (txtBoxNazev.Text == string.Empty && txtBoxSap.Text == string.Empty && btnSelecterTyp.Text == btnSelecterPlaceholder)
+            {
+                MainManualAdding mainManualForm = new();
+
                 mainManualForm.ClearUserControl();
             }
             else
             {
-                MessageBox.Show("Vyplňte všechny údaje!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult dialogResult = MessageBox.Show("Opravdu chcete zrušit přidávání materiálu?", "Zrušit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MainManualAdding mainManualForm = new();
+
+                    mainManualForm.ClearUserControl();
+                }
             }
         }
 
@@ -174,7 +215,7 @@ namespace TechnoWizz.ManualAddingForm.Add
         }
 
         bool dilSelected = false;
-        private void btnDíl_Click(object sender, EventArgs e)
+        private void BtnDíl_Click(object sender, EventArgs e)
         {
             string btnDilText = "Díl";
 
@@ -195,13 +236,11 @@ namespace TechnoWizz.ManualAddingForm.Add
                 btnSelecterTyp.Text = btnDilText;
                 btnDil.Text = btnDilText;
             }
-
-            TypTimer.Start();
         }
 
 
         private bool polymerSelected = false;
-        private void btnPolymer_Click(object sender, EventArgs e)
+        private void BtnPolymer_Click(object sender, EventArgs e)
         {
             string btnPolymerText = "Polymer";
 
@@ -226,11 +265,11 @@ namespace TechnoWizz.ManualAddingForm.Add
                 polymerSelected = false;
             }
 
-            TypTimer.Start();
+
         }
 
         private bool primerSelected = false;
-        private void btnPrimer_Click(object sender, EventArgs e)
+        private void BtnPrimer_Click(object sender, EventArgs e)
         {
             string btnPrimerText = "Primer";
 
@@ -255,11 +294,10 @@ namespace TechnoWizz.ManualAddingForm.Add
                 primerSelected = false;
             }
 
-            TypTimer.Start();
         }
 
         private bool aktivatorSelected = false;
-        private void btnAktivator_Click(object sender, EventArgs e)
+        private void BtnAktivator_Click(object sender, EventArgs e)
         {
             string btnAktivatorText = "Aktivátor";
 
@@ -283,12 +321,10 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 aktivatorSelected = false;
             }
-
-            TypTimer.Start();
         }
 
         private bool lakSelected = false;
-        private void btnLak_Click(object sender, EventArgs e)
+        private void BtnLak_Click(object sender, EventArgs e)
         {
             string btnLakText = "Kluzký lak";
 
@@ -312,12 +348,10 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 lakSelected = false;
             }
-
-            TypTimer.Start();
         }
 
         private bool redidloSelected = false;
-        private void btnRedidlo_Click(object sender, EventArgs e)
+        private void BtnRedidlo_Click(object sender, EventArgs e)
         {
             string btnRedidloText = "Ředidlo";
 
@@ -341,12 +375,10 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 redidloSelected = false;
             }
-
-            TypTimer.Start();
         }
 
         private bool inkoustSelected = false;
-        private void btnInkoust_Click(object sender, EventArgs e)
+        private void BtnInkoust_Click(object sender, EventArgs e)
         {
             string btnInkoustText = "Inkoust";
 
@@ -370,22 +402,24 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 inkoustSelected = false;
             }
-
-            TypTimer.Start();
         }
         #endregion
 
-        #region expand and collapse
-        private bool expanded = false;
+        private void BtnSelecterTyp_Click(object sender, EventArgs e)
+        {
+            typTimer.Start();
+        }
+
+        bool expand = false;
         private void TypTimer_Tick(object sender, EventArgs e)
         {
-            if (expanded == false)
+            if (expand == false)
             {
                 typContainer.Height += 10;
                 if (typContainer.Height >= 400)
                 {
-                    TypTimer.Stop();
-                    expanded = true;
+                    typTimer.Stop();
+                    expand = true;
                 }
             }
             else
@@ -393,19 +427,10 @@ namespace TechnoWizz.ManualAddingForm.Add
                 typContainer.Height -= 10;
                 if (typContainer.Height <= 50)
                 {
-                    TypTimer.Stop();
-                    expanded = false;
+                    typTimer.Stop();
+                    expand = false;
                 }
             }
-
-            TypTimer.Start();
         }
-
-        private void btnSelecterTyp_Click(object sender, EventArgs e)
-        {
-            TypTimer.Start();
-        }
-
-        #endregion
     }
 }

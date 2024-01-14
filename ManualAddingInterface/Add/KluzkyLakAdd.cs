@@ -5,23 +5,31 @@ using SortifyDB.Objects;
 
 namespace TechnoWizz.ManualAddingForm.Add
 {
-    public partial class GranulatAdd : UserControl
+    public partial class KluzkyLakAdd : UserControl
     {
-        public GranulatAdd()
+        public KluzkyLakAdd()
         {
             InitializeComponent();
         }
 
-        private readonly Dictionary<string, string> KeyValuePairs = new();
 
-        private void GranulatAdd_Load(object sender, EventArgs e)
+        private readonly Dictionary<string, string> KeyValuePairs = new();
+        private void KluzkyLakAdd_Load(object sender, System.EventArgs e)
         {
-            dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGrid.AutoGenerateColumns = false;
+            lakSlozeni.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            lakSlozeni.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            lakSlozeni.AutoGenerateColumns = false;
+
+            //TODO: add 
+        }
+
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, System.EventArgs e)
         {
             bool CheckTextBoxes()
             {
@@ -45,7 +53,7 @@ namespace TechnoWizz.ManualAddingForm.Add
                 //get data from datagrid
                 Dictionary<string, string> keyValuePairs = new();
 
-                foreach (DataGridViewRow row in dataGrid.Rows)
+                foreach (DataGridViewRow row in lakSlozeni.Rows)
                 {
                     if (row.Cells[1].Value != null)
                     {
@@ -53,25 +61,19 @@ namespace TechnoWizz.ManualAddingForm.Add
                     }
                 }
 
-
-                Granulat granulat = new(sap: txtBoxSAP.Text,
-                                                 nazev: txtBoxName.Text,
-                                                 typ: txtBoxTyp.Text,
-                                                 xk: txtBoxxK.Text,
-                                                 jeAktivni: txtBoxAktivni.Text,
-                                                 vyrobce: txtBoxVyrobce.Text,
-                                                 pouziti: txtBoxPouziti.Text,
-                                                 kombinaveS: txtBoxKombinace.Text,
-                                                 cisteni: txtBoxCisteni.Text,
-                                                 nevhodneKombinace: txtBoxNevhodKomb.Text,
-                                                 slozeniDle: txtBoxSlozeni.Text,
-                                                 slozeni: keyValuePairs);
-
+                KluzkyLak lak = new(sap: txtBoxSAP.Text,
+                                              nazev: txtBoxName.Text,
+                                              jeAktivni: txtBoxAktivni.Text,
+                                              vyrobce: txtBoxVyrobce.Text,
+                                              pouziti: txtBoxPouziti.Text,
+                                              nevhodneKombinace: txtBoxNevhodKomb.Text,
+                                              slozeniDle: txtBoxSlozDle.Text,
+                                              slozeni: keyValuePairs);
 
 
                 DatabaseConnection databaseConnection = new();
 
-                databaseConnection.PushGranulatToDatabase(granulat);
+                databaseConnection.PushKluzkyLakToDatabase(lak);
 
 
             }
@@ -81,7 +83,7 @@ namespace TechnoWizz.ManualAddingForm.Add
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, System.EventArgs e)
         {
             bool CheckTextBoxes()
             {

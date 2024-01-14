@@ -1,6 +1,6 @@
 ﻿namespace TechnoWizz.ManualAddingForm.Add
 {
-    partial class GranulatAdd
+    partial class KluzkyLakAdd
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label label11;
             tableLayoutPanel5 = new TableLayoutPanel();
-            txtBoxSlozeni = new TextBox();
+            txtBoxSlozDle = new TextBox();
             label4 = new Label();
             tableLayoutPanel6 = new TableLayoutPanel();
             txtBoxNevhodKomb = new TextBox();
@@ -47,80 +46,53 @@
             tableLayoutPanel8 = new TableLayoutPanel();
             txtBoxName = new TextBox();
             label7 = new Label();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            txtBoxTyp = new TextBox();
-            label3 = new Label();
-            tableLayoutPanel9 = new TableLayoutPanel();
-            txtBoxxK = new TextBox();
-            label8 = new Label();
-            tableLayoutPanel10 = new TableLayoutPanel();
-            txtBoxKombinace = new TextBox();
-            label9 = new Label();
-            tableLayoutPanel11 = new TableLayoutPanel();
-            txtBoxCisteni = new TextBox();
-            label10 = new Label();
-            dataGrid = new DataGridView();
+            lakSlozeni = new DataGridView();
+            slozeni = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnSave = new Button();
             btnCancel = new Button();
-            tableLayoutPanel12 = new TableLayoutPanel();
+            tableLayoutPanel4 = new TableLayoutPanel();
             txtBoxSAP = new TextBox();
-            label11 = new Label();
+            label3 = new Label();
             tableLayoutPanel5.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            tableLayoutPanel9.SuspendLayout();
-            tableLayoutPanel10.SuspendLayout();
-            tableLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)lakSlozeni).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel12.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Dock = DockStyle.Left;
-            label11.Font = new Font("Segoe UI", 15F);
-            label11.Location = new Point(4, 0);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(47, 34);
-            label11.TabIndex = 1;
-            label11.Text = "SAP";
             // 
             // tableLayoutPanel5
             // 
             tableLayoutPanel5.ColumnCount = 1;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Controls.Add(txtBoxSlozeni, 0, 1);
+            tableLayoutPanel5.Controls.Add(txtBoxSlozDle, 0, 1);
             tableLayoutPanel5.Controls.Add(label4, 0, 0);
-            tableLayoutPanel5.Location = new Point(283, 1133);
+            tableLayoutPanel5.Location = new Point(303, 713);
             tableLayoutPanel5.Margin = new Padding(35, 3, 4, 3);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 2;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
             tableLayoutPanel5.Size = new Size(356, 100);
-            tableLayoutPanel5.TabIndex = 27;
+            tableLayoutPanel5.TabIndex = 21;
             // 
-            // txtBoxSlozeni
+            // txtBoxSlozDle
             // 
-            txtBoxSlozeni.Dock = DockStyle.Fill;
-            txtBoxSlozeni.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            txtBoxSlozeni.Location = new Point(4, 37);
-            txtBoxSlozeni.Margin = new Padding(4, 3, 4, 3);
-            txtBoxSlozeni.Multiline = true;
-            txtBoxSlozeni.Name = "txtBoxSlozeni";
-            txtBoxSlozeni.Size = new Size(348, 60);
-            txtBoxSlozeni.TabIndex = 0;
-            txtBoxSlozeni.Text = "adasd";
+            txtBoxSlozDle.Dock = DockStyle.Fill;
+            txtBoxSlozDle.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            txtBoxSlozDle.Location = new Point(4, 37);
+            txtBoxSlozDle.Margin = new Padding(4, 3, 4, 3);
+            txtBoxSlozDle.Multiline = true;
+            txtBoxSlozDle.Name = "txtBoxSlozDle";
+            txtBoxSlozDle.Size = new Size(348, 60);
+            txtBoxSlozDle.TabIndex = 0;
+            txtBoxSlozDle.Text = "adasd";
             // 
             // label4
             // 
@@ -141,19 +113,18 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel6.Controls.Add(txtBoxNevhodKomb, 0, 1);
             tableLayoutPanel6.Controls.Add(label5, 0, 0);
-            tableLayoutPanel6.Location = new Point(279, 1026);
+            tableLayoutPanel6.Location = new Point(303, 606);
             tableLayoutPanel6.Margin = new Padding(35, 3, 4, 3);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 2;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
             tableLayoutPanel6.Size = new Size(356, 100);
-            tableLayoutPanel6.TabIndex = 26;
+            tableLayoutPanel6.TabIndex = 20;
             // 
             // txtBoxNevhodKomb
             // 
             txtBoxNevhodKomb.Dock = DockStyle.Fill;
-            txtBoxNevhodKomb.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxNevhodKomb.Location = new Point(4, 37);
             txtBoxNevhodKomb.Margin = new Padding(4, 3, 4, 3);
             txtBoxNevhodKomb.Multiline = true;
@@ -180,19 +151,18 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(txtBoxPouziti, 0, 1);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Location = new Point(279, 704);
+            tableLayoutPanel2.Location = new Point(303, 498);
             tableLayoutPanel2.Margin = new Padding(35, 3, 4, 3);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
             tableLayoutPanel2.Size = new Size(356, 100);
-            tableLayoutPanel2.TabIndex = 25;
+            tableLayoutPanel2.TabIndex = 19;
             // 
             // txtBoxPouziti
             // 
             txtBoxPouziti.Dock = DockStyle.Fill;
-            txtBoxPouziti.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxPouziti.Location = new Point(4, 37);
             txtBoxPouziti.Margin = new Padding(4, 3, 4, 3);
             txtBoxPouziti.Multiline = true;
@@ -219,7 +189,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Controls.Add(txtBoxVyrobce, 0, 1);
             tableLayoutPanel3.Controls.Add(label2, 0, 0);
-            tableLayoutPanel3.Location = new Point(279, 596);
+            tableLayoutPanel3.Location = new Point(303, 391);
             tableLayoutPanel3.Margin = new Padding(35, 3, 4, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
@@ -227,12 +197,11 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
             tableLayoutPanel3.Size = new Size(356, 100);
-            tableLayoutPanel3.TabIndex = 24;
+            tableLayoutPanel3.TabIndex = 18;
             // 
             // txtBoxVyrobce
             // 
             txtBoxVyrobce.Dock = DockStyle.Fill;
-            txtBoxVyrobce.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxVyrobce.Location = new Point(4, 37);
             txtBoxVyrobce.Margin = new Padding(4, 3, 4, 3);
             txtBoxVyrobce.Multiline = true;
@@ -259,20 +228,18 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel7.Controls.Add(txtBoxAktivni, 0, 1);
             tableLayoutPanel7.Controls.Add(label6, 0, 0);
-            tableLayoutPanel7.Location = new Point(279, 489);
+            tableLayoutPanel7.Location = new Point(303, 284);
             tableLayoutPanel7.Margin = new Padding(35, 3, 4, 3);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 2;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
             tableLayoutPanel7.Size = new Size(356, 100);
-            tableLayoutPanel7.TabIndex = 23;
+            tableLayoutPanel7.TabIndex = 17;
             // 
             // txtBoxAktivni
             // 
             txtBoxAktivni.Dock = DockStyle.Fill;
-            txtBoxAktivni.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxAktivni.Location = new Point(4, 37);
             txtBoxAktivni.Margin = new Padding(4, 3, 4, 3);
             txtBoxAktivni.Multiline = true;
@@ -299,19 +266,18 @@
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel8.Controls.Add(txtBoxName, 0, 1);
             tableLayoutPanel8.Controls.Add(label7, 0, 0);
-            tableLayoutPanel8.Location = new Point(279, 167);
+            tableLayoutPanel8.Location = new Point(303, 180);
             tableLayoutPanel8.Margin = new Padding(52, 69, 4, 3);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 2;
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
             tableLayoutPanel8.Size = new Size(356, 100);
-            tableLayoutPanel8.TabIndex = 22;
+            tableLayoutPanel8.TabIndex = 16;
             // 
             // txtBoxName
             // 
             txtBoxName.Dock = DockStyle.Fill;
-            txtBoxName.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxName.Location = new Point(4, 37);
             txtBoxName.Margin = new Padding(4, 3, 4, 3);
             txtBoxName.Multiline = true;
@@ -331,177 +297,26 @@
             label7.TabIndex = 1;
             label7.Text = "Název";
             // 
-            // tableLayoutPanel4
+            // lakSlozeni
             // 
-            tableLayoutPanel4.ColumnCount = 1;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(txtBoxTyp, 0, 1);
-            tableLayoutPanel4.Controls.Add(label3, 0, 0);
-            tableLayoutPanel4.Location = new Point(279, 274);
-            tableLayoutPanel4.Margin = new Padding(35, 3, 4, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 2;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel4.Size = new Size(356, 100);
-            tableLayoutPanel4.TabIndex = 28;
+            lakSlozeni.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            lakSlozeni.Columns.AddRange(new DataGridViewColumn[] { slozeni, Column1 });
+            lakSlozeni.Location = new Point(1050, 69);
+            lakSlozeni.Margin = new Padding(4, 3, 93, 3);
+            lakSlozeni.Name = "lakSlozeni";
+            lakSlozeni.Size = new Size(379, 415);
+            lakSlozeni.TabIndex = 23;
+            lakSlozeni.CellContentClick += dataGridView2_CellContentClick;
             // 
-            // txtBoxTyp
+            // slozeni
             // 
-            txtBoxTyp.Dock = DockStyle.Fill;
-            txtBoxTyp.Font = new Font("Microsoft Sans Serif", 15F);
-            txtBoxTyp.Location = new Point(4, 37);
-            txtBoxTyp.Margin = new Padding(4, 3, 4, 3);
-            txtBoxTyp.Multiline = true;
-            txtBoxTyp.Name = "txtBoxTyp";
-            txtBoxTyp.Size = new Size(348, 60);
-            txtBoxTyp.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Left;
-            label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(4, 0);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 34);
-            label3.TabIndex = 1;
-            label3.Text = "Typ";
-            // 
-            // tableLayoutPanel9
-            // 
-            tableLayoutPanel9.ColumnCount = 1;
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel9.Controls.Add(txtBoxxK, 0, 1);
-            tableLayoutPanel9.Controls.Add(label8, 0, 0);
-            tableLayoutPanel9.Location = new Point(279, 382);
-            tableLayoutPanel9.Margin = new Padding(35, 3, 4, 3);
-            tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 2;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel9.Size = new Size(356, 100);
-            tableLayoutPanel9.TabIndex = 29;
-            // 
-            // txtBoxxK
-            // 
-            txtBoxxK.Dock = DockStyle.Fill;
-            txtBoxxK.Font = new Font("Microsoft Sans Serif", 15F);
-            txtBoxxK.Location = new Point(4, 37);
-            txtBoxxK.Margin = new Padding(4, 3, 4, 3);
-            txtBoxxK.Multiline = true;
-            txtBoxxK.Name = "txtBoxxK";
-            txtBoxxK.Size = new Size(348, 60);
-            txtBoxxK.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Dock = DockStyle.Left;
-            label8.Font = new Font("Segoe UI", 15F);
-            label8.Location = new Point(4, 0);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(33, 34);
-            label8.TabIndex = 1;
-            label8.Text = "xK";
-            // 
-            // tableLayoutPanel10
-            // 
-            tableLayoutPanel10.ColumnCount = 1;
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel10.Controls.Add(txtBoxKombinace, 0, 1);
-            tableLayoutPanel10.Controls.Add(label9, 0, 0);
-            tableLayoutPanel10.Location = new Point(279, 811);
-            tableLayoutPanel10.Margin = new Padding(35, 3, 4, 3);
-            tableLayoutPanel10.Name = "tableLayoutPanel10";
-            tableLayoutPanel10.RowCount = 2;
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel10.Size = new Size(356, 100);
-            tableLayoutPanel10.TabIndex = 30;
-            // 
-            // txtBoxKombinace
-            // 
-            txtBoxKombinace.Dock = DockStyle.Fill;
-            txtBoxKombinace.Font = new Font("Microsoft Sans Serif", 15F);
-            txtBoxKombinace.Location = new Point(4, 37);
-            txtBoxKombinace.Margin = new Padding(4, 3, 4, 3);
-            txtBoxKombinace.Multiline = true;
-            txtBoxKombinace.Name = "txtBoxKombinace";
-            txtBoxKombinace.Size = new Size(348, 60);
-            txtBoxKombinace.TabIndex = 0;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Dock = DockStyle.Left;
-            label9.Font = new Font("Segoe UI", 15F);
-            label9.Location = new Point(4, 0);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(123, 34);
-            label9.TabIndex = 1;
-            label9.Text = "Kombinace s";
-            // 
-            // tableLayoutPanel11
-            // 
-            tableLayoutPanel11.ColumnCount = 1;
-            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.Controls.Add(txtBoxCisteni, 0, 1);
-            tableLayoutPanel11.Controls.Add(label10, 0, 0);
-            tableLayoutPanel11.Location = new Point(279, 918);
-            tableLayoutPanel11.Margin = new Padding(35, 3, 4, 3);
-            tableLayoutPanel11.Name = "tableLayoutPanel11";
-            tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel11.Size = new Size(356, 100);
-            tableLayoutPanel11.TabIndex = 31;
-            // 
-            // txtBoxCisteni
-            // 
-            txtBoxCisteni.Dock = DockStyle.Fill;
-            txtBoxCisteni.Font = new Font("Microsoft Sans Serif", 15F);
-            txtBoxCisteni.Location = new Point(4, 37);
-            txtBoxCisteni.Margin = new Padding(4, 3, 4, 3);
-            txtBoxCisteni.Multiline = true;
-            txtBoxCisteni.Name = "txtBoxCisteni";
-            txtBoxCisteni.Size = new Size(348, 60);
-            txtBoxCisteni.TabIndex = 0;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Dock = DockStyle.Left;
-            label10.Font = new Font("Segoe UI", 15F);
-            label10.Location = new Point(4, 0);
-            label10.Margin = new Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(70, 34);
-            label10.TabIndex = 1;
-            label10.Text = "Čištění";
-            // 
-            // dataGrid
-            // 
-            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGrid.Columns.AddRange(new DataGridViewColumn[] { Column1 });
-            dataGrid.Location = new Point(1026, 63);
-            dataGrid.Margin = new Padding(4, 3, 93, 3);
-            dataGrid.Name = "dataGrid";
-            dataGrid.Size = new Size(379, 173);
-            dataGrid.TabIndex = 32;
+            slozeni.HeaderText = "Složení";
+            slozeni.Name = "slozeni";
             // 
             // Column1
             // 
-            Column1.HeaderText = "Column1";
+            Column1.HeaderText = "";
             Column1.Name = "Column1";
-            Column1.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -511,14 +326,14 @@
             tableLayoutPanel1.Controls.Add(btnSave, 0, 0);
             tableLayoutPanel1.Controls.Add(btnCancel, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 1273);
+            tableLayoutPanel1.Location = new Point(0, 882);
             tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(1620, 133);
-            tableLayoutPanel1.TabIndex = 33;
+            tableLayoutPanel1.TabIndex = 25;
             // 
             // btnSave
             // 
@@ -546,26 +361,25 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // tableLayoutPanel12
+            // tableLayoutPanel4
             // 
-            tableLayoutPanel12.ColumnCount = 1;
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel12.Controls.Add(txtBoxSAP, 0, 1);
-            tableLayoutPanel12.Controls.Add(label11, 0, 0);
-            tableLayoutPanel12.Location = new Point(279, 63);
-            tableLayoutPanel12.Margin = new Padding(52, 69, 4, 3);
-            tableLayoutPanel12.Name = "tableLayoutPanel12";
-            tableLayoutPanel12.RowCount = 2;
-            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
-            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
-            tableLayoutPanel12.Size = new Size(356, 100);
-            tableLayoutPanel12.TabIndex = 34;
+            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(txtBoxSAP, 0, 1);
+            tableLayoutPanel4.Controls.Add(label3, 0, 0);
+            tableLayoutPanel4.Location = new Point(303, 69);
+            tableLayoutPanel4.Margin = new Padding(52, 69, 4, 3);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel4.Size = new Size(356, 100);
+            tableLayoutPanel4.TabIndex = 26;
             // 
             // txtBoxSAP
             // 
             txtBoxSAP.Dock = DockStyle.Fill;
-            txtBoxSAP.Font = new Font("Microsoft Sans Serif", 15F);
             txtBoxSAP.Location = new Point(4, 37);
             txtBoxSAP.Margin = new Padding(4, 3, 4, 3);
             txtBoxSAP.Multiline = true;
@@ -573,17 +387,25 @@
             txtBoxSAP.Size = new Size(348, 60);
             txtBoxSAP.TabIndex = 0;
             // 
-            // GranulatAdd
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Left;
+            label3.Font = new Font("Segoe UI", 15F);
+            label3.Location = new Point(4, 0);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(47, 34);
+            label3.TabIndex = 1;
+            label3.Text = "SAP";
+            // 
+            // KluzkyLakAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tableLayoutPanel12);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGrid);
-            Controls.Add(tableLayoutPanel11);
-            Controls.Add(tableLayoutPanel10);
-            Controls.Add(tableLayoutPanel9);
             Controls.Add(tableLayoutPanel4);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(lakSlozeni);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel6);
             Controls.Add(tableLayoutPanel2);
@@ -591,9 +413,9 @@
             Controls.Add(tableLayoutPanel7);
             Controls.Add(tableLayoutPanel8);
             Margin = new Padding(4, 3, 4, 3);
-            Name = "GranulatAdd";
-            Size = new Size(1620, 1406);
-            Load += GranulatAdd_Load;
+            Name = "KluzkyLakAdd";
+            Size = new Size(1620, 1015);
+            Load += KluzkyLakAdd_Load;
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
             tableLayoutPanel6.ResumeLayout(false);
@@ -606,24 +428,16 @@
             tableLayoutPanel7.PerformLayout();
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)lakSlozeni).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
-            tableLayoutPanel9.ResumeLayout(false);
-            tableLayoutPanel9.PerformLayout();
-            tableLayoutPanel10.ResumeLayout(false);
-            tableLayoutPanel10.PerformLayout();
-            tableLayoutPanel11.ResumeLayout(false);
-            tableLayoutPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGrid).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel12.ResumeLayout(false);
-            tableLayoutPanel12.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox txtBoxSlozeni;
+        private System.Windows.Forms.TextBox txtBoxSlozDle;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox txtBoxNevhodKomb;
@@ -640,24 +454,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox txtBoxTyp;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.TextBox txtBoxxK;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TextBox txtBoxKombinace;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.TextBox txtBoxCisteni;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.DataGridView lakSlozeni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slozeni;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox txtBoxSAP;
+        private System.Windows.Forms.Label label3;
     }
 }
