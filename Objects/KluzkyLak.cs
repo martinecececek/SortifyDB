@@ -2,7 +2,7 @@
 {
     class KluzkyLak
     {
-        public KluzkyLak(string sap, string nazev, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
+        public KluzkyLak(string sap, string nazev, string typ, string jeAktivni, string vyrobce, string pouziti, string nevhodneKombinace, string slozeniDle, Dictionary<string, string> slozeni)
         {
             SAP = sap;
             Nazev = nazev;
@@ -16,6 +16,7 @@
 
         public String SAP { get; set; }
         public String Nazev { get; set; }
+        public String Typ { get; set; }
         public String JeAktivni { get; set; }
         public String Vyrobce { get; set; }
         public String Pouziti { get; set; }
