@@ -18,47 +18,47 @@ namespace SortifyDB
             InitializeComponent();
         }
 
-        private void btnProjekty_Click(object sender, EventArgs e)
+        private void BtnProjekty_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnMat_Click(object sender, EventArgs e)
+        private void BtnMat_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnCleanActive_Click(object sender, EventArgs e)
+        private void BtnCleanActive_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnVarnish_Click(object sender, EventArgs e)
+        private void BtnVarnish_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnGran_Click(object sender, EventArgs e)
+        private void BtnGran_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnMainFormsAdd_Click(object sender, EventArgs e)
+        private void BtnMainFormsAdd_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnParser_Click(object sender, EventArgs e)
+        private void BtnParser_Click(object sender, EventArgs e)
         {
 
         }

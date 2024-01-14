@@ -29,18 +29,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUserControl));
             searchBox = new TextBox();
-            btnProjekty = new Cbtn.CBtn();
-            btnMat = new Cbtn.CBtn();
-            btnCleanActive = new Cbtn.CBtn();
-            btnVarnish = new Cbtn.CBtn();
-            btnGran = new Cbtn.CBtn();
-            btnBack = new Cbtn.CBtn();
-            btnSearch = new Cbtn.CBtn();
+            BtnProjekty = new Cbtn.CBtn();
+            BtnMat = new Cbtn.CBtn();
+            BtnCleanActive = new Cbtn.CBtn();
+            BtnVarnish = new Cbtn.CBtn();
+            BtnGran = new Cbtn.CBtn();
+            BtnBack = new Cbtn.CBtn();
+            BtnSearch = new Cbtn.CBtn();
             panel1 = new Panel();
             panel2 = new Panel();
-            btnMainFormsAdd = new Cbtn.CBtn();
-            btnParser = new Cbtn.CBtn();
+            BtnMainFormsAdd = new Cbtn.CBtn();
+            BtnParser = new Cbtn.CBtn();
             dataGridOutput = new DataGridView();
             panel4 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -63,166 +64,166 @@
             searchBox.Size = new Size(961, 54);
             searchBox.TabIndex = 2;
             // 
-            // btnProjekty
+            // BtnProjekty
             // 
-            btnProjekty.BackColor = Color.FromArgb(0, 142, 255);
-            btnProjekty.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnProjekty.BorderColor = Color.Black;
-            btnProjekty.BorderRadius = 40;
-            btnProjekty.BorderSize = 2;
-            btnProjekty.Cursor = Cursors.Hand;
-            btnProjekty.FlatAppearance.BorderSize = 0;
-            btnProjekty.FlatStyle = FlatStyle.Flat;
-            btnProjekty.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnProjekty.ForeColor = Color.White;
-            btnProjekty.Location = new Point(9, 21);
-            btnProjekty.Name = "btnProjekty";
-            btnProjekty.Size = new Size(205, 115);
-            btnProjekty.TabIndex = 8;
-            btnProjekty.Text = "Projekty";
-            btnProjekty.TextColor = Color.White;
-            btnProjekty.UseVisualStyleBackColor = false;
-            btnProjekty.Click += btnProjekty_Click;
+            BtnProjekty.BackColor = Color.FromArgb(0, 142, 255);
+            BtnProjekty.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnProjekty.BorderColor = Color.Black;
+            BtnProjekty.BorderRadius = 40;
+            BtnProjekty.BorderSize = 2;
+            BtnProjekty.Cursor = Cursors.Hand;
+            BtnProjekty.FlatAppearance.BorderSize = 0;
+            BtnProjekty.FlatStyle = FlatStyle.Flat;
+            BtnProjekty.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnProjekty.ForeColor = Color.White;
+            BtnProjekty.Location = new Point(9, 21);
+            BtnProjekty.Name = "BtnProjekty";
+            BtnProjekty.Size = new Size(205, 115);
+            BtnProjekty.TabIndex = 8;
+            BtnProjekty.Text = "Projekty";
+            BtnProjekty.TextColor = Color.White;
+            BtnProjekty.UseVisualStyleBackColor = false;
+            BtnProjekty.Click += BtnProjekty_Click;
             // 
-            // btnMat
+            // BtnMat
             // 
-            btnMat.BackColor = Color.FromArgb(0, 142, 255);
-            btnMat.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnMat.BorderColor = Color.Black;
-            btnMat.BorderRadius = 40;
-            btnMat.BorderSize = 2;
-            btnMat.Cursor = Cursors.Hand;
-            btnMat.FlatAppearance.BorderSize = 0;
-            btnMat.FlatStyle = FlatStyle.Flat;
-            btnMat.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnMat.ForeColor = Color.White;
-            btnMat.Location = new Point(242, 21);
-            btnMat.Name = "btnMat";
-            btnMat.Size = new Size(205, 115);
-            btnMat.TabIndex = 9;
-            btnMat.Text = "Materiály";
-            btnMat.TextColor = Color.White;
-            btnMat.UseVisualStyleBackColor = false;
-            btnMat.Click += btnMat_Click;
+            BtnMat.BackColor = Color.FromArgb(0, 142, 255);
+            BtnMat.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnMat.BorderColor = Color.Black;
+            BtnMat.BorderRadius = 40;
+            BtnMat.BorderSize = 2;
+            BtnMat.Cursor = Cursors.Hand;
+            BtnMat.FlatAppearance.BorderSize = 0;
+            BtnMat.FlatStyle = FlatStyle.Flat;
+            BtnMat.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnMat.ForeColor = Color.White;
+            BtnMat.Location = new Point(242, 21);
+            BtnMat.Name = "BtnMat";
+            BtnMat.Size = new Size(205, 115);
+            BtnMat.TabIndex = 9;
+            BtnMat.Text = "Materiály";
+            BtnMat.TextColor = Color.White;
+            BtnMat.UseVisualStyleBackColor = false;
+            BtnMat.Click += BtnMat_Click;
             // 
-            // btnCleanActive
+            // BtnCleanActive
             // 
-            btnCleanActive.BackColor = Color.FromArgb(0, 142, 255);
-            btnCleanActive.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnCleanActive.BorderColor = Color.Black;
-            btnCleanActive.BorderRadius = 40;
-            btnCleanActive.BorderSize = 2;
-            btnCleanActive.Cursor = Cursors.Hand;
-            btnCleanActive.FlatAppearance.BorderSize = 0;
-            btnCleanActive.FlatStyle = FlatStyle.Flat;
-            btnCleanActive.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btnCleanActive.ForeColor = Color.White;
-            btnCleanActive.Location = new Point(471, 21);
-            btnCleanActive.Name = "btnCleanActive";
-            btnCleanActive.Size = new Size(205, 115);
-            btnCleanActive.TabIndex = 10;
-            btnCleanActive.Text = "Čističe\r\nAktivátory";
-            btnCleanActive.TextColor = Color.White;
-            btnCleanActive.UseVisualStyleBackColor = false;
-            btnCleanActive.Click += btnCleanActive_Click;
+            BtnCleanActive.BackColor = Color.FromArgb(0, 142, 255);
+            BtnCleanActive.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnCleanActive.BorderColor = Color.Black;
+            BtnCleanActive.BorderRadius = 40;
+            BtnCleanActive.BorderSize = 2;
+            BtnCleanActive.Cursor = Cursors.Hand;
+            BtnCleanActive.FlatAppearance.BorderSize = 0;
+            BtnCleanActive.FlatStyle = FlatStyle.Flat;
+            BtnCleanActive.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            BtnCleanActive.ForeColor = Color.White;
+            BtnCleanActive.Location = new Point(471, 21);
+            BtnCleanActive.Name = "BtnCleanActive";
+            BtnCleanActive.Size = new Size(205, 115);
+            BtnCleanActive.TabIndex = 10;
+            BtnCleanActive.Text = "Čističe\r\nAktivátory";
+            BtnCleanActive.TextColor = Color.White;
+            BtnCleanActive.UseVisualStyleBackColor = false;
+            BtnCleanActive.Click += BtnCleanActive_Click;
             // 
-            // btnVarnish
+            // BtnVarnish
             // 
-            btnVarnish.BackColor = Color.FromArgb(0, 142, 255);
-            btnVarnish.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnVarnish.BorderColor = Color.Black;
-            btnVarnish.BorderRadius = 40;
-            btnVarnish.BorderSize = 2;
-            btnVarnish.Cursor = Cursors.Hand;
-            btnVarnish.FlatAppearance.BorderSize = 0;
-            btnVarnish.FlatStyle = FlatStyle.Flat;
-            btnVarnish.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnVarnish.ForeColor = Color.White;
-            btnVarnish.Location = new Point(703, 21);
-            btnVarnish.Name = "btnVarnish";
-            btnVarnish.Size = new Size(205, 115);
-            btnVarnish.TabIndex = 11;
-            btnVarnish.Text = "Kluzké laky";
-            btnVarnish.TextColor = Color.White;
-            btnVarnish.UseVisualStyleBackColor = false;
-            btnVarnish.Click += btnVarnish_Click;
+            BtnVarnish.BackColor = Color.FromArgb(0, 142, 255);
+            BtnVarnish.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnVarnish.BorderColor = Color.Black;
+            BtnVarnish.BorderRadius = 40;
+            BtnVarnish.BorderSize = 2;
+            BtnVarnish.Cursor = Cursors.Hand;
+            BtnVarnish.FlatAppearance.BorderSize = 0;
+            BtnVarnish.FlatStyle = FlatStyle.Flat;
+            BtnVarnish.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnVarnish.ForeColor = Color.White;
+            BtnVarnish.Location = new Point(703, 21);
+            BtnVarnish.Name = "BtnVarnish";
+            BtnVarnish.Size = new Size(205, 115);
+            BtnVarnish.TabIndex = 11;
+            BtnVarnish.Text = "Kluzké laky";
+            BtnVarnish.TextColor = Color.White;
+            BtnVarnish.UseVisualStyleBackColor = false;
+            BtnVarnish.Click += BtnVarnish_Click;
             // 
-            // btnGran
+            // BtnGran
             // 
-            btnGran.BackColor = Color.FromArgb(0, 142, 255);
-            btnGran.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnGran.BorderColor = Color.Black;
-            btnGran.BorderRadius = 40;
-            btnGran.BorderSize = 2;
-            btnGran.Cursor = Cursors.Hand;
-            btnGran.FlatAppearance.BorderSize = 0;
-            btnGran.FlatStyle = FlatStyle.Flat;
-            btnGran.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnGran.ForeColor = Color.White;
-            btnGran.Location = new Point(937, 21);
-            btnGran.Name = "btnGran";
-            btnGran.Size = new Size(205, 115);
-            btnGran.TabIndex = 12;
-            btnGran.Text = "Granuláty";
-            btnGran.TextColor = Color.White;
-            btnGran.UseVisualStyleBackColor = false;
-            btnGran.Click += btnGran_Click;
+            BtnGran.BackColor = Color.FromArgb(0, 142, 255);
+            BtnGran.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnGran.BorderColor = Color.Black;
+            BtnGran.BorderRadius = 40;
+            BtnGran.BorderSize = 2;
+            BtnGran.Cursor = Cursors.Hand;
+            BtnGran.FlatAppearance.BorderSize = 0;
+            BtnGran.FlatStyle = FlatStyle.Flat;
+            BtnGran.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnGran.ForeColor = Color.White;
+            BtnGran.Location = new Point(945, 21);
+            BtnGran.Name = "BtnGran";
+            BtnGran.Size = new Size(205, 115);
+            BtnGran.TabIndex = 12;
+            BtnGran.Text = "Granuláty";
+            BtnGran.TextColor = Color.White;
+            BtnGran.UseVisualStyleBackColor = false;
+            BtnGran.Click += BtnGran_Click;
             // 
-            // btnBack
+            // BtnBack
             // 
-            btnBack.BackColor = Color.FromArgb(0, 142, 255);
-            btnBack.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnBack.BackgroundImage = Properties.Resources.back1;
-            btnBack.BackgroundImageLayout = ImageLayout.Zoom;
-            btnBack.BorderColor = Color.Black;
-            btnBack.BorderRadius = 40;
-            btnBack.BorderSize = 2;
-            btnBack.Cursor = Cursors.Hand;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(11, 155);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(80, 80);
-            btnBack.TabIndex = 13;
-            btnBack.TextColor = Color.White;
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
+            BtnBack.BackColor = Color.FromArgb(0, 142, 255);
+            BtnBack.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnBack.BackgroundImage = (Image)resources.GetObject("BtnBack.BackgroundImage");
+            BtnBack.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnBack.BorderColor = Color.Black;
+            BtnBack.BorderRadius = 40;
+            BtnBack.BorderSize = 2;
+            BtnBack.Cursor = Cursors.Hand;
+            BtnBack.FlatAppearance.BorderSize = 0;
+            BtnBack.FlatStyle = FlatStyle.Flat;
+            BtnBack.ForeColor = Color.White;
+            BtnBack.Location = new Point(11, 155);
+            BtnBack.Name = "BtnBack";
+            BtnBack.Size = new Size(80, 80);
+            BtnBack.TabIndex = 13;
+            BtnBack.TextColor = Color.White;
+            BtnBack.UseVisualStyleBackColor = false;
+            BtnBack.Click += BtnBack_Click;
             // 
-            // btnSearch
+            // BtnSearch
             // 
-            btnSearch.BackColor = Color.FromArgb(0, 142, 255);
-            btnSearch.BackgroundColor = Color.FromArgb(0, 142, 255);
-            btnSearch.BackgroundImage = Properties.Resources.Search1;
-            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            btnSearch.BorderColor = Color.Black;
-            btnSearch.BorderRadius = 40;
-            btnSearch.BorderSize = 2;
-            btnSearch.Cursor = Cursors.Hand;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(1065, 155);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(80, 80);
-            btnSearch.TabIndex = 14;
-            btnSearch.TextColor = Color.White;
-            btnSearch.UseVisualStyleBackColor = false;
-            btnSearch.Click += btnSearch_Click;
+            BtnSearch.BackColor = Color.FromArgb(0, 142, 255);
+            BtnSearch.BackgroundColor = Color.FromArgb(0, 142, 255);
+            BtnSearch.BackgroundImage = (Image)resources.GetObject("BtnSearch.BackgroundImage");
+            BtnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnSearch.BorderColor = Color.Black;
+            BtnSearch.BorderRadius = 40;
+            BtnSearch.BorderSize = 2;
+            BtnSearch.Cursor = Cursors.Hand;
+            BtnSearch.FlatAppearance.BorderSize = 0;
+            BtnSearch.FlatStyle = FlatStyle.Flat;
+            BtnSearch.ForeColor = Color.White;
+            BtnSearch.Location = new Point(1065, 155);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(80, 80);
+            BtnSearch.TabIndex = 14;
+            BtnSearch.TextColor = Color.White;
+            BtnSearch.UseVisualStyleBackColor = false;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(btnVarnish);
-            panel1.Controls.Add(btnGran);
-            panel1.Controls.Add(btnBack);
-            panel1.Controls.Add(btnCleanActive);
+            panel1.Controls.Add(BtnVarnish);
+            panel1.Controls.Add(BtnGran);
+            panel1.Controls.Add(BtnBack);
+            panel1.Controls.Add(BtnCleanActive);
             panel1.Controls.Add(searchBox);
-            panel1.Controls.Add(btnMat);
-            panel1.Controls.Add(btnSearch);
-            panel1.Controls.Add(btnProjekty);
+            panel1.Controls.Add(BtnMat);
+            panel1.Controls.Add(BtnSearch);
+            panel1.Controls.Add(BtnProjekty);
             panel1.Location = new Point(383, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
@@ -233,55 +234,55 @@
             // 
             panel2.Anchor = AnchorStyles.Top;
             panel2.BackColor = Color.SteelBlue;
-            panel2.Controls.Add(btnMainFormsAdd);
-            panel2.Controls.Add(btnParser);
+            panel2.Controls.Add(BtnMainFormsAdd);
+            panel2.Controls.Add(BtnParser);
             panel2.Location = new Point(1537, 0);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.Size = new Size(383, 257);
             panel2.TabIndex = 20;
             // 
-            // btnMainFormsAdd
+            // BtnMainFormsAdd
             // 
-            btnMainFormsAdd.BackColor = Color.FromArgb(0, 95, 172);
-            btnMainFormsAdd.BackgroundColor = Color.FromArgb(0, 95, 172);
-            btnMainFormsAdd.BorderColor = Color.Black;
-            btnMainFormsAdd.BorderRadius = 40;
-            btnMainFormsAdd.BorderSize = 2;
-            btnMainFormsAdd.Cursor = Cursors.Hand;
-            btnMainFormsAdd.FlatAppearance.BorderSize = 0;
-            btnMainFormsAdd.FlatStyle = FlatStyle.Flat;
-            btnMainFormsAdd.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnMainFormsAdd.ForeColor = Color.White;
-            btnMainFormsAdd.Location = new Point(92, 22);
-            btnMainFormsAdd.Name = "btnMainFormsAdd";
-            btnMainFormsAdd.Size = new Size(205, 98);
-            btnMainFormsAdd.TabIndex = 23;
-            btnMainFormsAdd.Text = "Přidat";
-            btnMainFormsAdd.TextColor = Color.White;
-            btnMainFormsAdd.UseVisualStyleBackColor = false;
-            btnMainFormsAdd.Click += btnMainFormsAdd_Click;
+            BtnMainFormsAdd.BackColor = Color.FromArgb(0, 95, 172);
+            BtnMainFormsAdd.BackgroundColor = Color.FromArgb(0, 95, 172);
+            BtnMainFormsAdd.BorderColor = Color.Black;
+            BtnMainFormsAdd.BorderRadius = 40;
+            BtnMainFormsAdd.BorderSize = 2;
+            BtnMainFormsAdd.Cursor = Cursors.Hand;
+            BtnMainFormsAdd.FlatAppearance.BorderSize = 0;
+            BtnMainFormsAdd.FlatStyle = FlatStyle.Flat;
+            BtnMainFormsAdd.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnMainFormsAdd.ForeColor = Color.White;
+            BtnMainFormsAdd.Location = new Point(92, 22);
+            BtnMainFormsAdd.Name = "BtnMainFormsAdd";
+            BtnMainFormsAdd.Size = new Size(205, 98);
+            BtnMainFormsAdd.TabIndex = 23;
+            BtnMainFormsAdd.Text = "Přidat";
+            BtnMainFormsAdd.TextColor = Color.White;
+            BtnMainFormsAdd.UseVisualStyleBackColor = false;
+            BtnMainFormsAdd.Click += BtnMainFormsAdd_Click;
             // 
-            // btnParser
+            // BtnParser
             // 
-            btnParser.BackColor = Color.FromArgb(0, 95, 172);
-            btnParser.BackgroundColor = Color.FromArgb(0, 95, 172);
-            btnParser.BorderColor = Color.Black;
-            btnParser.BorderRadius = 40;
-            btnParser.BorderSize = 2;
-            btnParser.Cursor = Cursors.Hand;
-            btnParser.FlatAppearance.BorderSize = 0;
-            btnParser.FlatStyle = FlatStyle.Flat;
-            btnParser.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
-            btnParser.ForeColor = Color.White;
-            btnParser.Location = new Point(92, 136);
-            btnParser.Name = "btnParser";
-            btnParser.Size = new Size(205, 98);
-            btnParser.TabIndex = 22;
-            btnParser.Text = "Vložit PDF";
-            btnParser.TextColor = Color.White;
-            btnParser.UseVisualStyleBackColor = false;
-            btnParser.Click += btnParser_Click;
+            BtnParser.BackColor = Color.FromArgb(0, 95, 172);
+            BtnParser.BackgroundColor = Color.FromArgb(0, 95, 172);
+            BtnParser.BorderColor = Color.Black;
+            BtnParser.BorderRadius = 40;
+            BtnParser.BorderSize = 2;
+            BtnParser.Cursor = Cursors.Hand;
+            BtnParser.FlatAppearance.BorderSize = 0;
+            BtnParser.FlatStyle = FlatStyle.Flat;
+            BtnParser.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnParser.ForeColor = Color.White;
+            BtnParser.Location = new Point(92, 136);
+            BtnParser.Name = "BtnParser";
+            BtnParser.Size = new Size(205, 98);
+            BtnParser.TabIndex = 22;
+            BtnParser.Text = "Vložit PDF";
+            BtnParser.TextColor = Color.White;
+            BtnParser.UseVisualStyleBackColor = false;
+            BtnParser.Click += BtnParser_Click;
             // 
             // dataGridOutput
             // 
@@ -347,17 +348,17 @@
 
         #endregion
         private TextBox searchBox;
-        private Cbtn.CBtn btnProjekty;
-        private Cbtn.CBtn btnMat;
-        private Cbtn.CBtn btnCleanActive;
-        private Cbtn.CBtn btnVarnish;
-        private Cbtn.CBtn btnGran;
-        private Cbtn.CBtn btnBack;
-        private Cbtn.CBtn btnSearch;
+        private Cbtn.CBtn BtnProjekty;
+        private Cbtn.CBtn BtnMat;
+        private Cbtn.CBtn BtnCleanActive;
+        private Cbtn.CBtn BtnVarnish;
+        private Cbtn.CBtn BtnGran;
+        private Cbtn.CBtn BtnBack;
+        private Cbtn.CBtn BtnSearch;
         private Panel panel1;
         private Panel panel2;
-        private Cbtn.CBtn btnMainFormsAdd;
-        private Cbtn.CBtn btnParser;
+        private Cbtn.CBtn BtnMainFormsAdd;
+        private Cbtn.CBtn BtnParser;
         private DataGridView dataGridOutput;
         private Panel panel4;
         private FlowLayoutPanel flowLayoutPanel1;
