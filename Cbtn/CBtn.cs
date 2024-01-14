@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 
 namespace SortifyDB.Cbtn
 {
+    //Vlastní tlačítka
     public class CBtn : Button
     {
         private int borderSize = 0;
