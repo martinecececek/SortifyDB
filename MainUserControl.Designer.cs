@@ -2,6 +2,7 @@
 {
     partial class MainUserControl
     {
+        //Kódík
         /// <summary> 
         /// Vyžaduje se proměnná návrháře.
         /// </summary>
