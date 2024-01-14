@@ -305,7 +305,7 @@ namespace SortifyDB.Ms_Todo
                     }
                 }
 
-                MainForm.Tasks = objectedTodoTasks;
+                MainForm.TodoTask = objectedTodoTasks;
             }
             catch (Exception ex)
             {

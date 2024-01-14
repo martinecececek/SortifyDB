@@ -1,6 +1,4 @@
 using MaterialSkin.Controls;
-using Microsoft.Graph;
-using Microsoft.Graph.Models;
 using SortifyDB.Objects;
 
 namespace SortifyDB
@@ -14,7 +12,7 @@ namespace SortifyDB
         public static List<CisiticAktivator> CisticeAktivatory { get; set; }
         public static List<Projekt> Projekty { get; set; }
 
-        public static List<TodoTask> Tasks { get; set; }
+        public static List<Ms_Todo.TodoTask> TodoTask { get; set; }
 
         public MainForm()
         {
