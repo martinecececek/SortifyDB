@@ -10,64 +10,70 @@ namespace SortifyDB
             InitializeComponent();
         }
 
-        private void ChangeUI<T>(UserControl userControl, List<T> list)
+        public void ChangeUI(UserControl userControl)
         {
-            panel4.Controls.Clear();
+            panelMainShower.Controls.Clear();
 
-            panel4.Controls.Add(userControl);
+            panelMainShower.Controls.Add(userControl);
         }
 
+        #region basic buttons
+        private void BtnProjekty_Click(object sender, EventArgs e)
+        {
+            AddToHistory("Projekty", "All");
+
+            ChangeUI(new UserControlOutPut("P", panelMainShower));
+        }
+
+        private void BtnMat_Click(object sender, EventArgs e)
+        {
+            AddToHistory("Materialy", "All");
+
+            ChangeUI(new UserControlOutPut("M", panelMainShower));
+        }
+
+        private void BtnCleanActive_Click(object sender, EventArgs e)
+        {
+            AddToHistory("CisticeAktivatory", "All");
+
+            ChangeUI(new UserControlOutPut("C", panelMainShower));
+        }
+
+        private void BtnVarnish_Click(object sender, EventArgs e)
+        {
+            AddToHistory("KluzkeLaky", "All");
+
+            ChangeUI(new UserControlOutPut("K", panelMainShower));
+        }
+
+        private void BtnGran_Click(object sender, EventArgs e)
+        {
+            AddToHistory("Granulaty", "All");
+
+            ChangeUI(new UserControlOutPut("G", panelMainShower));
+        }
+        #endregion
+
+        #region history 
 
         private readonly Dictionary<string, string> history = [];
 
-        private void AddToHistory(string key, string value)
+        public void AddToHistory(string key, string value)
         {
             if (history.Count > 10)
             {
                 history.Remove(history.First().Key);
             }
 
+            if (history.ContainsKey(key))
+            {
+                history.Remove(key);
+            }
 
             history.Add(key, value);
         }
 
-        private void BtnProjekty_Click(object sender, EventArgs e)
-        {
-            AddToHistory("Projekty", "All");
-
-
-            panelMainShower.Controls.Clear();
-            panelMainShower.Controls.Add(new UserControlOutPut(0,panelMainShower));
-            
-        }
-
-        private void BtnMat_Click(object sender, EventArgs e)
-        {
-            AddToHistory("Materialy", "All");
-            panelMainShower.Controls.Clear();
-            panelMainShower.Controls.Add(new UserControlOutPut(1, panelMainShower));
-        }
-
-        private void BtnCleanActive_Click(object sender, EventArgs e)
-        {
-            AddToHistory("CisticeAktivatory", "All");
-            panelMainShower.Controls.Clear();
-            panelMainShower.Controls.Add(new UserControlOutPut(2, panelMainShower));
-        }
-
-        private void BtnVarnish_Click(object sender, EventArgs e)
-        {
-            AddToHistory("KluzkeLaky", "All");
-            panelMainShower.Controls.Clear();
-            panelMainShower.Controls.Add(new UserControlOutPut(3, panelMainShower));
-        }
-
-        private void BtnGran_Click(object sender, EventArgs e)
-        {
-            AddToHistory("Granulaty", "All");
-            panelMainShower.Controls.Add(new UserControlOutPut(4, panelMainShower));
-        }
-
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             switch (history.Last().Key)
             {
@@ -75,11 +81,11 @@ namespace SortifyDB
                     {
                         if (history.Last().Value == "All")
                         {
-
+                            ChangeUI(new UserControlOutPut("P", panelMainShower));
                         }
                         else
                         {
-
+                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower));
                         }
 
                         break;
@@ -88,40 +94,39 @@ namespace SortifyDB
                     {
                         if (history.Last().Value == "All")
                         {
-
+                            ChangeUI(new UserControlOutPut("M", panelMainShower));
                         }
                         else
                         {
-
+                            ChangeUI(new UserControlDetail(history.Last().Value, "M", panelMainShower));
                         }
 
                         break;
                     }
                 case "CisticeAktivatory":
                     {
-
+                        ChangeUI(new UserControlOutPut("C", panelMainShower));
 
                         break;
                     }
                 case "KluzkeLaky":
                     {
-
+                        ChangeUI(new UserControlOutPut("K", panelMainShower));
 
                         break;
                     }
                 case "Granulaty":
                     {
-
+                        ChangeUI(new UserControlOutPut("G", panelMainShower));
 
                         break;
                     }
                 default:
                     break;
             }
-
-
-
         }
+
+        #endregion
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -171,10 +176,13 @@ namespace SortifyDB
                                                    material.SAP == searchBox.Text))
             {
 
+
+
             }
 
         }
 
+        #region open 3th party 
         private void BtnMainFormsAdd_Click(object sender, EventArgs e)
         {
 
@@ -184,5 +192,6 @@ namespace SortifyDB
         {
             PdfParsing.ParsePDF();
         }
+        #endregion
     }
 }

@@ -1,39 +1,28 @@
-﻿using SortifyDB.Objects;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SortifyDB
+﻿namespace SortifyDB
 {
     public partial class UserControlOutPut : UserControl
     {
         /// <summary>
-        /// 0 = Projekty
-        /// 1 = Materiály
-        /// 2 = Čističe/Aktivátory
-        /// 3 = Kluzké laky
-        /// 4 = Granuláty
+        /// P = Projekty
+        /// M = Materiály
+        /// C = Čističe/Aktivátory
+        /// K = Kluzké laky
+        /// G = Granuláty
         /// </summary>
-        int typList = 0;
-        int TypList
+
+        public UserControlOutPut(string typVypsaniListu, Panel vys)
         {
-            get { return typList; }
-            set { typList = value; }
-        }
-        Panel panel;
-        public UserControlOutPut(int typVypsaniListu, Panel vys)
-        {
-            TypList = typVypsaniListu;
-            panel = vys;
             InitializeComponent();
+
+            this.typVypsaniListu = typVypsaniListu;
+            panel = vys;
+
             ListDataGridVypis();
         }
+
+        readonly Panel panel;
+        private readonly string typVypsaniListu;
+
         private void ClearDataGrid()
         {
             if (dataGridUCOutput.DataSource != null)
@@ -42,27 +31,30 @@ namespace SortifyDB
                 dataGridUCOutput.Rows.Clear();
             }
         }
+
         private void ListDataGridVypis()
         {
-            switch (TypList)
+            switch (typVypsaniListu)
             {
-                case 0:
+                case "P":
                     ProjektyMet();
                     break;
-                case 1:
+                case "M":
                     MaterialsMet();
                     break;
-                case 2:
+                case "C":
                     CleanActivesMet();
                     break;
-                case 3:
+                case "K":
                     VarnishMet();
                     break;
-                case 4:
+                case "G":
                     GranMet();
                     break;
             }
         }
+
+        #region projects show methods + detail button
         private void ProjektyMet()
         {
             ClearDataGrid();
@@ -78,34 +70,90 @@ namespace SortifyDB
 
             dataGridUCOutput.Columns.Add(deleteButtonColumn);
 
-            dataGridUCOutput.CellClick += dataGridOutput_CellClick;
+            dataGridUCOutput.CellClick += dataGridOutputProject_CellClick;
         }
 
-        private void dataGridOutput_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridOutputProject_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
+            MainUserControl mainUserControl = new();
+
+            if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dataGridUCOutput.Rows[e.RowIndex];
+                string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                string tlValue = (string)selectedRow.Cells[1].Value;
+                mainUserControl.AddToHistory("Projekty", findingParemater);
 
-                Projekt projekt = MainForm.Projekty.Find(x => x.TL == tlValue);
-
-                ClearDataGrid();
-            }*/
-            
+                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel));
+            }
         }
+        #endregion
 
+        #region materials show methods + detail button
         private void MaterialsMet()
         {
             ClearDataGrid();
 
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn skloColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Název",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(skloColumn);
+
+            DataGridViewTextBoxColumn tempColumn = new()
+            {
+                Name = "TypPripravku",
+                HeaderText = "TypPripravku",
+                DataPropertyName = "TypPripravku"
+            };
+            dataGridUCOutput.Columns.Add(tempColumn);
+
+            DataGridViewButtonColumn deleteButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Text = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+
+            dataGridUCOutput.Columns.Add(deleteButtonColumn);
+
+            dataGridUCOutput.CellClick += dataGridOutputMaterial_CellClick;
+
             dataGridUCOutput.DataSource = MainForm.Materials;
         }
 
+        private void dataGridOutputMaterial_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TODO: fix this bcs the if statement will not execute
+
+            MainUserControl mainUserControl = new();
+
+            if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+            {
+                string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                mainUserControl.AddToHistory("Materialy", findingParemater);
+
+                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel));
+            }
+        }
+        #endregion
+
+        #region regular show methods
         private void CleanActivesMet()
         {
             ClearDataGrid();
+
+            //TODO: fix this bcs need to write the Dictionary
 
             dataGridUCOutput.DataSource = MainForm.CisticeAktivatory;
         }
@@ -114,6 +162,8 @@ namespace SortifyDB
         {
             ClearDataGrid();
 
+            //TODO: fix this bcs need to write the Dictionary
+
             dataGridUCOutput.DataSource = MainForm.KluzkeLaky;
         }
 
@@ -121,7 +171,11 @@ namespace SortifyDB
         {
             ClearDataGrid();
 
+            //TODO: fix this bcs need to write the Dictionary
+
             dataGridUCOutput.DataSource = MainForm.Granulaty;
         }
+        #endregion
+
     }
 }

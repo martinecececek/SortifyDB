@@ -40,7 +40,7 @@
             dataGridProjectOutput.Anchor = AnchorStyles.Top;
             dataGridProjectOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridProjectOutput.Location = new Point(20, 20);
-            dataGridProjectOutput.Margin = new Padding(20, 20, 20, 20);
+            dataGridProjectOutput.Margin = new Padding(20);
             dataGridProjectOutput.Name = "dataGridProjectOutput";
             dataGridProjectOutput.RowHeadersWidth = 51;
             dataGridProjectOutput.Size = new Size(1128, 106);
@@ -51,7 +51,7 @@
             dataGridMaterialOutput.Anchor = AnchorStyles.Top;
             dataGridMaterialOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridMaterialOutput.Location = new Point(20, 150);
-            dataGridMaterialOutput.Margin = new Padding(20, 20, 20, 20);
+            dataGridMaterialOutput.Margin = new Padding(20);
             dataGridMaterialOutput.Name = "dataGridMaterialOutput";
             dataGridMaterialOutput.RowHeadersWidth = 51;
             dataGridMaterialOutput.Size = new Size(1128, 358);
@@ -73,9 +73,10 @@
             Controls.Add(dataGridMaterialOutput);
             Controls.Add(dataGridProjectOutput);
             Controls.Add(panelColorUCD);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserControlDetail";
             Size = new Size(1168, 528);
+            Load += UserControlDetail_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridProjectOutput).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridMaterialOutput).EndInit();
             ResumeLayout(false);
