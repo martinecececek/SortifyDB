@@ -42,14 +42,11 @@
             panel2 = new Panel();
             BtnMainFormsAdd = new Cbtn.CBtn();
             BtnParser = new Cbtn.CBtn();
-            dataGridOutput = new DataGridView();
-            panel4 = new Panel();
+            panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridOutput).BeginInit();
-            panel4.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -188,10 +185,10 @@
             BtnBack.FlatAppearance.BorderSize = 0;
             BtnBack.FlatStyle = FlatStyle.Flat;
             BtnBack.ForeColor = Color.White;
-            BtnBack.Location = new Point(13, 207);
+            BtnBack.Location = new Point(13, 212);
             BtnBack.Margin = new Padding(3, 4, 3, 4);
             BtnBack.Name = "BtnBack";
-            BtnBack.Size = new Size(91, 107);
+            BtnBack.Size = new Size(91, 91);
             BtnBack.TabIndex = 13;
             BtnBack.TextColor = Color.White;
             BtnBack.UseVisualStyleBackColor = false;
@@ -210,10 +207,10 @@
             BtnSearch.FlatAppearance.BorderSize = 0;
             BtnSearch.FlatStyle = FlatStyle.Flat;
             BtnSearch.ForeColor = Color.White;
-            BtnSearch.Location = new Point(1080, 207);
+            BtnSearch.Location = new Point(1080, 212);
             BtnSearch.Margin = new Padding(3, 4, 3, 4);
             BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(91, 107);
+            BtnSearch.Size = new Size(91, 91);
             BtnSearch.TabIndex = 14;
             BtnSearch.TextColor = Color.White;
             BtnSearch.UseVisualStyleBackColor = false;
@@ -294,27 +291,15 @@
             BtnParser.UseVisualStyleBackColor = false;
             BtnParser.Click += BtnParser_Click;
             // 
-            // dataGridOutput
+            // panelMainShower
             // 
-            dataGridOutput.Anchor = AnchorStyles.Top;
-            dataGridOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridOutput.Location = new Point(11, 16);
-            dataGridOutput.Margin = new Padding(3, 4, 9, 11);
-            dataGridOutput.Name = "dataGridOutput";
-            dataGridOutput.RowHeadersWidth = 51;
-            dataGridOutput.Size = new Size(1462, 658);
-            dataGridOutput.TabIndex = 21;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Top;
-            panel4.BackColor = Color.CornflowerBlue;
-            panel4.Controls.Add(dataGridOutput);
-            panel4.Location = new Point(438, 330);
-            panel4.Margin = new Padding(0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1482, 685);
-            panel4.TabIndex = 25;
+            panelMainShower.Anchor = AnchorStyles.Top;
+            panelMainShower.BackColor = Color.CornflowerBlue;
+            panelMainShower.Location = new Point(438, 330);
+            panelMainShower.Margin = new Padding(0);
+            panelMainShower.Name = "panelMainShower";
+            panelMainShower.Size = new Size(1482, 685);
+            panelMainShower.TabIndex = 25;
             // 
             // flowLayoutPanel1
             // 
@@ -339,10 +324,10 @@
             // 
             // MainUserControl
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Lavender;
-            Controls.Add(panel4);
+            Controls.Add(panelMainShower);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panel3);
@@ -352,8 +337,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridOutput).EndInit();
-            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -371,8 +354,7 @@
         private Panel panel2;
         private Cbtn.CBtn BtnMainFormsAdd;
         private Cbtn.CBtn BtnParser;
-        private DataGridView dataGridOutput;
-        private Panel panel4;
+        private Panel panelMainShower;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
     }

@@ -36,29 +36,38 @@ namespace SortifyDB
             AddToHistory("Projekty", "All");
 
 
+            panelMainShower.Controls.Clear();
+            panelMainShower.Controls.Add(new UserControlOutPut(0,panelMainShower));
+            
         }
 
         private void BtnMat_Click(object sender, EventArgs e)
         {
             AddToHistory("Materialy", "All");
+            panelMainShower.Controls.Clear();
+            panelMainShower.Controls.Add(new UserControlOutPut(1, panelMainShower));
         }
 
         private void BtnCleanActive_Click(object sender, EventArgs e)
         {
             AddToHistory("CisticeAktivatory", "All");
+            panelMainShower.Controls.Clear();
+            panelMainShower.Controls.Add(new UserControlOutPut(2, panelMainShower));
         }
 
         private void BtnVarnish_Click(object sender, EventArgs e)
         {
             AddToHistory("KluzkeLaky", "All");
+            panelMainShower.Controls.Clear();
+            panelMainShower.Controls.Add(new UserControlOutPut(3, panelMainShower));
         }
 
         private void BtnGran_Click(object sender, EventArgs e)
         {
             AddToHistory("Granulaty", "All");
+            panelMainShower.Controls.Add(new UserControlOutPut(4, panelMainShower));
         }
 
-        private void BtnBack_Click(object sender, EventArgs e)
         {
             switch (history.Last().Key)
             {
