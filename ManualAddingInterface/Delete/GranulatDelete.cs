@@ -34,11 +34,11 @@ namespace TechnoWizz.ManualAddingForm.Delete
                 HeaderText = "Název"
             };
 
-            DataGridViewTextBoxColumn usageColumn = new()
+            DataGridViewTextBoxColumn sapColumn = new()
             {
-                Name = "Pouziti",
-                DataPropertyName = "Pouziti",
-                HeaderText = "Pouziti"
+                Name = "SAP",
+                DataPropertyName = "SAP",
+                HeaderText = "SAP"
             };
 
             DataGridViewTextBoxColumn vyrobceColumn = new()
@@ -56,7 +56,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
             };
 
             dataGridGranulat.Columns.Add(nameColumn);
-            dataGridGranulat.Columns.Add(usageColumn);
+            dataGridGranulat.Columns.Add(sapColumn);
             dataGridGranulat.Columns.Add(vyrobceColumn);
 
             dataGridGranulat.Columns.Add(editButtonColumn);
@@ -73,13 +73,13 @@ namespace TechnoWizz.ManualAddingForm.Delete
                 DataGridViewRow selectedRow = dataGridGranulat.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string pouzitiValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string sapValue = (string)selectedRow.Cells["SAP"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (Granulat lak in MainForm.Granulaty)
                 {
                     if (lak.Nazev == nameValue &&
-                        lak.Pouziti == pouzitiValue &&
+                        lak.SAP == sapValue &&
                         lak.Vyrobce == vyrobceValue)
                     {
                         textBoxSearch.Text = null;
@@ -133,7 +133,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
                     foreach (Granulat item in MainForm.Granulaty)
                     {
-                        if (item.Nazev == textBoxSearch.Text || item.Pouziti == textBoxSearch.Text || item.Vyrobce == textBoxSearch.Text)
+                        if (item.Nazev == textBoxSearch.Text || item.SAP == textBoxSearch.Text || item.Vyrobce == textBoxSearch.Text)
                         {
                             selectedGranulaty.Add(item);
                             break;

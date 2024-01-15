@@ -26,8 +26,8 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
             DataGridViewButtonColumn deleteButtonColumn = new()
             {
-                HeaderText = "Upravit",
-                Text = "Upravit",
+                HeaderText = "Smazat",
+                Text = "Smazat",
                 UseColumnTextForButtonValue = true
             };
 
@@ -38,7 +38,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
         private void MaterialDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridMaterials.Columns[e.ColumnIndex].HeaderText == "Upravit" && e.RowIndex >= 0)
+            if (dataGridMaterials.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridMaterials.Rows[e.RowIndex];
 

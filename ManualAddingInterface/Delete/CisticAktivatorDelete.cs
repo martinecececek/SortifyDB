@@ -28,11 +28,11 @@ namespace TechnoWizz.ManualAddingForm.Delete
                 HeaderText = "Název"
             };
 
-            DataGridViewTextBoxColumn usageColumn = new()
+            DataGridViewTextBoxColumn sapColumn = new()
             {
-                Name = "Pouziti",
-                DataPropertyName = "Pouziti",
-                HeaderText = "Pouziti"
+                Name = "SAP",
+                DataPropertyName = "SAP",
+                HeaderText = "SAP"
             };
 
             DataGridViewTextBoxColumn vyrobceColumn = new()
@@ -42,18 +42,18 @@ namespace TechnoWizz.ManualAddingForm.Delete
                 HeaderText = "Vyrobce",
             };
 
-            DataGridViewButtonColumn editButtonColumn = new()
+            DataGridViewButtonColumn deleteButtonColumn = new()
             {
                 HeaderText = "Upravit",
                 Text = "Upravit",
                 UseColumnTextForButtonValue = true
             };
 
+            dataGridCistice.Columns.Add(sapColumn);
             dataGridCistice.Columns.Add(nameColumn);
-            dataGridCistice.Columns.Add(usageColumn);
             dataGridCistice.Columns.Add(vyrobceColumn);
 
-            dataGridCistice.Columns.Add(editButtonColumn);
+            dataGridCistice.Columns.Add(deleteButtonColumn);
 
             dataGridCistice.DataSource = MainForm.CisticeAktivatory;
 
@@ -67,7 +67,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
                 DataGridViewRow selectedRow = dataGridCistice.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string pouzitiValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string pouzitiValue = (string)selectedRow.Cells["SAP"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (CisiticAktivator cistic in MainForm.CisticeAktivatory)

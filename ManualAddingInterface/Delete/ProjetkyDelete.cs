@@ -2,7 +2,6 @@
 using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
-using TechnoWizz.ManualAddingForm.Edit;
 
 
 namespace TechnoWizz.ManualAddingForm.Delete
@@ -49,8 +48,8 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
             DataGridViewButtonColumn btnColumn = new()
             {
-                HeaderText = "Upravit",
-                Text = "Upravit",
+                HeaderText = "Smazat",
+                Text = "Smazat",
                 UseColumnTextForButtonValue = true
             };
             dataGridProject.Columns.Add(btnColumn);
@@ -62,7 +61,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
         private void ProjectDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridProject.Columns[e.ColumnIndex].HeaderText == "Upravit" && e.RowIndex >= 0)
+            if (dataGridProject.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridProject.Rows[e.RowIndex];
 
@@ -89,8 +88,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
                     MainManualAdding mainForm = new();
 
-                    ProjektyEdit editingProject = new(MainForm.Projekty[positioInList]);
-                    mainForm.ChangeUI(editingProject);
+                    mainForm.ClearUserControl();
 
                 }
                 else
