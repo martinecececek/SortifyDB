@@ -10,7 +10,7 @@
         public String NevhodneKombinace { get; set; } = nevhodneKombinace;
         public String SlozeniDle { get; set; } = slozeniDle;
 
-        //key = nazev, value = procenta
+        //key = nazev, value = procenta (13 items)
         public Dictionary<string, string> Slozeni { get; set; } = slozeni;
 
     }
