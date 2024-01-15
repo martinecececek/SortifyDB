@@ -1,4 +1,6 @@
-﻿using SortifyDB.ManualAddingInterface.Add;
+﻿using TechnoWizz.ManualAddingForm.Add;
+using TechnoWizz.ManualAddingForm.Delete;
+using TechnoWizz.ManualAddingForm.Select;
 
 namespace SortifyDB.ManualAddingInterface
 {
@@ -121,13 +123,13 @@ namespace SortifyDB.ManualAddingInterface
 
         private void btnEditMaterial_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new MaterialSelect());
             materialTimer.Start();
         }
 
         private void btnDeleteMaterial_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new MaterialDelete());
             materialTimer.Start();
         }
 
@@ -161,19 +163,19 @@ namespace SortifyDB.ManualAddingInterface
 
         private void btnAddProjekt_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new ProjectAdd());
             projectTimer.Start();
         }
 
         private void btnEditProjekt_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new ProjektySelect());
             projectTimer.Start();
         }
 
         private void btnDeleteProjekt_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new ProjetkyDelete());
             projectTimer.Start();
         }
 
@@ -208,25 +210,24 @@ namespace SortifyDB.ManualAddingInterface
 
         private void btnGranulat_Click(object sender, EventArgs e)
         {
-
             granulatyTimer.Start();
         }
 
         private void btnAddGranulat_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new GranulatAdd());
             granulatyTimer.Start();
         }
 
         private void btnEditGranulat_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new GranulatySelect());
             granulatyTimer.Start();
         }
 
         private void btnDeleteGranulat_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new GranulatDelete());
             granulatyTimer.Start();
         }
 
@@ -259,21 +260,26 @@ namespace SortifyDB.ManualAddingInterface
             }
         }
 
+        private void btnLak_Click(object sender, EventArgs e)
+        {
+            lakTimer.Start();
+        }
+
         private void btnAddLak_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new KluzkyLakAdd());
             lakTimer.Start();
         }
 
         private void btnEditLak_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new KluzkyLakSelect());
             lakTimer.Start();
         }
 
         private void btnDeleteLak_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new KluzkyLakDelete());
             lakTimer.Start();
         }
 
@@ -313,21 +319,23 @@ namespace SortifyDB.ManualAddingInterface
 
         private void btnAddCistic_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new CisticAktivatorAdd());
             cisticeTimer.Start();
         }
 
         private void btnEditCistic_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new CisticAktivatorSelect());
             cisticeTimer.Start();
         }
 
         private void btnDeleteCisitic_Click(object sender, EventArgs e)
         {
-
+            ChangeUI(new CisticAktivatorDelete());
+            cisticeTimer.Start();
         }
         #endregion
+
 
     }
 }

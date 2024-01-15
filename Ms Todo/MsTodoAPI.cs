@@ -263,7 +263,6 @@ namespace SortifyDB.Ms_Todo
             await GetDataFromTodo(GraphClient);
         }
 
-
         public static async Task<GraphServiceClient> GetAutorizedAsync()
         {
             var options = new InteractiveBrowserCredentialOptions
@@ -305,14 +304,12 @@ namespace SortifyDB.Ms_Todo
                     }
                 }
 
-                MainForm.Tasks = objectedTodoTasks;
+                MainForm.TodoTask = objectedTodoTasks;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         public static async Task TodoTaskCompleted(TodoTask task)
@@ -323,9 +320,5 @@ namespace SortifyDB.Ms_Todo
 
             MessageBox.Show("Označeno jako splněné!", "Úpěšně dokončeno", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
-
-
     }
 }

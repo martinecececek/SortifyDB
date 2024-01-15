@@ -12,14 +12,13 @@ using System.Runtime.CompilerServices;
 
 namespace SortifyDB.Cbtn
 {
-    //Vlastní tlačítka
     public class CBtn : Button
     {
         private int borderSize = 0;
         private int borderRadius = 40;
         private Color borderColor = Color.PaleVioletRed;
 
-        [Category("Custom Buttons")]
+        [Category("Custo m Buttons")]
         public int BorderSize 
         {
             get => borderSize;
