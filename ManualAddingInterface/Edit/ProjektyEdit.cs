@@ -8,5 +8,7 @@ namespace TechnoWizz.ManualAddingForm.Edit
         {
             InitializeComponent();
         }
+
+        //TODO: Add code & visual here
     }
 }

@@ -15,14 +15,25 @@ namespace TechnoWizz.ManualAddingForm.Edit
         }
         public CisiticAktivator CisticAktivator { get; set; }
 
-
-        private readonly Dictionary<string, string> KeyValuePairs = new();
+        private readonly Dictionary<string, string> KeyValuePairs = [];
         private void CisticAktivatorEdit_Load(object sender, System.EventArgs e)
         {
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGrid.AutoGenerateColumns = false;
 
-            //TODO: add
+            //add data to textboxes
+            txtBoxName.Text = CisticAktivator.Nazev;
+            txtBoxSAP.Text = CisticAktivator.SAP;
+            txtBoxAktivni.Text = CisticAktivator.JeAktivni;
+            txtBoxVyrobce.Text = CisticAktivator.Vyrobce;
+            txtBoxPouziti.Text = CisticAktivator.Pouziti;
+            txtBoxNevhodKomb.Text = CisticAktivator.NevhodneKombinace;
+            txtBoxSlozeniDle.Text = CisticAktivator.SlozeniDle;
+
+            foreach (KeyValuePair<string, string> keyValuePair in CisticAktivator.Slozeni)
+            {
+                dataGrid.Rows.Add(keyValuePair.Key, keyValuePair.Value);
+            }
         }
 
         private void btnSave_Click(object sender, System.EventArgs e)
@@ -92,7 +103,7 @@ namespace TechnoWizz.ManualAddingForm.Edit
             }
 
             //get data from datagrid
-            Dictionary<string, string> keyValuePairs = new();
+            Dictionary<string, string> keyValuePairs = [];
 
             foreach (DataGridViewRow dataGridRow in dataGrid.Rows)
             {
@@ -103,13 +114,13 @@ namespace TechnoWizz.ManualAddingForm.Edit
             }
 
             CisiticAktivator cistic = new(sap: txtBoxSAP.Text,
-                                                         nazev: txtBoxName.Text,
-                                                         jeAktivni: txtBoxAktivni.Text,
-                                                         vyrobce: txtBoxVyrobce.Text,
-                                                         pouziti: txtBoxPouziti.Text,
-                                                         nevhodneKombinace: txtBoxNevhodKomb.Text,
-                                                         slozeniDle: txtBoxSlozeniDle.Text,
-                                                         slozeni: keyValuePairs);
+                                          nazev: txtBoxName.Text,
+                                          jeAktivni: txtBoxAktivni.Text,
+                                          vyrobce: txtBoxVyrobce.Text,
+                                          pouziti: txtBoxPouziti.Text,
+                                          nevhodneKombinace: txtBoxNevhodKomb.Text,
+                                          slozeniDle: txtBoxSlozeniDle.Text,
+                                          slozeni: keyValuePairs);
 
             #region update main list
             int index = MainForm.CisticeAktivatory.FindIndex(x => x.Nazev == CisticAktivator.Nazev);

@@ -21,6 +21,22 @@ namespace TechnoWizz.ManualAddingForm.Edit
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGrid.AutoGenerateColumns = false;
 
+            txtBoxName.Text = Granulat.Nazev;
+            txtBoxSAP.Text = Granulat.SAP;
+            txtBoxTyp.Text = Granulat.Typ;
+            txtBoxxK.Text = Granulat.Xk;
+            txtBoxAktivni.Text = Granulat.JeAktivni;
+            txtBoxVyrobce.Text = Granulat.Vyrobce;
+            txtBoxPouziti.Text = Granulat.Pouziti;
+            txtBoxKombinace.Text = Granulat.KombinaceS;
+            txtBoxCisteni.Text = Granulat.Cisteni;
+            txtBoxNevhodKomb.Text = Granulat.NevhodneKombinace;
+            txtBoxSlozeni.Text = Granulat.SlozeniDle;
+
+            foreach (KeyValuePair<string, string> keyValuePair in Granulat.Slozeni)
+            {
+                dataGrid.Rows.Add(keyValuePair.Key, keyValuePair.Value);
+            }
 
         }
 
