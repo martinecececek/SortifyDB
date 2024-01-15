@@ -67,13 +67,13 @@ namespace TechnoWizz.ManualAddingForm.Select
                 DataGridViewRow selectedRow = dataGridGranulat.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string pouzitiValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string sapValue = (string)selectedRow.Cells["Pouziti"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (Granulat lak in MainForm.Granulaty)
                 {
                     if (lak.Nazev == nameValue &&
-                        lak.Pouziti == pouzitiValue &&
+                        lak.SAP == sapValue &&
                         lak.Vyrobce == vyrobceValue)
                     {
                         textBoxSearch.Text = null;

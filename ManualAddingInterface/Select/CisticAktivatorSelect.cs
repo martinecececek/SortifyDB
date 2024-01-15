@@ -44,8 +44,8 @@ namespace TechnoWizz.ManualAddingForm.Select
 
             DataGridViewButtonColumn editButtonColumn = new()
             {
-                HeaderText = "Upravit",
-                Text = "Upravit",
+                HeaderText = "Smazat",
+                Text = "Smazat",
                 UseColumnTextForButtonValue = true
             };
 
@@ -62,18 +62,18 @@ namespace TechnoWizz.ManualAddingForm.Select
 
         private void CisticeDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridCistice.Columns[e.ColumnIndex].HeaderText == "Upravit" && e.RowIndex >= 0)
+            if (dataGridCistice.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridCistice.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string pouzitiValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string sapValue = (string)selectedRow.Cells["SAP"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (CisiticAktivator cistic in MainForm.CisticeAktivatory)
                 {
                     if (cistic.Nazev == nameValue &&
-                        cistic.Pouziti == pouzitiValue &&
+                        cistic.SAP == sapValue &&
                         cistic.Vyrobce == vyrobceValue)
                     {
                         textBoxSearch.Text = null;
@@ -81,7 +81,7 @@ namespace TechnoWizz.ManualAddingForm.Select
                         MainManualAdding mainForm = new();
 
                         CisticAktivatorEdit editinglak = new(cistic);
-                        mainForm.ChangeUI(editinglak);
+                        mainForm.ClearUserControl();
 
                     }
                 }
@@ -104,7 +104,7 @@ namespace TechnoWizz.ManualAddingForm.Select
 
                     foreach (CisiticAktivator cistic in MainForm.CisticeAktivatory)
                     {
-                        if (cistic.Nazev == textBoxSearch.Text || cistic.Vyrobce == textBoxSearch.Text || cistic.Pouziti == textBoxSearch.Text)
+                        if (cistic.Nazev == textBoxSearch.Text || cistic.SAP == textBoxSearch.Text || cistic.Pouziti == textBoxSearch.Text)
                         {
                             selected.Add(cistic);
                             break;

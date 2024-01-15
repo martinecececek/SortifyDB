@@ -67,13 +67,13 @@ namespace TechnoWizz.ManualAddingForm.Select
                 DataGridViewRow selectedRow = dataGridLak.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string pouzitiValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string sapValue = (string)selectedRow.Cells["SAP"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (KluzkyLak lak in MainForm.KluzkeLaky)
                 {
                     if (lak.Nazev == nameValue &&
-                        lak.Pouziti == pouzitiValue &&
+                        lak.SAP == sapValue &&
                         lak.Vyrobce == vyrobceValue)
                     {
                         textBoxSearch.Text = null;
