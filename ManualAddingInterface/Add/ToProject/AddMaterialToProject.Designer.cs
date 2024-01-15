@@ -65,7 +65,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Image = global::TechnoWizz.Properties.Resources.Left;
+            this.btnBack.Image = global::SortifyDB.Properties.Resources.Left;
             this.btnBack.Location = new System.Drawing.Point(24, 24);
             this.btnBack.Margin = new System.Windows.Forms.Padding(15, 15, 3, 3);
             this.btnBack.Name = "btnBack";

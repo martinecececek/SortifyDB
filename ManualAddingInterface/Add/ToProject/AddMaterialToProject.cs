@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using TechnoWizz.Objects;
+﻿using SortifyDB;
+using SortifyDB.Objects;
 
 namespace TechnoWizz.ManualAddingForm.Add
 {
@@ -16,7 +14,7 @@ namespace TechnoWizz.ManualAddingForm.Add
 
         private void AddMaterialToProject_Load(object sender, EventArgs e)
         {
-            dataGridMaterials.DataSource = MainList.Materials;
+            dataGridMaterials.DataSource = MainForm.Materials;
 
             PopulateDataGrid();
         }
@@ -68,7 +66,7 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                     btnSearch.Text = "Zpět";
 
-                    foreach (Material material in MainList.Materials)
+                    foreach (Material material in MainForm.Materials)
                     {
                         if (material.SAP.Contains(txtBoxSearch.Text) || material.Nazev.Contains(txtBoxSearch.Text))
                         {
@@ -87,7 +85,7 @@ namespace TechnoWizz.ManualAddingForm.Add
             else
             {
                 btnSearch.Text = "Vyhledat";
-                dataGridMaterials.DataSource = MainList.Materials;
+                dataGridMaterials.DataSource = MainForm.Materials;
             }
         }
 

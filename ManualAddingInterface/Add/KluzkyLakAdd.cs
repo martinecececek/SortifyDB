@@ -1,4 +1,5 @@
-﻿using SortifyDB.DatabaseConnect;
+﻿using SortifyDB;
+using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
 
@@ -23,7 +24,6 @@ namespace TechnoWizz.ManualAddingForm.Add
             //TODO: add 
         }
 
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -47,7 +47,6 @@ namespace TechnoWizz.ManualAddingForm.Add
                 return true;
             }
 
-
             if (CheckTextBoxes())
             {
                 //get data from datagrid
@@ -62,19 +61,19 @@ namespace TechnoWizz.ManualAddingForm.Add
                 }
 
                 KluzkyLak lak = new(sap: txtBoxSAP.Text,
-                                              nazev: txtBoxName.Text,
-                                              jeAktivni: txtBoxAktivni.Text,
-                                              vyrobce: txtBoxVyrobce.Text,
-                                              pouziti: txtBoxPouziti.Text,
-                                              nevhodneKombinace: txtBoxNevhodKomb.Text,
-                                              slozeniDle: txtBoxSlozDle.Text,
-                                              slozeni: keyValuePairs);
+                                    nazev: txtBoxName.Text,
+                                    jeAktivni: txtBoxAktivni.Text,
+                                    vyrobce: txtBoxVyrobce.Text,
+                                    pouziti: txtBoxPouziti.Text,
+                                    nevhodneKombinace: txtBoxNevhodKomb.Text,
+                                    slozeniDle: txtBoxSlozDle.Text,
+                                    slozeni: keyValuePairs);
 
+                MainForm.KluzkeLaky.Add(lak);
 
                 DatabaseConnection databaseConnection = new();
 
                 databaseConnection.PushKluzkyLakToDatabase(lak);
-
 
             }
             else
@@ -119,7 +118,5 @@ namespace TechnoWizz.ManualAddingForm.Add
                 }
             }
         }
-
-
     }
 }

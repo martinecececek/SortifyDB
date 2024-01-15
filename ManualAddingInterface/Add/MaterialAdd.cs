@@ -1,4 +1,5 @@
-﻿using SortifyDB.DatabaseConnect;
+﻿using SortifyDB;
+using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
 
@@ -69,12 +70,11 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 Material material = new(txtBoxSap.Text, txtBoxNazev.Text, btnSelecterTyp.Text);
 
-                #region push into database
+                MainForm.Materials.Add(material);
+
 
                 DatabaseConnection databaseConnection = new();
                 _ = databaseConnection.PushMaterialToDatabase(material);
-
-                #endregion
 
                 MessageBox.Show("Materiál byl úspěšně přidán", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

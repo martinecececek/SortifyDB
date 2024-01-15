@@ -2,7 +2,6 @@
 using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
-using TechnoWizz.ManualAddingForm.Select;
 
 
 namespace TechnoWizz.ManualAddingForm.Add
@@ -72,8 +71,7 @@ namespace TechnoWizz.ManualAddingForm.Add
 
                 Projekt project = new(txtBoxTL.Text, txtBoxName.Text, materials, txtBoxDes.Text, txtBoxGlass.Text, txtBoxLamp.Text, txtBoxTrh.Text, txtBoxIMDS.Text);
 
-
-
+                MainForm.Projekty.Add(project);
 
                 #region push to database
 
@@ -93,10 +91,9 @@ namespace TechnoWizz.ManualAddingForm.Add
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
-            ProjektySelect projektySelect = new();
 
             MainManualAdding mainManualForm = new();
-            mainManualForm.ChangeUI(projektySelect);
+            mainManualForm.ClearUserControl();
         }
 
         private void UpdateContainer()
