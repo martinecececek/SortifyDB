@@ -302,7 +302,7 @@
             dataGridOutput.Margin = new Padding(3, 4, 9, 11);
             dataGridOutput.Name = "dataGridOutput";
             dataGridOutput.RowHeadersWidth = 51;
-            dataGridOutput.Size = new Size(1460, 660);
+            dataGridOutput.Size = new Size(1462, 658);
             dataGridOutput.TabIndex = 21;
             // 
             // panel4
