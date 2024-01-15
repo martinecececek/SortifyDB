@@ -22,6 +22,19 @@ namespace TechnoWizz.ManualAddingForm.Edit
         {
             lakSlozeni.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             lakSlozeni.AutoGenerateColumns = false;
+
+            txtBoxName.Text = KluzkyLak.Nazev;
+            txtBoxSAP.Text = KluzkyLak.SAP;
+            txtBoxAktivni.Text = KluzkyLak.JeAktivni;
+            txtBoxVyrobce.Text = KluzkyLak.Vyrobce;
+            txtBoxPouziti.Text = KluzkyLak.Pouziti;
+            txtBoxNevhodKomb.Text = KluzkyLak.NevhodneKombinace;
+            txtBoxSlozDle.Text = KluzkyLak.SlozeniDle;
+
+            foreach (KeyValuePair<string, string> keyValuePair in KluzkyLak.Slozeni)
+            {
+                lakSlozeni.Rows.Add(keyValuePair.Key, keyValuePair.Value);
+            }
         }
 
         private void BtnSave_Click(object sender, System.EventArgs e)
@@ -43,13 +56,13 @@ namespace TechnoWizz.ManualAddingForm.Edit
             }
 
             KluzkyLak lak = new(sap: txtBoxSAP.Text,
-                                              nazev: txtBoxName.Text,
-                                              jeAktivni: txtBoxAktivni.Text,
-                                              vyrobce: txtBoxVyrobce.Text,
-                                              pouziti: txtBoxPouziti.Text,
-                                              nevhodneKombinace: txtBoxNevhodKomb.Text,
-                                              slozeniDle: txtBoxSlozDle.Text,
-                                              slozeni: keyValuePairs);
+                                nazev: txtBoxName.Text,
+                                jeAktivni: txtBoxAktivni.Text,
+                                vyrobce: txtBoxVyrobce.Text,
+                                pouziti: txtBoxPouziti.Text,
+                                nevhodneKombinace: txtBoxNevhodKomb.Text,
+                                slozeniDle: txtBoxSlozDle.Text,
+                                slozeni: keyValuePairs);
 
             #region update main list
             int index = MainForm.KluzkeLaky.FindIndex(x => x.Nazev == KluzkyLak.Nazev);
@@ -59,7 +72,6 @@ namespace TechnoWizz.ManualAddingForm.Edit
                 MainForm.KluzkeLaky[index] = lak;
             }
             #endregion
-
 
             DatabaseConnection databaseConnection = new();
 
@@ -102,7 +114,5 @@ namespace TechnoWizz.ManualAddingForm.Edit
                 }
             }
         }
-
-
     }
 }

@@ -20,8 +20,6 @@ namespace TechnoWizz.ManualAddingForm.Add
             lakSlozeni.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             lakSlozeni.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             lakSlozeni.AutoGenerateColumns = false;
-
-            //TODO: add 
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
