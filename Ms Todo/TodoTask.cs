@@ -1,6 +1,6 @@
 ﻿namespace SortifyDB.Ms_Todo
 {
-    class TodoTask : Microsoft.Graph.Models.TodoTask
+    public class TodoTask : Microsoft.Graph.Models.TodoTask
     {
         public void ExtractTlFromTitle()
         {

@@ -197,7 +197,6 @@
             btnEditMaterial.BackColor = Color.FromArgb(0, 148, 255);
             btnEditMaterial.Font = new Font("Segoe UI", 15F);
             btnEditMaterial.ForeColor = Color.White;
-            btnEditMaterial.Image = Properties.Resources.Edit;
             btnEditMaterial.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditMaterial.Location = new Point(-22, -18);
             btnEditMaterial.Name = "btnEditMaterial";
@@ -223,7 +222,6 @@
             btnDeleteMaterial.BackColor = Color.FromArgb(0, 148, 255);
             btnDeleteMaterial.Font = new Font("Segoe UI", 15F);
             btnDeleteMaterial.ForeColor = Color.White;
-            btnDeleteMaterial.Image = Properties.Resources.Delete;
             btnDeleteMaterial.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteMaterial.Location = new Point(-22, -18);
             btnDeleteMaterial.Name = "btnDeleteMaterial";
@@ -282,7 +280,6 @@
             btnAddProjekt.BackColor = Color.FromArgb(0, 148, 255);
             btnAddProjekt.Font = new Font("Segoe UI", 15F);
             btnAddProjekt.ForeColor = Color.White;
-            btnAddProjekt.Image = Properties.Resources.Add_New;
             btnAddProjekt.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddProjekt.Location = new Point(-22, -18);
             btnAddProjekt.Name = "btnAddProjekt";
@@ -308,7 +305,6 @@
             btnEditProjekt.BackColor = Color.FromArgb(0, 148, 255);
             btnEditProjekt.Font = new Font("Segoe UI", 15F);
             btnEditProjekt.ForeColor = Color.White;
-            btnEditProjekt.Image = Properties.Resources.Edit;
             btnEditProjekt.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditProjekt.Location = new Point(-22, -18);
             btnEditProjekt.Name = "btnEditProjekt";
@@ -334,7 +330,6 @@
             btnDeleteProjekt.BackColor = Color.FromArgb(0, 148, 255);
             btnDeleteProjekt.Font = new Font("Segoe UI", 15F);
             btnDeleteProjekt.ForeColor = Color.White;
-            btnDeleteProjekt.Image = Properties.Resources.Delete;
             btnDeleteProjekt.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteProjekt.Location = new Point(-22, -18);
             btnDeleteProjekt.Name = "btnDeleteProjekt";
@@ -394,7 +389,6 @@
             btnAddGranulat.BackColor = Color.FromArgb(0, 148, 255);
             btnAddGranulat.Font = new Font("Segoe UI", 15F);
             btnAddGranulat.ForeColor = Color.White;
-            btnAddGranulat.Image = Properties.Resources.Add_New;
             btnAddGranulat.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddGranulat.Location = new Point(-22, -18);
             btnAddGranulat.Name = "btnAddGranulat";
@@ -420,7 +414,6 @@
             btnEditGranulat.BackColor = Color.FromArgb(0, 148, 255);
             btnEditGranulat.Font = new Font("Segoe UI", 15F);
             btnEditGranulat.ForeColor = Color.White;
-            btnEditGranulat.Image = Properties.Resources.Edit;
             btnEditGranulat.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditGranulat.Location = new Point(-22, -18);
             btnEditGranulat.Name = "btnEditGranulat";
@@ -446,7 +439,6 @@
             btnDeleteGranulat.BackColor = Color.FromArgb(0, 148, 255);
             btnDeleteGranulat.Font = new Font("Segoe UI", 15F);
             btnDeleteGranulat.ForeColor = Color.White;
-            btnDeleteGranulat.Image = Properties.Resources.Delete;
             btnDeleteGranulat.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteGranulat.Location = new Point(-22, -18);
             btnDeleteGranulat.Name = "btnDeleteGranulat";
@@ -490,6 +482,7 @@
             btnLak.TabIndex = 5;
             btnLak.Text = "Kluzký lak";
             btnLak.UseVisualStyleBackColor = false;
+            btnLak.Click += btnLak_Click;
             // 
             // panel10
             // 
@@ -505,7 +498,6 @@
             btnAddLak.BackColor = Color.FromArgb(0, 148, 255);
             btnAddLak.Font = new Font("Segoe UI", 15F);
             btnAddLak.ForeColor = Color.White;
-            btnAddLak.Image = Properties.Resources.Add_New;
             btnAddLak.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddLak.Location = new Point(-22, -18);
             btnAddLak.Name = "btnAddLak";
@@ -531,7 +523,6 @@
             btnEditLak.BackColor = Color.FromArgb(0, 148, 255);
             btnEditLak.Font = new Font("Segoe UI", 15F);
             btnEditLak.ForeColor = Color.White;
-            btnEditLak.Image = Properties.Resources.Edit;
             btnEditLak.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditLak.Location = new Point(-22, -18);
             btnEditLak.Name = "btnEditLak";
@@ -557,7 +548,6 @@
             btnDeleteLak.BackColor = Color.FromArgb(0, 148, 255);
             btnDeleteLak.Font = new Font("Segoe UI", 15F);
             btnDeleteLak.ForeColor = Color.White;
-            btnDeleteLak.Image = Properties.Resources.Delete;
             btnDeleteLak.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteLak.Location = new Point(-22, -18);
             btnDeleteLak.Name = "btnDeleteLak";
@@ -617,7 +607,6 @@
             btnAddCistic.BackColor = Color.FromArgb(0, 148, 255);
             btnAddCistic.Font = new Font("Segoe UI", 15F);
             btnAddCistic.ForeColor = Color.White;
-            btnAddCistic.Image = Properties.Resources.Add_New;
             btnAddCistic.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddCistic.Location = new Point(-22, -18);
             btnAddCistic.Name = "btnAddCistic";
@@ -643,7 +632,6 @@
             btnEditCistic.BackColor = Color.FromArgb(0, 148, 255);
             btnEditCistic.Font = new Font("Segoe UI", 15F);
             btnEditCistic.ForeColor = Color.White;
-            btnEditCistic.Image = Properties.Resources.Edit;
             btnEditCistic.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditCistic.Location = new Point(-22, -18);
             btnEditCistic.Name = "btnEditCistic";
@@ -669,7 +657,6 @@
             btnDeleteCisitic.BackColor = Color.FromArgb(0, 148, 255);
             btnDeleteCisitic.Font = new Font("Segoe UI", 15F);
             btnDeleteCisitic.ForeColor = Color.White;
-            btnDeleteCisitic.Image = Properties.Resources.Delete;
             btnDeleteCisitic.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteCisitic.Location = new Point(-22, -18);
             btnDeleteCisitic.Name = "btnDeleteCisitic";
