@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SortifyDB
 {
-    public partial class ProjectsUserControl : UserControl
+    public partial class UserControlDetail : UserControl
     {
-        public ProjectsUserControl()
+        public UserControlDetail()
         {
             InitializeComponent();
         }
