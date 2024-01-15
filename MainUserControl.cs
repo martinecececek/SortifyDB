@@ -1,5 +1,4 @@
-﻿using SortifyDB.Objects;
-using SortifyDB.PDF_parser;
+﻿using SortifyDB.PDF_parser;
 
 namespace SortifyDB
 {
@@ -9,88 +8,161 @@ namespace SortifyDB
         public MainUserControl()
         {
             InitializeComponent();
-
-            dataGridOutput.DataSource = null;
         }
 
-        private void ClearDataGrid()
+        private void ChangeUI<T>(UserControl userControl, List<T> list)
         {
-            if (dataGridOutput.DataSource != null)
+            panel4.Controls.Clear();
+
+            panel4.Controls.Add(userControl);
+        }
+
+
+        private readonly Dictionary<string, string> history = [];
+
+        private void AddToHistory(string key, string value)
+        {
+            if (history.Count > 10)
             {
-                dataGridOutput.Rows.Clear();
+                history.Remove(history.First().Key);
             }
+
+
+            history.Add(key, value);
         }
 
         private void BtnProjekty_Click(object sender, EventArgs e)
         {
-            ClearDataGrid();
-
-            dataGridOutput.DataSource = MainForm.Projekty;
-
-            DataGridViewButtonColumn deleteButtonColumn = new()
-            {
-                HeaderText = "Detail",
-                Text = "Detail",
-                UseColumnTextForButtonValue = true
-            };
-
-            dataGridOutput.Columns.Add(deleteButtonColumn);
-
-            dataGridOutput.CellClick += dataGridOutput_CellClick;
-        }
-
-        private void dataGridOutput_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridOutput.Rows[e.RowIndex];
-
-                string tlValue = (string)selectedRow.Cells[1].Value;
-
-                Projekt projekt = MainForm.Projekty.Find(x => x.TL == tlValue);
-
-                ClearDataGrid();
+            AddToHistory("Projekty", "All");
 
 
-
-            }
         }
 
         private void BtnMat_Click(object sender, EventArgs e)
         {
-            ClearDataGrid();
-
-            dataGridOutput.DataSource = MainForm.Materials;
+            AddToHistory("Materialy", "All");
         }
 
         private void BtnCleanActive_Click(object sender, EventArgs e)
         {
-            ClearDataGrid();
-
-            dataGridOutput.DataSource = MainForm.CisticeAktivatory;
+            AddToHistory("CisticeAktivatory", "All");
         }
 
         private void BtnVarnish_Click(object sender, EventArgs e)
         {
-            ClearDataGrid();
-
-            dataGridOutput.DataSource = MainForm.KluzkeLaky;
+            AddToHistory("KluzkeLaky", "All");
         }
 
         private void BtnGran_Click(object sender, EventArgs e)
         {
-            ClearDataGrid();
-
-            dataGridOutput.DataSource = MainForm.Granulaty;
+            AddToHistory("Granulaty", "All");
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
+            switch (history.Last().Key)
+            {
+                case "Projekty":
+                    {
+                        if (history.Last().Value == "All")
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+
+                        break;
+                    }
+                case "Materialy":
+                    {
+                        if (history.Last().Value == "All")
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+
+                        break;
+                    }
+                case "CisticeAktivatory":
+                    {
+
+
+                        break;
+                    }
+                case "KluzkeLaky":
+                    {
+
+
+                        break;
+                    }
+                case "Granulaty":
+                    {
+
+
+                        break;
+                    }
+                default:
+                    break;
+            }
+
+
 
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            if (searchBox.Text == string.Empty)
+            {
+                //TODO: finish
+                MessageBox.Show("Zadejte hledaný výraz");
+                return;
+            }
+
+            //check if searchBox.Text is in any of granulaty
+            if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||
+                                                   granulat.Vyrobce == searchBox.Text ||
+                                                   granulat.Typ == searchBox.Text))
+            {
+
+
+
+
+
+            }
+
+            //check if searchBox.Text is in any of kluzke laky
+            if (MainForm.KluzkeLaky.Any(lak => lak.Nazev == searchBox.Text ||
+                                               lak.Vyrobce == searchBox.Text))
+            {
+
+            }
+
+            //check if searchBox.Text is in any of cistice aktivatory
+            if (MainForm.CisticeAktivatory.Any(cistice => cistice.Nazev == searchBox.Text ||
+                                                          cistice.Vyrobce == searchBox.Text))
+            {
+
+            }
+
+            //check if searchBox.Text is in any of projects
+            if (MainForm.Projekty.Any(projekt => projekt.Nazev == searchBox.Text ||
+                                                 projekt.TL == searchBox.Text ||
+                                                 projekt.IMDS == searchBox.Text))
+            {
+
+            }
+
+            //check if searchBox.Text is in any of materials
+            if (MainForm.Materials.Any(material => material.Nazev == searchBox.Text ||
+                                                   material.SAP == searchBox.Text))
+            {
+
+            }
 
         }
 
