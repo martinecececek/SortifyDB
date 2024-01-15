@@ -1,5 +1,6 @@
 using MaterialSkin.Controls;
 using SortifyDB.Objects;
+using System.Windows.Forms;
 
 namespace SortifyDB
 {
@@ -17,6 +18,9 @@ namespace SortifyDB
         public MainForm()
         {
             InitializeComponent();
+            /*this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.WindowState = FormWindowState.Maximized;
+            this.ClientSize = new System.Drawing.Size(800, 400);*/
         }
     }
 }

@@ -57,11 +57,12 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(97, 168);
+            searchBox.Location = new Point(110, 224);
+            searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "TL číslo, SAP číslo";
-            searchBox.Size = new Size(961, 54);
+            searchBox.Size = new Size(964, 71);
             searchBox.TabIndex = 2;
             // 
             // BtnProjekty
@@ -74,11 +75,12 @@
             BtnProjekty.Cursor = Cursors.Hand;
             BtnProjekty.FlatAppearance.BorderSize = 0;
             BtnProjekty.FlatStyle = FlatStyle.Flat;
-            BtnProjekty.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnProjekty.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnProjekty.ForeColor = Color.White;
-            BtnProjekty.Location = new Point(9, 21);
+            BtnProjekty.Location = new Point(30, 28);
+            BtnProjekty.Margin = new Padding(3, 4, 3, 4);
             BtnProjekty.Name = "BtnProjekty";
-            BtnProjekty.Size = new Size(205, 115);
+            BtnProjekty.Size = new Size(220, 153);
             BtnProjekty.TabIndex = 8;
             BtnProjekty.Text = "Projekty";
             BtnProjekty.TextColor = Color.White;
@@ -95,11 +97,12 @@
             BtnMat.Cursor = Cursors.Hand;
             BtnMat.FlatAppearance.BorderSize = 0;
             BtnMat.FlatStyle = FlatStyle.Flat;
-            BtnMat.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnMat.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnMat.ForeColor = Color.White;
-            BtnMat.Location = new Point(242, 21);
+            BtnMat.Location = new Point(256, 28);
+            BtnMat.Margin = new Padding(3, 4, 3, 4);
             BtnMat.Name = "BtnMat";
-            BtnMat.Size = new Size(205, 115);
+            BtnMat.Size = new Size(220, 153);
             BtnMat.TabIndex = 9;
             BtnMat.Text = "Materiály";
             BtnMat.TextColor = Color.White;
@@ -116,11 +119,12 @@
             BtnCleanActive.Cursor = Cursors.Hand;
             BtnCleanActive.FlatAppearance.BorderSize = 0;
             BtnCleanActive.FlatStyle = FlatStyle.Flat;
-            BtnCleanActive.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            BtnCleanActive.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 238);
             BtnCleanActive.ForeColor = Color.White;
-            BtnCleanActive.Location = new Point(471, 21);
+            BtnCleanActive.Location = new Point(482, 28);
+            BtnCleanActive.Margin = new Padding(3, 4, 3, 4);
             BtnCleanActive.Name = "BtnCleanActive";
-            BtnCleanActive.Size = new Size(205, 115);
+            BtnCleanActive.Size = new Size(220, 153);
             BtnCleanActive.TabIndex = 10;
             BtnCleanActive.Text = "Čističe\r\nAktivátory";
             BtnCleanActive.TextColor = Color.White;
@@ -137,11 +141,12 @@
             BtnVarnish.Cursor = Cursors.Hand;
             BtnVarnish.FlatAppearance.BorderSize = 0;
             BtnVarnish.FlatStyle = FlatStyle.Flat;
-            BtnVarnish.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnVarnish.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnVarnish.ForeColor = Color.White;
-            BtnVarnish.Location = new Point(703, 21);
+            BtnVarnish.Location = new Point(708, 28);
+            BtnVarnish.Margin = new Padding(3, 4, 3, 4);
             BtnVarnish.Name = "BtnVarnish";
-            BtnVarnish.Size = new Size(205, 115);
+            BtnVarnish.Size = new Size(220, 153);
             BtnVarnish.TabIndex = 11;
             BtnVarnish.Text = "Kluzké laky";
             BtnVarnish.TextColor = Color.White;
@@ -158,11 +163,12 @@
             BtnGran.Cursor = Cursors.Hand;
             BtnGran.FlatAppearance.BorderSize = 0;
             BtnGran.FlatStyle = FlatStyle.Flat;
-            BtnGran.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
+            BtnGran.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnGran.ForeColor = Color.White;
-            BtnGran.Location = new Point(945, 21);
+            BtnGran.Location = new Point(934, 28);
+            BtnGran.Margin = new Padding(3, 4, 3, 4);
             BtnGran.Name = "BtnGran";
-            BtnGran.Size = new Size(205, 115);
+            BtnGran.Size = new Size(220, 153);
             BtnGran.TabIndex = 12;
             BtnGran.Text = "Granuláty";
             BtnGran.TextColor = Color.White;
@@ -182,9 +188,10 @@
             BtnBack.FlatAppearance.BorderSize = 0;
             BtnBack.FlatStyle = FlatStyle.Flat;
             BtnBack.ForeColor = Color.White;
-            BtnBack.Location = new Point(11, 155);
+            BtnBack.Location = new Point(13, 207);
+            BtnBack.Margin = new Padding(3, 4, 3, 4);
             BtnBack.Name = "BtnBack";
-            BtnBack.Size = new Size(80, 80);
+            BtnBack.Size = new Size(91, 107);
             BtnBack.TabIndex = 13;
             BtnBack.TextColor = Color.White;
             BtnBack.UseVisualStyleBackColor = false;
@@ -203,9 +210,10 @@
             BtnSearch.FlatAppearance.BorderSize = 0;
             BtnSearch.FlatStyle = FlatStyle.Flat;
             BtnSearch.ForeColor = Color.White;
-            BtnSearch.Location = new Point(1065, 155);
+            BtnSearch.Location = new Point(1080, 207);
+            BtnSearch.Margin = new Padding(3, 4, 3, 4);
             BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(80, 80);
+            BtnSearch.Size = new Size(91, 107);
             BtnSearch.TabIndex = 14;
             BtnSearch.TextColor = Color.White;
             BtnSearch.UseVisualStyleBackColor = false;
@@ -224,10 +232,10 @@
             panel1.Controls.Add(BtnMat);
             panel1.Controls.Add(BtnSearch);
             panel1.Controls.Add(BtnProjekty);
-            panel1.Location = new Point(383, 0);
+            panel1.Location = new Point(438, 11);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1154, 257);
+            panel1.Size = new Size(1182, 320);
             panel1.TabIndex = 19;
             // 
             // panel2
@@ -236,10 +244,10 @@
             panel2.BackColor = Color.SteelBlue;
             panel2.Controls.Add(BtnMainFormsAdd);
             panel2.Controls.Add(BtnParser);
-            panel2.Location = new Point(1537, 0);
+            panel2.Location = new Point(1620, 0);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(383, 257);
+            panel2.Size = new Size(300, 330);
             panel2.TabIndex = 20;
             // 
             // BtnMainFormsAdd
@@ -254,9 +262,10 @@
             BtnMainFormsAdd.FlatStyle = FlatStyle.Flat;
             BtnMainFormsAdd.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
             BtnMainFormsAdd.ForeColor = Color.White;
-            BtnMainFormsAdd.Location = new Point(92, 22);
+            BtnMainFormsAdd.Location = new Point(41, 37);
+            BtnMainFormsAdd.Margin = new Padding(3, 4, 3, 4);
             BtnMainFormsAdd.Name = "BtnMainFormsAdd";
-            BtnMainFormsAdd.Size = new Size(205, 98);
+            BtnMainFormsAdd.Size = new Size(234, 131);
             BtnMainFormsAdd.TabIndex = 23;
             BtnMainFormsAdd.Text = "Přidat";
             BtnMainFormsAdd.TextColor = Color.White;
@@ -275,9 +284,10 @@
             BtnParser.FlatStyle = FlatStyle.Flat;
             BtnParser.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
             BtnParser.ForeColor = Color.White;
-            BtnParser.Location = new Point(92, 136);
+            BtnParser.Location = new Point(41, 184);
+            BtnParser.Margin = new Padding(3, 4, 3, 4);
             BtnParser.Name = "BtnParser";
-            BtnParser.Size = new Size(205, 98);
+            BtnParser.Size = new Size(234, 131);
             BtnParser.TabIndex = 22;
             BtnParser.Text = "Vložit PDF";
             BtnParser.TextColor = Color.White;
@@ -288,10 +298,11 @@
             // 
             dataGridOutput.Anchor = AnchorStyles.Top;
             dataGridOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridOutput.Location = new Point(2, 6);
-            dataGridOutput.Margin = new Padding(3, 3, 8, 8);
+            dataGridOutput.Location = new Point(11, 16);
+            dataGridOutput.Margin = new Padding(3, 4, 9, 11);
             dataGridOutput.Name = "dataGridOutput";
-            dataGridOutput.Size = new Size(1526, 744);
+            dataGridOutput.RowHeadersWidth = 51;
+            dataGridOutput.Size = new Size(1462, 658);
             dataGridOutput.TabIndex = 21;
             // 
             // panel4
@@ -299,20 +310,20 @@
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.CornflowerBlue;
             panel4.Controls.Add(dataGridOutput);
-            panel4.Location = new Point(384, 257);
+            panel4.Location = new Point(438, 330);
             panel4.Margin = new Padding(0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1536, 758);
+            panel4.Size = new Size(1482, 685);
             panel4.TabIndex = 25;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.BackColor = Color.SlateGray;
-            flowLayoutPanel1.Location = new Point(4, 8);
-            flowLayoutPanel1.Margin = new Padding(8);
+            flowLayoutPanel1.Location = new Point(5, 11);
+            flowLayoutPanel1.Margin = new Padding(9, 11, 9, 11);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(371, 999);
+            flowLayoutPanel1.Size = new Size(424, 993);
             flowLayoutPanel1.TabIndex = 22;
             // 
             // panel3
@@ -323,18 +334,19 @@
             panel3.Location = new Point(0, 0);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(383, 1015);
+            panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
             // MainUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Lavender;
+            Controls.Add(panel4);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panel3);
-            Controls.Add(panel4);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainUserControl";
             Size = new Size(1920, 1015);
             panel1.ResumeLayout(false);
