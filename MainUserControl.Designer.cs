@@ -291,7 +291,12 @@
             dataGridOutput.Location = new Point(2, 6);
             dataGridOutput.Margin = new Padding(3, 3, 8, 8);
             dataGridOutput.Name = "dataGridOutput";
+<<<<<<< Updated upstream
             dataGridOutput.Size = new Size(1526, 744);
+=======
+            dataGridOutput.RowHeadersWidth = 51;
+            dataGridOutput.Size = new Size(1460, 660);
+>>>>>>> Stashed changes
             dataGridOutput.TabIndex = 21;
             // 
             // panel4
