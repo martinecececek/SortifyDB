@@ -1,6 +1,5 @@
 using MaterialSkin.Controls;
 using SortifyDB.Objects;
-using System.Windows.Forms;
 
 namespace SortifyDB
 {
@@ -21,6 +20,10 @@ namespace SortifyDB
             /*this.AutoScaleMode = AutoScaleMode.Dpi;
             this.WindowState = FormWindowState.Maximized;
             this.ClientSize = new System.Drawing.Size(800, 400);*/
+
+            List<Material> materials = new List<Material>();
+
+            Projekty.Add(new Projekt("1", "projekt", materials, "pokus", "QWL", "fgh", ""));
         }
     }
 }
