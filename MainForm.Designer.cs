@@ -34,7 +34,6 @@
             // mainUserControl1
             // 
             mainUserControl1.BackColor = Color.Lavender;
-            mainUserControl1.Location = new Point(0, 68);
             mainUserControl1.Margin = new Padding(2, 3, 2, 3);
             mainUserControl1.Name = "mainUserControl1";
             mainUserControl1.Size = new Size(1920, 1015);
@@ -42,7 +41,7 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
             Controls.Add(mainUserControl1);
