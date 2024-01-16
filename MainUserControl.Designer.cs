@@ -324,7 +324,7 @@
             // 
             // MainUserControl
             // 
-            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);
             Controls.Add(panel1);

@@ -13,7 +13,7 @@ namespace SortifyDB
         public void ChangeUI(UserControl userControl, Panel panel)
         {
             panel.Controls.Clear();
-
+            userControl.Location = new Point(5,5);
             panel.Controls.Add(userControl);
         }
 

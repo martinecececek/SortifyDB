@@ -42,9 +42,8 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1920, 1077);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(mainUserControl1);
             Margin = new Padding(3, 5, 3, 5);
             Name = "MainForm";

@@ -29,9 +29,13 @@ namespace SortifyDB
         {
             if (whatOpen == "M")
             {
+                labelUCDetailMainName.Text = "Materiál";
+                labelUCDetailContains.Text = "Chemikálie";
                 WriteMaterialDetail();
                 return;
             }
+            labelUCDetailMainName.Text = "Projekt";
+            labelUCDetailContains.Text = "Materiály";
 
             WriteProjectDetail();
         }
