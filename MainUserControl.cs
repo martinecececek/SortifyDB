@@ -56,7 +56,7 @@ namespace SortifyDB
 
         #region history 
 
-        private readonly Dictionary<string, string> history = [];
+        private readonly Stack<KeyValuePair<string, string>> history = new();
 
         public void AddToHistory(string key, string value)
         {
@@ -64,15 +64,24 @@ namespace SortifyDB
 
             if (history.Count > 10)
             {
-                history.Remove(history.First().Key);
+                var temp = new Stack<KeyValuePair<string, string>>();
+
+                for (int i = 0; i < 9; i++)
+                {
+                    temp.Push(history.Pop());
+                }
+
+                history.Pop();
+
+                while (temp.Count > 0)
+                {
+                    history.Push(temp.Pop());
+                }
+
             }
 
-            if (history.ContainsKey(key))
-            {
-                history.Remove(key);
-            }
 
-            history.Add(key, value);
+            history.Push(new KeyValuePair<string, string>(key, value));
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -132,7 +141,19 @@ namespace SortifyDB
                     break;
             }
 
-            history.Remove(history.Last().Key);
+            var temp = new Stack<KeyValuePair<string, string>>();
+
+            while (history.Count > 1)
+            {
+                temp.Push(history.Pop());
+            }
+
+            history.Pop();
+
+            while (temp.Count > 0)
+            {
+                history.Push(temp.Pop());
+            }
         }
 
         #endregion
