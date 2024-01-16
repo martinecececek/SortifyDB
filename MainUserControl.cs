@@ -10,11 +10,11 @@ namespace SortifyDB
             InitializeComponent();
         }
 
-        public void ChangeUI(UserControl userControl)
+        public void ChangeUI(UserControl userControl, Panel panel)
         {
-            panelMainShower.Controls.Clear();
+            panel.Controls.Clear();
 
-            panelMainShower.Controls.Add(userControl);
+            panel.Controls.Add(userControl);
         }
 
         #region basic buttons
@@ -22,35 +22,35 @@ namespace SortifyDB
         {
             AddToHistory("Projekty", "All");
 
-            ChangeUI(new UserControlOutPut("P", panelMainShower));
+            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
         }
 
         private void BtnMat_Click(object sender, EventArgs e)
         {
             AddToHistory("Materialy", "All");
 
-            ChangeUI(new UserControlOutPut("M", panelMainShower));
+            ChangeUI(new UserControlOutPut("M", panelMainShower), panelMainShower);
         }
 
         private void BtnCleanActive_Click(object sender, EventArgs e)
         {
             AddToHistory("CisticeAktivatory", "All");
 
-            ChangeUI(new UserControlOutPut("C", panelMainShower));
+            ChangeUI(new UserControlOutPut("C", panelMainShower), panelMainShower);
         }
 
         private void BtnVarnish_Click(object sender, EventArgs e)
         {
             AddToHistory("KluzkeLaky", "All");
 
-            ChangeUI(new UserControlOutPut("K", panelMainShower));
+            ChangeUI(new UserControlOutPut("K", panelMainShower), panelMainShower);
         }
 
         private void BtnGran_Click(object sender, EventArgs e)
         {
             AddToHistory("Granulaty", "All");
 
-            ChangeUI(new UserControlOutPut("G", panelMainShower));
+            ChangeUI(new UserControlOutPut("G", panelMainShower), panelMainShower);
         }
         #endregion
 
@@ -88,11 +88,11 @@ namespace SortifyDB
                     {
                         if (history.Last().Value == "All")
                         {
-                            ChangeUI(new UserControlOutPut("P", panelMainShower));
+                            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
                         }
                         else
                         {
-                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower));
+                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
                         }
 
                         break;
@@ -101,30 +101,30 @@ namespace SortifyDB
                     {
                         if (history.Last().Value == "All")
                         {
-                            ChangeUI(new UserControlOutPut("M", panelMainShower));
+                            ChangeUI(new UserControlOutPut("M", panelMainShower), panelMainShower);
                         }
                         else
                         {
-                            ChangeUI(new UserControlDetail(history.Last().Value, "M", panelMainShower));
+                            ChangeUI(new UserControlDetail(history.Last().Value, "M", panelMainShower), panelMainShower);
                         }
 
                         break;
                     }
                 case "CisticeAktivatory":
                     {
-                        ChangeUI(new UserControlOutPut("C", panelMainShower));
+                        ChangeUI(new UserControlOutPut("C", panelMainShower), panelMainShower);
 
                         break;
                     }
                 case "KluzkeLaky":
                     {
-                        ChangeUI(new UserControlOutPut("K", panelMainShower));
+                        ChangeUI(new UserControlOutPut("K", panelMainShower), panelMainShower);
 
                         break;
                     }
                 case "Granulaty":
                     {
-                        ChangeUI(new UserControlOutPut("G", panelMainShower));
+                        ChangeUI(new UserControlOutPut("G", panelMainShower), panelMainShower);
 
                         break;
                     }

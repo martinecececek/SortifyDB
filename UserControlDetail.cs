@@ -16,7 +16,7 @@ namespace SortifyDB
         readonly Panel panel;
 
         private readonly string findBy;
-        private readonly string whatOpen;
+        private string whatOpen;
         private void UserControlDetail_Load(object sender, EventArgs e)
         {
             ListDataGridVypis();
@@ -30,6 +30,7 @@ namespace SortifyDB
             if (whatOpen == "M")
             {
                 WriteMaterialDetail();
+                return;
             }
 
             WriteProjectDetail();
@@ -90,6 +91,7 @@ namespace SortifyDB
             Projekt projekt = MainForm.Projekty.Find(x => x.TL == findBy);
 
             dataGridProjectOutput.AutoGenerateColumns = false;
+            dataGridProjectOutput.DataSource = projekt;
 
             #region add project data to dataGridProjectOutput by manually adding columns and rows
 
@@ -175,7 +177,7 @@ namespace SortifyDB
 
                 mainUserControl.AddToHistory("Materials", findingParemater);
 
-                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel));
+                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel), panel);
             }
         }
     }

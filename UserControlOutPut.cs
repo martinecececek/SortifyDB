@@ -81,15 +81,12 @@
 
             if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
             {
-                MessageBox.Show("Detail");
 
                 string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 mainUserControl.AddToHistory("Projekty", findingParemater);
 
-                panel.Controls.Clear();
-                panel.Controls.Add(new UserControlDetail(findingParemater, "P", panel));
-                //mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel));
+                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
             }
         }
         #endregion
@@ -123,14 +120,17 @@
             };
             dataGridUCOutput.Columns.Add(tempColumn);
 
-            DataGridViewButtonColumn deleteButtonColumn = new()
+            DataGridViewButtonColumn detailButtonColumn = new()
             {
                 HeaderText = "Detail",
                 Text = "Detail",
                 UseColumnTextForButtonValue = true
             };
 
-            dataGridUCOutput.Columns.Add(deleteButtonColumn);
+
+
+
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
 
             dataGridUCOutput.CellClick += dataGridOutputMaterial_CellClick;
 
@@ -149,7 +149,7 @@
 
                 mainUserControl.AddToHistory("Materialy", findingParemater);
 
-                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel));
+                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel), panel);
             }
         }
         #endregion
