@@ -14,7 +14,6 @@ namespace SortifyDB
 
         public static List<Ms_Todo.TodoTask> TodoTask { get; set; } = [];
 
-
         public MainForm()
         {
             InitializeComponent();

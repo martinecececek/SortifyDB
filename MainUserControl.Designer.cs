@@ -54,7 +54,7 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(110, 207);
+            searchBox.Location = new Point(110, 224);
             searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
@@ -185,10 +185,10 @@
             BtnBack.FlatAppearance.BorderSize = 0;
             BtnBack.FlatStyle = FlatStyle.Flat;
             BtnBack.ForeColor = Color.White;
-            BtnBack.Location = new Point(13, 207);
+            BtnBack.Location = new Point(13, 212);
             BtnBack.Margin = new Padding(3, 4, 3, 4);
             BtnBack.Name = "BtnBack";
-            BtnBack.Size = new Size(90, 90);
+            BtnBack.Size = new Size(91, 91);
             BtnBack.TabIndex = 13;
             BtnBack.TextColor = Color.White;
             BtnBack.UseVisualStyleBackColor = false;
@@ -207,10 +207,10 @@
             BtnSearch.FlatAppearance.BorderSize = 0;
             BtnSearch.FlatStyle = FlatStyle.Flat;
             BtnSearch.ForeColor = Color.White;
-            BtnSearch.Location = new Point(1080, 207);
+            BtnSearch.Location = new Point(1080, 212);
             BtnSearch.Margin = new Padding(3, 4, 3, 4);
             BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(90, 90);
+            BtnSearch.Size = new Size(91, 91);
             BtnSearch.TabIndex = 14;
             BtnSearch.TextColor = Color.White;
             BtnSearch.UseVisualStyleBackColor = false;
@@ -305,10 +305,10 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.BackColor = Color.SlateGray;
-            flowLayoutPanel1.Location = new Point(9, 11);
+            flowLayoutPanel1.Location = new Point(5, 11);
             flowLayoutPanel1.Margin = new Padding(9, 11, 9, 11);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(424, 971);
+            flowLayoutPanel1.Size = new Size(424, 993);
             flowLayoutPanel1.TabIndex = 22;
             // 
             // panel3
@@ -324,15 +324,13 @@
             // 
             // MainUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panel3);
             Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(1920, 1015);
             Name = "MainUserControl";
             Size = new Size(1920, 1015);
             panel1.ResumeLayout(false);
