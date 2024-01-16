@@ -18,6 +18,8 @@
             panel = vys;
 
             ListDataGridVypis();
+
+            dataGridUCOutput.ReadOnly = true;
         }
 
         readonly Panel panel;
@@ -79,11 +81,15 @@
 
             if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
             {
+                MessageBox.Show("Detail");
+
                 string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 mainUserControl.AddToHistory("Projekty", findingParemater);
 
-                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel));
+                panel.Controls.Clear();
+                panel.Controls.Add(new UserControlDetail(findingParemater, "P", panel));
+                //mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel));
             }
         }
         #endregion

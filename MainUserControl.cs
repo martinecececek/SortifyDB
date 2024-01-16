@@ -60,6 +60,8 @@ namespace SortifyDB
 
         public void AddToHistory(string key, string value)
         {
+            //TODO: finish and move -1 index
+
             if (history.Count > 10)
             {
                 history.Remove(history.First().Key);
@@ -75,6 +77,11 @@ namespace SortifyDB
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
+            if (history.Count == 0)
+            {
+                return;
+            }
+
             switch (history.Last().Key)
             {
                 case "Projekty":
@@ -124,6 +131,8 @@ namespace SortifyDB
                 default:
                     break;
             }
+
+            history.Remove(history.Last().Key);
         }
 
         #endregion

@@ -20,6 +20,9 @@ namespace SortifyDB
         private void UserControlDetail_Load(object sender, EventArgs e)
         {
             ListDataGridVypis();
+
+            dataGridProjectOutput.ReadOnly = true;
+            dataGridMaterialOutput.ReadOnly = true;
         }
 
         private void ListDataGridVypis()
@@ -166,7 +169,7 @@ namespace SortifyDB
         {
             MainUserControl mainUserControl = new();
 
-            if (dataGridMaterialOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
+            if (dataGridMaterialOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
             {
                 string findingParemater = dataGridMaterialOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
