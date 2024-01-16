@@ -44,11 +44,11 @@
             dataGridProjectOutput.BackgroundColor = Color.CornflowerBlue;
             dataGridProjectOutput.BorderStyle = BorderStyle.None;
             dataGridProjectOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridProjectOutput.Location = new Point(25, 42);
-            dataGridProjectOutput.Margin = new Padding(25);
+            dataGridProjectOutput.Location = new Point(20, 33);
+            dataGridProjectOutput.Margin = new Padding(20);
             dataGridProjectOutput.Name = "dataGridProjectOutput";
             dataGridProjectOutput.RowHeadersWidth = 51;
-            dataGridProjectOutput.Size = new Size(1410, 104);
+            dataGridProjectOutput.Size = new Size(1440, 88);
             dataGridProjectOutput.TabIndex = 0;
             // 
             // dataGridMaterialOutput
@@ -57,11 +57,11 @@
             dataGridMaterialOutput.BackgroundColor = Color.CornflowerBlue;
             dataGridMaterialOutput.BorderStyle = BorderStyle.None;
             dataGridMaterialOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridMaterialOutput.Location = new Point(25, 187);
-            dataGridMaterialOutput.Margin = new Padding(25);
+            dataGridMaterialOutput.Location = new Point(20, 149);
+            dataGridMaterialOutput.Margin = new Padding(20);
             dataGridMaterialOutput.Name = "dataGridMaterialOutput";
             dataGridMaterialOutput.RowHeadersWidth = 51;
-            dataGridMaterialOutput.Size = new Size(1410, 448);
+            dataGridMaterialOutput.Size = new Size(1432, 506);
             dataGridMaterialOutput.TabIndex = 1;
             // 
             // panelColorUCD
@@ -74,7 +74,7 @@
             panelColorUCD.Location = new Point(0, 0);
             panelColorUCD.Margin = new Padding(0);
             panelColorUCD.Name = "panelColorUCD";
-            panelColorUCD.Size = new Size(1460, 660);
+            panelColorUCD.Size = new Size(1472, 675);
             panelColorUCD.TabIndex = 2;
             // 
             // labelUCDetailContains
@@ -83,9 +83,10 @@
             labelUCDetailContains.AutoSize = true;
             labelUCDetailContains.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
             labelUCDetailContains.ForeColor = Color.White;
-            labelUCDetailContains.Location = new Point(25, 153);
+            labelUCDetailContains.Location = new Point(20, 121);
+            labelUCDetailContains.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailContains.Name = "labelUCDetailContains";
-            labelUCDetailContains.Size = new Size(220, 38);
+            labelUCDetailContains.Size = new Size(169, 30);
             labelUCDetailContains.TabIndex = 1;
             labelUCDetailContains.Text = "PlaceholderText";
             // 
@@ -95,20 +96,20 @@
             labelUCDetailMainName.AutoSize = true;
             labelUCDetailMainName.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
             labelUCDetailMainName.ForeColor = Color.White;
-            labelUCDetailMainName.Location = new Point(25, 7);
+            labelUCDetailMainName.Location = new Point(20, 5);
+            labelUCDetailMainName.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailMainName.Name = "labelUCDetailMainName";
-            labelUCDetailMainName.Size = new Size(220, 38);
+            labelUCDetailMainName.Size = new Size(169, 30);
             labelUCDetailMainName.TabIndex = 0;
             labelUCDetailMainName.Text = "PlaceholderText";
             // 
             // UserControlDetail
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
-            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(panelColorUCD);
             Margin = new Padding(2);
             Name = "UserControlDetail";
-            Size = new Size(1460, 660);
+            Size = new Size(1472, 675);
             Load += UserControlDetail_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridProjectOutput).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridMaterialOutput).EndInit();

@@ -38,21 +38,19 @@
             dataGridUCOutput.BackgroundColor = Color.CornflowerBlue;
             dataGridUCOutput.BorderStyle = BorderStyle.None;
             dataGridUCOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUCOutput.Location = new Point(10, 10);
-            dataGridUCOutput.Margin = new Padding(10);
+            dataGridUCOutput.Location = new Point(9, 8);
+            dataGridUCOutput.Margin = new Padding(9, 8, 9, 8);
             dataGridUCOutput.Name = "dataGridUCOutput";
             dataGridUCOutput.RowHeadersWidth = 51;
-            dataGridUCOutput.Size = new Size(1452, 655);
+            dataGridUCOutput.Size = new Size(1270, 491);
             dataGridUCOutput.TabIndex = 0;
             // 
             // UserControlOutPut
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(dataGridUCOutput);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "UserControlOutPut";
-            Size = new Size(1472, 675);
+            Size = new Size(1288, 506);
             ((System.ComponentModel.ISupportInitialize)dataGridUCOutput).EndInit();
             ResumeLayout(false);
         }
