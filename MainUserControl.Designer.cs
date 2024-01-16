@@ -45,6 +45,7 @@
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
+            comboBoxFilter = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -54,12 +55,12 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(110, 224);
+            searchBox.Location = new Point(110, 212);
             searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "TL číslo, SAP číslo";
-            searchBox.Size = new Size(964, 71);
+            searchBox.Size = new Size(964, 65);
             searchBox.TabIndex = 2;
             // 
             // BtnProjekty
@@ -221,6 +222,7 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(comboBoxFilter);
             panel1.Controls.Add(BtnVarnish);
             panel1.Controls.Add(BtnGran);
             panel1.Controls.Add(BtnBack);
@@ -322,8 +324,19 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
+            // comboBoxFilter
+            // 
+            comboBoxFilter.FormattingEnabled = true;
+            comboBoxFilter.Items.AddRange(new object[] { "Projekty", "Materiály", "Čističe & Aktivátory", "Kluzké laky", "Granuláty" });
+            comboBoxFilter.Location = new Point(110, 275);
+            comboBoxFilter.MaxDropDownItems = 5;
+            comboBoxFilter.Name = "comboBoxFilter";
+            comboBoxFilter.Size = new Size(964, 28);
+            comboBoxFilter.TabIndex = 15;
+            // 
             // MainUserControl
             // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);
@@ -356,5 +369,6 @@
         private Panel panelMainShower;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
+        private ComboBox comboBoxFilter;
     }
 }
