@@ -139,8 +139,6 @@
 
         private void dataGridOutputMaterial_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TODO: fix this bcs the if statement will not execute
-
             MainUserControl mainUserControl = new();
 
             if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)

@@ -60,7 +60,6 @@ namespace SortifyDB
 
         public void AddToHistory(string key, string value)
         {
-            //TODO: finish and move -1 index
 
             if (history.Count > 10)
             {
@@ -137,7 +136,7 @@ namespace SortifyDB
 
         #endregion
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click<T>(object sender, EventArgs e)
         {
             if (searchBox.Text == string.Empty)
             {
@@ -145,6 +144,11 @@ namespace SortifyDB
                 MessageBox.Show("Zadejte hledaný výraz");
                 return;
             }
+
+
+            //based on checkbox's
+            //use switch to create case for every 
+
 
             //check if searchBox.Text is in any of granulaty
             if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||
