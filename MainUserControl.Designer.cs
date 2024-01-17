@@ -324,6 +324,7 @@
             // 
             // MainUserControl
             // 
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);

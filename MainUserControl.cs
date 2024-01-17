@@ -165,7 +165,7 @@ namespace SortifyDB
 
         #endregion
 
-        private void BtnSearch_Click<T>(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
             if (searchBox.Text == string.Empty)
             {
