@@ -81,10 +81,11 @@
 
             if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
             {
-
                 string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                mainUserControl.AddToHistory("Projekty", findingParemater);
+                mainUserControl.AddToHistory("Projekty", findingParemater.ToString());
+
+                MessageBox.Show(findingParemater);
 
                 mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
             }
