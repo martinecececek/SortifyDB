@@ -22,94 +22,73 @@ namespace SortifyDB
         {
             AddToHistory("Projekty", "All");
 
-            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
+            ChangeUI(new UserControlOutPut("P", panelMainShower, this), panelMainShower);
         }
 
         private void BtnMat_Click(object sender, EventArgs e)
         {
             AddToHistory("Materialy", "All");
 
-            ChangeUI(new UserControlOutPut("M", panelMainShower), panelMainShower);
+            ChangeUI(new UserControlOutPut("M", panelMainShower, this), panelMainShower);
         }
 
         private void BtnCleanActive_Click(object sender, EventArgs e)
         {
             AddToHistory("CisticeAktivatory", "All");
 
-            ChangeUI(new UserControlOutPut("C", panelMainShower), panelMainShower);
+            ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
         }
 
         private void BtnVarnish_Click(object sender, EventArgs e)
         {
             AddToHistory("KluzkeLaky", "All");
 
-            ChangeUI(new UserControlOutPut("K", panelMainShower), panelMainShower);
+            ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
         }
 
         private void BtnGran_Click(object sender, EventArgs e)
         {
             AddToHistory("Granulaty", "All");
 
-            ChangeUI(new UserControlOutPut("G", panelMainShower), panelMainShower);
+            ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
         }
         #endregion
 
         #region history 
 
-        private readonly Stack<KeyValuePair<string, string>> history = new();
+        public List<KeyValuePair<string, string>> history = new();
 
         public void AddToHistory(string key, string value)
         {
 
-            MessageBox.Show(key + ", " + value);
-
-            /*if (history.Count > 10)
+            if (history.Count > 10)
             {
-                var temp = new Stack<KeyValuePair<string, string>>();
+                history.Remove(history.First());
+            }
 
-                for (int i = 0; i < 9; i++)
-                {
-                    temp.Push(history.Pop());
-                }
+            history.Add(new KeyValuePair<string, string>(key, value));
 
-                history.Pop();
-
-                while (temp.Count > 0)
-                {
-                    history.Push(temp.Pop());
-                }
-
-            }*/
-
-
-            history.Push(new KeyValuePair<string, string>(key, value));
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            if (history.Count == 0)
+            if (history.Count.Equals(0))
             {
                 return;
             }
 
-            MessageBox.Show(history.Last().Key + ", " + history.Last().Value);
-
             switch (history.Last().Key)
             {
-
-
                 case "Projekty":
                     {
-                        MessageBox.Show(history.Last().Value);
 
-                        if (history.Last().Value != "All")
+                        if (history.Last().Value == "All")
                         {
-                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                            ChangeUI(new UserControlOutPut("P", panelMainShower, this), panelMainShower);
+                            break;
                         }
-                        else
-                        {
-                            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
-                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
 
                         break;
                     }
@@ -117,50 +96,37 @@ namespace SortifyDB
                     {
                         if (history.Last().Value == "All")
                         {
-                            ChangeUI(new UserControlOutPut("M", panelMainShower), panelMainShower);
+                            ChangeUI(new UserControlOutPut("M", panelMainShower, this), panelMainShower);
+                            break;
                         }
-                        else
-                        {
-                            ChangeUI(new UserControlDetail(history.Last().Value, "M", panelMainShower), panelMainShower);
-                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+
 
                         break;
                     }
                 case "CisticeAktivatory":
                     {
-                        ChangeUI(new UserControlOutPut("C", panelMainShower), panelMainShower);
-
+                        ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
                         break;
                     }
                 case "KluzkeLaky":
                     {
-                        ChangeUI(new UserControlOutPut("K", panelMainShower), panelMainShower);
-
+                        ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
                         break;
                     }
                 case "Granulaty":
                     {
-                        ChangeUI(new UserControlOutPut("G", panelMainShower), panelMainShower);
-
+                        ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
                         break;
                     }
                 default:
-                    break;
+                    {
+                        break;
+                    }
             }
 
-            var temp = new Stack<KeyValuePair<string, string>>();
-
-            while (history.Count > 1)
-            {
-                temp.Push(history.Pop());
-            }
-
-            history.Pop();
-
-            while (temp.Count > 0)
-            {
-                history.Push(temp.Pop());
-            }
+            history.Remove(history.Last());
         }
 
         #endregion
@@ -173,11 +139,6 @@ namespace SortifyDB
                 MessageBox.Show("Zadejte hledaný výraz");
                 return;
             }
-
-
-            //based on checkbox's
-            //use switch to create case for every 
-
 
             //check if searchBox.Text is in any of granulaty
             if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||

@@ -10,11 +10,12 @@
         /// G = Granuláty
         /// </summary>
 
-        public UserControlOutPut(string typVypsaniListu, Panel vys)
+        public UserControlOutPut(string typVypsaniListu, Panel vys, MainUserControl mainUserControl)
         {
             InitializeComponent();
 
             this.typVypsaniListu = typVypsaniListu;
+            this.mainUserControl = mainUserControl;
             panel = vys;
 
             ListDataGridVypis();
@@ -22,6 +23,7 @@
             dataGridUCOutput.ReadOnly = true;
         }
 
+        private readonly MainUserControl mainUserControl;
         readonly Panel panel;
         private readonly string typVypsaniListu;
 
@@ -77,16 +79,12 @@
 
         private void dataGridOutputProject_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MainUserControl mainUserControl = new();
 
             if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
             {
                 string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 mainUserControl.AddToHistory("Projekty", findingParemater.ToString());
-
-                MessageBox.Show(findingParemater);
-
                 mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
             }
         }
