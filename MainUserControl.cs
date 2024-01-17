@@ -62,7 +62,9 @@ namespace SortifyDB
         {
             //TODO: finish and move -1 index
 
-            if (history.Count > 10)
+            MessageBox.Show(key + ", " + value);
+
+            /*if (history.Count > 10)
             {
                 var temp = new Stack<KeyValuePair<string, string>>();
 
@@ -78,7 +80,7 @@ namespace SortifyDB
                     history.Push(temp.Pop());
                 }
 
-            }
+            }*/
 
 
             history.Push(new KeyValuePair<string, string>(key, value));
@@ -91,17 +93,23 @@ namespace SortifyDB
                 return;
             }
 
+            MessageBox.Show(history.Last().Key + ", " + history.Last().Value);
+
             switch (history.Last().Key)
             {
+
+
                 case "Projekty":
                     {
-                        if (history.Last().Value == "All")
+                        MessageBox.Show(history.Last().Value);
+
+                        if (history.Last().Value != "All")
                         {
-                            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
+                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
                         }
                         else
                         {
-                            ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                            ChangeUI(new UserControlOutPut("P", panelMainShower), panelMainShower);
                         }
 
                         break;
@@ -224,4 +232,7 @@ namespace SortifyDB
         }
         #endregion
     }
+
+
+
 }
