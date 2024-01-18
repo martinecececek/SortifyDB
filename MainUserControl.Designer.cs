@@ -39,17 +39,15 @@
             BtnBack = new Cbtn.CBtn();
             BtnSearch = new Cbtn.CBtn();
             panel1 = new Panel();
-            cCechMenus = new CCheckMenu.CCechMenus();
             panel2 = new Panel();
             BtnMainFormsAdd = new Cbtn.CBtn();
             BtnParser = new Cbtn.CBtn();
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
-            button1 = new Button();
+            cCechMenusM = new CCheckMenu.CCechMenus();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panelMainShower.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,12 +55,12 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(110, 240);
-            searchBox.Margin = new Padding(5);
+            searchBox.Location = new Point(110, 231);
+            searchBox.Margin = new Padding(5, 0, 5, 5);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "TL číslo, SAP číslo";
-            searchBox.Size = new Size(964, 54);
+            searchBox.Size = new Size(964, 63);
             searchBox.TabIndex = 2;
             // 
             // BtnProjekty
@@ -224,7 +222,7 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(cCechMenus);
+            panel1.Controls.Add(cCechMenusM);
             panel1.Controls.Add(BtnVarnish);
             panel1.Controls.Add(BtnGran);
             panel1.Controls.Add(BtnBack);
@@ -238,15 +236,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1182, 320);
             panel1.TabIndex = 19;
-            // 
-            // cCechMenus
-            // 
-            cCechMenus.Anchor = AnchorStyles.Top;
-            cCechMenus.BackColor = SystemColors.Control;
-            cCechMenus.Location = new Point(112, 184);
-            cCechMenus.Name = "cCechMenus";
-            cCechMenus.Size = new Size(964, 50);
-            cCechMenus.TabIndex = 15;
             // 
             // panel2
             // 
@@ -306,7 +295,6 @@
             // 
             panelMainShower.Anchor = AnchorStyles.Top;
             panelMainShower.BackColor = Color.CornflowerBlue;
-            panelMainShower.Controls.Add(button1);
             panelMainShower.Location = new Point(438, 330);
             panelMainShower.Margin = new Padding(0);
             panelMainShower.Name = "panelMainShower";
@@ -334,14 +322,14 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
-            // button1
+            // cCechMenusM
             // 
-            button1.Location = new Point(31, 55);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            cCechMenusM.BackColor = Color.FromArgb(142, 220, 229);
+            cCechMenusM.Location = new Point(110, 181);
+            cCechMenusM.Margin = new Padding(0);
+            cCechMenusM.Name = "cCechMenusM";
+            cCechMenusM.Size = new Size(964, 50);
+            cCechMenusM.TabIndex = 15;
             // 
             // MainUserControl
             // 
@@ -356,7 +344,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panelMainShower.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -377,7 +364,6 @@
         private Panel panelMainShower;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
-        private CCheckMenu.CCechMenus cCechMenus;
-        private Button button1;
+        private CCheckMenu.CCechMenus cCechMenusM;
     }
 }
