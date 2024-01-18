@@ -36,18 +36,17 @@
             mainUserControl1.BackColor = Color.Lavender;
             mainUserControl1.Dock = DockStyle.Bottom;
             mainUserControl1.Location = new Point(0, 65);
-            mainUserControl1.Margin = new Padding(2, 4, 2, 4);
+            mainUserControl1.Margin = new Padding(2, 5, 2, 5);
             mainUserControl1.Name = "mainUserControl1";
             mainUserControl1.Size = new Size(1920, 1015);
             mainUserControl1.TabIndex = 0;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1920, 1080);
             Controls.Add(mainUserControl1);
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(3, 7, 3, 7);
             Name = "MainForm";
             Text = "Form1";
             Load += MainForm_Load;
