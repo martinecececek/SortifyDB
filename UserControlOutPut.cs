@@ -1,4 +1,6 @@
-﻿namespace SortifyDB
+﻿using SortifyDB.Objects;
+
+namespace SortifyDB
 {
     public partial class UserControlOutPut : UserControl
     {
@@ -546,6 +548,337 @@
 
         #endregion
 
+        #region search methods
+
+        public void WriteProjektsFromSearch(List<Projekt> list)
+        {
+            ClearDataGrid();
+
+            dataGridUCOutput.DataSource = list;
+
+            #region columns
+            DataGridViewButtonColumn deleteButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Text = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(deleteButtonColumn);
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputProject_CellClick;
+        }
+
+        public void WriteMaterialsFromSearch(List<Material> list)
+        {
+            ClearDataGrid();
+
+            dataGridUCOutput.DataSource = list;
+
+            #region columns
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn skloColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Název",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(skloColumn);
+
+            DataGridViewTextBoxColumn tempColumn = new()
+            {
+                Name = "TypPripravku",
+                HeaderText = "Typ přípravku",
+                DataPropertyName = "TypPripravku"
+            };
+            dataGridUCOutput.Columns.Add(tempColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputProject_CellClick;
+        }
+
+        public void WriteLakyFromSearch(List<KluzkyLak> list)
+        {
+            ClearDataGrid();
+
+            dataGridUCOutput.AutoGenerateColumns = false;
+            dataGridUCOutput.DataSource = list;
+
+            #region columns
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                Text = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputVarnish_CellClick;
+        }
+
+        public void WriteGranulatyFromSearch(List<Granulat> list)
+        {
+            ClearDataGrid();
+
+            dataGridUCOutput.AutoGenerateColumns = false;
+            dataGridUCOutput.DataSource = list;
+
+            #region columns
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn typColumn = new()
+            {
+                Name = "Typ",
+                HeaderText = "Typ",
+                DataPropertyName = "Typ"
+            };
+            dataGridUCOutput.Columns.Add(typColumn);
+
+            DataGridViewTextBoxColumn xkColumn = new()
+            {
+                Name = "Xk",
+                HeaderText = "Xk",
+                DataPropertyName = "Xk"
+            };
+            dataGridUCOutput.Columns.Add(xkColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn kombinaceSColumn = new()
+            {
+                Name = "KombinaceS",
+                HeaderText = "KombinaceS",
+                DataPropertyName = "KombinaceS"
+            };
+            dataGridUCOutput.Columns.Add(kombinaceSColumn);
+
+            DataGridViewTextBoxColumn cisteniColumn = new()
+            {
+                Name = "Cisteni",
+                HeaderText = "Cisteni",
+                DataPropertyName = "Cisteni"
+            };
+            dataGridUCOutput.Columns.Add(cisteniColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                Text = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputGranulat_CellClick;
+        }
+
+        public void WriteCisticeFromSearch(List<CisiticAktivator> list)
+        {
+            ClearDataGrid();
+
+            dataGridUCOutput.AutoGenerateColumns = false;
+            dataGridUCOutput.DataSource = list;
+
+            #region columns
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Text = "Detail",
+                Name = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputCistice_CellClick;
+        }
+        #endregion
 
     }
 }

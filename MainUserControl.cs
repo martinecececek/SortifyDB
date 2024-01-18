@@ -1,5 +1,6 @@
 ﻿using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
+using SortifyDB.Objects;
 using SortifyDB.PDF_parser;
 
 namespace SortifyDB
@@ -161,6 +162,8 @@ namespace SortifyDB
 
         #endregion
 
+
+        #region search
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             if (searchBox.Text == string.Empty)
@@ -170,50 +173,217 @@ namespace SortifyDB
                 return;
             }
 
-            //check if searchBox.Text is in any of granulaty
-            if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||
-                                                   granulat.Vyrobce == searchBox.Text ||
-                                                   granulat.Typ == searchBox.Text))
+            if (checkBoxProjects.Checked)
             {
+                List<Projekt> projetky = SearchInProjects();
 
+                if (projetky.Count == 0)
+                {
+                    MessageBox.Show("Projekt nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
+                UserControlOutPut userControlOutPut = new("P", panelMainShower, this);
 
+                ChangeUI(userControlOutPut, panelMainShower);
 
-
+                userControlOutPut.WriteProjektsFromSearch(projetky);
             }
 
-            //check if searchBox.Text is in any of kluzke laky
-            if (MainForm.KluzkeLaky.Any(lak => lak.Nazev == searchBox.Text ||
-                                               lak.Vyrobce == searchBox.Text))
-            {
 
+            if (checkBoxMaterials.Checked)
+            {
+                List<Material> materials = SearchInMaterials();
+
+                if (materials.Count == 0)
+                {
+                    MessageBox.Show("Material nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("M", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteMaterialsFromSearch(materials);
             }
 
-            //check if searchBox.Text is in any of cistice aktivatory
-            if (MainForm.CisticeAktivatory.Any(cistice => cistice.Nazev == searchBox.Text ||
-                                                          cistice.Vyrobce == searchBox.Text))
+            if (checkBoxCleanActive.Checked)
             {
+                List<CisiticAktivator> cisiticAktivators = SearchInCistice();
 
+                if (cisiticAktivators.Count == 0)
+                {
+                    MessageBox.Show("Čistič nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("C", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteCisticeFromSearch(cisiticAktivators);
             }
 
-            //check if searchBox.Text is in any of projects
-            if (MainForm.Projekty.Any(projekt => projekt.Nazev == searchBox.Text ||
-                                                 projekt.TL == searchBox.Text ||
-                                                 projekt.IMDS == searchBox.Text))
+            if (checkBoxVarnish.Checked)
             {
+                List<KluzkyLak> kluzkyLaks = SearchInVarnish();
 
+                if (kluzkyLaks.Count == 0)
+                {
+                    MessageBox.Show("Lak nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("K", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteLakyFromSearch(kluzkyLaks);
             }
 
-            //check if searchBox.Text is in any of materials
-            if (MainForm.Materials.Any(material => material.Nazev == searchBox.Text ||
-                                                   material.SAP == searchBox.Text))
+            if (checkBoxGran.Checked)
             {
+                List<Granulat> granulats = SearchInGranulat();
 
+                if (granulats.Count == 0)
+                {
+                    MessageBox.Show("Granulat nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
+                UserControlOutPut userControlOutPut = new("G", panelMainShower, this);
 
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteGranulatyFromSearch(granulats);
             }
 
         }
+
+        #region search in
+        private List<Projekt> SearchInProjects()
+        {
+            List<Projekt> projects = [];
+
+            foreach (Projekt projekt in MainForm.Projekty)
+            {
+                if (projekt.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    projekt.TL.ToLower() == searchBox.Text.ToLower() ||
+                    projekt.IMDS == searchBox.Text)
+                {
+                    projects.Add(projekt);
+                }
+            }
+
+            return projects;
+        }
+
+        private List<Material> SearchInMaterials()
+        {
+            List<Material> materials = [];
+
+            foreach (Material material in MainForm.Materials)
+            {
+                if (material.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    material.SAP == searchBox.Text)
+                {
+                    materials.Add(material);
+                }
+            }
+
+            return materials;
+        }
+
+        private List<CisiticAktivator> SearchInCistice()
+        {
+            List<CisiticAktivator> cisiticAktivators = [];
+
+            foreach (CisiticAktivator cisiticAktivator in MainForm.CisticeAktivatory)
+            {
+                if (cisiticAktivator.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    cisiticAktivator.SAP == searchBox.Text)
+                {
+                    cisiticAktivators.Add(cisiticAktivator);
+                }
+            }
+
+            return cisiticAktivators;
+        }
+
+        private List<KluzkyLak> SearchInVarnish()
+        {
+            List<KluzkyLak> kluzkeLaks = [];
+
+            foreach (KluzkyLak kluzkeLak in MainForm.KluzkeLaky)
+            {
+                if (kluzkeLak.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                                       kluzkeLak.SAP == searchBox.Text)
+                {
+                    kluzkeLaks.Add(kluzkeLak);
+                }
+            }
+
+            return kluzkeLaks;
+        }
+
+        private List<Granulat> SearchInGranulat()
+        {
+            List<Granulat> granulats = [];
+
+            foreach (Granulat granulat in MainForm.Granulaty)
+            {
+                if (granulat.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                                       granulat.SAP == searchBox.Text)
+                {
+                    granulats.Add(granulat);
+                }
+            }
+
+            return granulats;
+        }
+
+        #endregion
+
+        private void CheckCheckBoxes(string parametr)
+        {
+            foreach (CheckBox checkBox in searchByPanel.Controls)
+            {
+                if (checkBox.Checked && checkBox.Name != parametr)
+                {
+                    checkBox.Checked = false;
+                }
+            }
+        }
+
+        #region check boxes
+        private void checkBoxProjects_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckCheckBoxes(this.Name);
+        }
+
+        private void checkBoxMaterials_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckCheckBoxes(this.Name);
+        }
+
+        private void checkBoxCleanActive_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckCheckBoxes(this.Name);
+        }
+
+        private void checkBoxVarnish_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckCheckBoxes(this.Name);
+        }
+
+        private void checkBoxGran_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckCheckBoxes(this.Name);
+        }
+        #endregion
+
+        #endregion
 
         #region open 3th party 
         private void BtnMainFormsAdd_Click(object sender, EventArgs e)
@@ -229,8 +399,6 @@ namespace SortifyDB
         #endregion
 
 
+
     }
-
-
-
 }
