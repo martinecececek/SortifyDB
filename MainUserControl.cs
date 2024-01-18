@@ -1,4 +1,6 @@
-﻿using SortifyDB.PDF_parser;
+﻿using SortifyDB.ManualAddingInterface;
+using SortifyDB.Ms_Todo;
+using SortifyDB.PDF_parser;
 
 namespace SortifyDB
 {
@@ -8,6 +10,13 @@ namespace SortifyDB
         public MainUserControl()
         {
             InitializeComponent();
+        }
+
+        private void MainUserControl_Load(object sender, EventArgs e)
+        {
+            MsTodoAPI.ExecuteAsync();
+
+
         }
 
         public void ChangeUI(UserControl userControl, Panel panel)
@@ -209,7 +218,8 @@ namespace SortifyDB
         #region open 3th party 
         private void BtnMainFormsAdd_Click(object sender, EventArgs e)
         {
-
+            MainForm mainForm = new();
+            mainForm.ChangeUI(new MainManualAdding());
         }
 
         private void BtnParser_Click(object sender, EventArgs e)
@@ -217,6 +227,8 @@ namespace SortifyDB
             PdfParsing.ParsePDF();
         }
         #endregion
+
+
     }
 
 

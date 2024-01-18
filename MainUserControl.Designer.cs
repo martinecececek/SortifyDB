@@ -39,13 +39,13 @@
             BtnBack = new Cbtn.CBtn();
             BtnSearch = new Cbtn.CBtn();
             panel1 = new Panel();
+            cCechMenus1 = new CCheckMenu.CCechMenus();
             panel2 = new Panel();
             BtnMainFormsAdd = new Cbtn.CBtn();
             BtnParser = new Cbtn.CBtn();
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
-            cCechMenus1 = new CCheckMenu.CCechMenus();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -237,6 +237,15 @@
             panel1.Size = new Size(1182, 331);
             panel1.TabIndex = 19;
             // 
+            // cCechMenus1
+            // 
+            cCechMenus1.BackColor = Color.FromArgb(142, 220, 229);
+            cCechMenus1.Location = new Point(111, 189);
+            cCechMenus1.Margin = new Padding(0);
+            cCechMenus1.Name = "cCechMenus1";
+            cCechMenus1.Size = new Size(964, 50);
+            cCechMenus1.TabIndex = 15;
+            // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
@@ -322,15 +331,6 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
-            // cCechMenus1
-            // 
-            cCechMenus1.BackColor = Color.FromArgb(142, 220, 229);
-            cCechMenus1.Location = new Point(111, 189);
-            cCechMenus1.Margin = new Padding(0);
-            cCechMenus1.Name = "cCechMenus1";
-            cCechMenus1.Size = new Size(964, 50);
-            cCechMenus1.TabIndex = 15;
-            // 
             // MainUserControl
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -341,6 +341,7 @@
             Controls.Add(panel1);
             Name = "MainUserControl";
             Size = new Size(1920, 1015);
+            Load += MainUserControl_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

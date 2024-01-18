@@ -81,6 +81,9 @@
             granulatyTimer = new System.Windows.Forms.Timer(components);
             lakTimer = new System.Windows.Forms.Timer(components);
             cisticeTimer = new System.Windows.Forms.Timer(components);
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            panel21 = new Panel();
+            btnBack = new Button();
             flowLayoutPanel1.SuspendLayout();
             materialConatainer.SuspendLayout();
             panel1.SuspendLayout();
@@ -107,6 +110,7 @@
             panel18.SuspendLayout();
             panel19.SuspendLayout();
             panel20.SuspendLayout();
+            panel21.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -117,6 +121,7 @@
             flowLayoutPanel1.Controls.Add(granulatContainer);
             flowLayoutPanel1.Controls.Add(lakContainer);
             flowLayoutPanel1.Controls.Add(cisticeContainer);
+            flowLayoutPanel1.Controls.Add(panel21);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -700,10 +705,41 @@
             cisticeTimer.Interval = 10;
             cisticeTimer.Tick += cisticeTimer_Tick;
             // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.Location = new Point(810, 457);
+            flowLayoutPanel2.Margin = new Padding(0);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(300, 100);
+            flowLayoutPanel2.TabIndex = 10;
+            // 
+            // panel21
+            // 
+            panel21.Controls.Add(btnBack);
+            panel21.Location = new Point(0, 530);
+            panel21.Margin = new Padding(0);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(302, 100);
+            panel21.TabIndex = 2;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(0, 38, 255);
+            btnBack.Font = new Font("Segoe UI", 20F);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(-22, -18);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(350, 130);
+            btnBack.TabIndex = 5;
+            btnBack.Text = "Zpět";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
             // MainManualAdding
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(flowLayoutPanel2);
             Controls.Add(mainContainer);
             Controls.Add(flowLayoutPanel1);
             Name = "MainManualAdding";
@@ -734,6 +770,7 @@
             panel18.ResumeLayout(false);
             panel19.ResumeLayout(false);
             panel20.ResumeLayout(false);
+            panel21.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -791,5 +828,8 @@
         private System.Windows.Forms.Timer granulatyTimer;
         private System.Windows.Forms.Timer lakTimer;
         private System.Windows.Forms.Timer cisticeTimer;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Panel panel21;
+        private Button btnBack;
     }
 }
