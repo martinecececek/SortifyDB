@@ -45,6 +45,7 @@
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
+            cCechMenus1 = new CCheckMenu.CCechMenus();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(110, 231);
+            searchBox.Location = new Point(111, 239);
             searchBox.Margin = new Padding(5, 0, 5, 5);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
@@ -185,7 +186,7 @@
             BtnBack.FlatAppearance.BorderSize = 0;
             BtnBack.FlatStyle = FlatStyle.Flat;
             BtnBack.ForeColor = Color.White;
-            BtnBack.Location = new Point(35, 224);
+            BtnBack.Location = new Point(36, 236);
             BtnBack.Margin = new Padding(22, 0, 0, 0);
             BtnBack.Name = "BtnBack";
             BtnBack.Size = new Size(70, 70);
@@ -207,7 +208,7 @@
             BtnSearch.FlatAppearance.BorderSize = 0;
             BtnSearch.FlatStyle = FlatStyle.Flat;
             BtnSearch.ForeColor = Color.White;
-            BtnSearch.Location = new Point(1079, 224);
+            BtnSearch.Location = new Point(1080, 236);
             BtnSearch.Margin = new Padding(0, 0, 22, 0);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(70, 70);
@@ -221,6 +222,7 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(cCechMenus1);
             panel1.Controls.Add(BtnVarnish);
             panel1.Controls.Add(BtnGran);
             panel1.Controls.Add(BtnBack);
@@ -229,10 +231,10 @@
             panel1.Controls.Add(BtnMat);
             panel1.Controls.Add(BtnSearch);
             panel1.Controls.Add(BtnProjekty);
-            panel1.Location = new Point(438, 11);
+            panel1.Location = new Point(438, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1182, 320);
+            panel1.Size = new Size(1182, 331);
             panel1.TabIndex = 19;
             // 
             // panel2
@@ -320,6 +322,15 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
+            // cCechMenus1
+            // 
+            cCechMenus1.BackColor = Color.FromArgb(142, 220, 229);
+            cCechMenus1.Location = new Point(111, 189);
+            cCechMenus1.Margin = new Padding(0);
+            cCechMenus1.Name = "cCechMenus1";
+            cCechMenus1.Size = new Size(964, 50);
+            cCechMenus1.TabIndex = 15;
+            // 
             // MainUserControl
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -354,5 +365,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
         private CCheckMenu.CCechMenus cCechMenusM;
+        private CCheckMenu.CCechMenus cCechMenus1;
     }
 }
