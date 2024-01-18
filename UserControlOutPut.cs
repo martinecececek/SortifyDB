@@ -79,13 +79,19 @@
 
         private void dataGridOutputProject_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
+            try
             {
-                string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
+                {
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                mainUserControl.AddToHistory("Projekty", findingParemater.ToString());
-                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
+                    mainUserControl.AddToHistory("Projekty", findingParemater.ToString());
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
+                }
+            }
+            catch
+            {
+                return;
             }
         }
         #endregion
@@ -114,7 +120,7 @@
             DataGridViewTextBoxColumn tempColumn = new()
             {
                 Name = "TypPripravku",
-                HeaderText = "TypPripravku",
+                HeaderText = "Typ přípravku",
                 DataPropertyName = "TypPripravku"
             };
             dataGridUCOutput.Columns.Add(tempColumn);
@@ -122,10 +128,8 @@
             DataGridViewButtonColumn detailButtonColumn = new()
             {
                 HeaderText = "Detail",
-                Text = "Detail",
-                UseColumnTextForButtonValue = true
+                Name = "Detail",
             };
-
 
 
 
@@ -134,51 +138,402 @@
             dataGridUCOutput.CellClick += dataGridOutputMaterial_CellClick;
 
             dataGridUCOutput.DataSource = MainForm.Materials;
+
+            dataGridUCOutput.DataBindingComplete += new DataGridViewBindingCompleteEventHandler(dataGridUCOutput_DataBindingComplete);
+
+        }
+
+        private void dataGridUCOutput_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dataGridUCOutput.Rows)
+                {
+                    if (row.IsNewRow) continue; // Skip the new row placeholder
+
+                    var typPripravkuValue = row.Cells["TypPripravku"].Value?.ToString().Trim();
+
+                    // Debugging
+                    Console.WriteLine($"Row: {row.Index}, TypPripravku: {typPripravkuValue}");
+
+                    if (typPripravkuValue == "díl" || typPripravkuValue == "inkoust" ||
+                        typPripravkuValue == "ředidlo" || typPripravkuValue == "primer")
+                    {
+                        row.Cells["Detail"].Value = "X";
+                    }
+                    else
+                    {
+                        row.Cells["Detail"].Value = "Detail";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DataBindingComplete: " + ex.Message);
+            }
         }
 
         private void dataGridOutputMaterial_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MainUserControl mainUserControl = new();
-
-            if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+            try
             {
-                string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                {
+                    DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dataGridUCOutput.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    string buttonText = buttonCell.Value.ToString();
 
-                mainUserControl.AddToHistory("Materialy", findingParemater);
+                    if (buttonText == "X")
+                    {
+                        MessageBox.Show("Tento typ materiálu nemá detail", "Detail neexistuje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
 
-                mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel), panel);
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                    mainUserControl.AddToHistory("Materialy", findingParemater);
+
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel), panel);
+                }
+            }
+            catch
+            {
+                return;
             }
         }
         #endregion
 
-        #region regular show methods
+        #region Cistice show metods + detail button
         private void CleanActivesMet()
         {
             ClearDataGrid();
 
-            //TODO: fix this bcs need to write the Dictionary
-
+            dataGridUCOutput.AutoGenerateColumns = false;
             dataGridUCOutput.DataSource = MainForm.CisticeAktivatory;
+
+            #region columns
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputCistice_CellClick;
         }
+
+        private void dataGridOutputCistice_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                {
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                    mainUserControl.AddToHistory("CisticeAktivatory", findingParemater);
+
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "C", panel), panel);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        #endregion
+
+        #region varnish show methods + detail button
 
         private void VarnishMet()
         {
             ClearDataGrid();
 
-            //TODO: fix this bcs need to write the Dictionary
-
+            dataGridUCOutput.AutoGenerateColumns = false;
             dataGridUCOutput.DataSource = MainForm.KluzkeLaky;
+
+            #region columns
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputVarnish_CellClick;
         }
+
+        private void dataGridOutputVarnish_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                {
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                    mainUserControl.AddToHistory("CisticeAktivatory", findingParemater);
+
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "G", panel), panel);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        #endregion
+
+        #region granulaty show methods + detail button
 
         private void GranMet()
         {
             ClearDataGrid();
 
-            //TODO: fix this bcs need to write the Dictionary
-
+            dataGridUCOutput.AutoGenerateColumns = false;
             dataGridUCOutput.DataSource = MainForm.Granulaty;
-        }
-        #endregion
 
+            #region columns
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridUCOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridUCOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn typColumn = new()
+            {
+                Name = "Typ",
+                HeaderText = "Typ",
+                DataPropertyName = "Typ"
+            };
+            dataGridUCOutput.Columns.Add(typColumn);
+
+            DataGridViewTextBoxColumn xkColumn = new()
+            {
+                Name = "Xk",
+                HeaderText = "Xk",
+                DataPropertyName = "Xk"
+            };
+            dataGridUCOutput.Columns.Add(xkColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridUCOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridUCOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridUCOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn kombinaceSColumn = new()
+            {
+                Name = "KombinaceS",
+                HeaderText = "KombinaceS",
+                DataPropertyName = "KombinaceS"
+            };
+            dataGridUCOutput.Columns.Add(kombinaceSColumn);
+
+            DataGridViewTextBoxColumn cisteniColumn = new()
+            {
+                Name = "Cisteni",
+                HeaderText = "Cisteni",
+                DataPropertyName = "Cisteni"
+            };
+            dataGridUCOutput.Columns.Add(cisteniColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridUCOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridUCOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridUCOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            dataGridUCOutput.CellClick += dataGridOutputGranulat_CellClick;
+        }
+
+
+        private void dataGridOutputGranulat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                {
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                    mainUserControl.AddToHistory("Granulaty", findingParemater);
+
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "G", panel), panel);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        #endregion
     }
 }
