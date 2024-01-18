@@ -38,6 +38,11 @@ namespace SortifyDB
                 case "G":
                     WriteGranulat();
                     break;
+                case "K":
+                    WriteKluzkyLakDetail();
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -150,12 +155,106 @@ namespace SortifyDB
 
             foreach (var pair in slozeni)
             {
-                dataGridDetailOutputOutput.Rows.Add(pair.Key, pair.Value);
+                dataGridDetailOutput.Rows.Add(pair.Key, pair.Value);
             }
-            labelUCDetailMainName.Text = "Projekt";
-            labelUCDetailContains.Text = "Materiály";
+            labelUCDetailMainName.Text = "Granulát";
+            labelUCDetailContains.Text = "Složení";
 
             #endregion
+
+        }
+
+        #endregion
+
+        #region write kluzky detail
+
+        private void WriteKluzkyLakDetail()
+        {
+            KluzkyLak lak = MainForm.KluzkeLaky.Find(x => x.SAP == findBy);
+
+            #region add lak data to dataGridProjectOutput by manually adding columns and rows
+
+            dataGridMainOutput.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                Name = "SAP",
+                HeaderText = "SAP",
+                DataPropertyName = "SAP"
+            };
+            dataGridMainOutput.Columns.Add(sapColumn);
+
+            DataGridViewTextBoxColumn nazevColumn = new()
+            {
+                Name = "Nazev",
+                HeaderText = "Nazev",
+                DataPropertyName = "Nazev"
+            };
+            dataGridMainOutput.Columns.Add(nazevColumn);
+
+            DataGridViewTextBoxColumn jeAktivniColumn = new()
+            {
+                Name = "JeAktivni",
+                HeaderText = "JeAktivni",
+                DataPropertyName = "JeAktivni"
+            };
+            dataGridMainOutput.Columns.Add(jeAktivniColumn);
+
+            DataGridViewTextBoxColumn vyrobceColumn = new()
+            {
+                Name = "Vyrobce",
+                HeaderText = "Vyrobce",
+                DataPropertyName = "Vyrobce"
+            };
+            dataGridMainOutput.Columns.Add(vyrobceColumn);
+
+            DataGridViewTextBoxColumn pouzitiColumn = new()
+            {
+                Name = "Pouziti",
+                HeaderText = "Pouziti",
+                DataPropertyName = "Pouziti"
+            };
+            dataGridMainOutput.Columns.Add(pouzitiColumn);
+
+            DataGridViewTextBoxColumn nevhodneKombinaceColumn = new()
+            {
+                Name = "NevhodneKombinace",
+                HeaderText = "NevhodneKombinace",
+                DataPropertyName = "NevhodneKombinace"
+            };
+            dataGridMainOutput.Columns.Add(nevhodneKombinaceColumn);
+
+            DataGridViewTextBoxColumn slozeniDleColumn = new()
+            {
+                Name = "SlozeniDle",
+                HeaderText = "SlozeniDle",
+                DataPropertyName = "SlozeniDle"
+            };
+            dataGridMainOutput.Columns.Add(slozeniDleColumn);
+
+            DataGridViewButtonColumn detailButtonColumn = new()
+            {
+                HeaderText = "Detail",
+                Name = "Detail",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridMainOutput.Columns.Add(detailButtonColumn);
+
+            #endregion
+
+            #region add slozeni to dataGridDetailOutputOutput by manually adding columns and rows
+
+            Dictionary<string, string> slozeni = lak.Slozeni;
+
+            foreach (var pair in slozeni)
+            {
+                dataGridDetailOutput.Rows.Add(pair.Key, pair.Value);
+            }
+
+            #endregion
+
+            labelUCDetailMainName.Text = "Kluzký lak";
+            labelUCDetailContains.Text = "Složení";
 
         }
 
@@ -202,33 +301,33 @@ namespace SortifyDB
             {
                 case "aktivátor/čistič":
                     {
-                        dataGridDetailOutputOutput.AutoGenerateColumns = true;
+                        dataGridDetailOutput.AutoGenerateColumns = true;
 
                         CisiticAktivator cisiticAktivator = MainForm.CisticeAktivatory.Find(x => x.SAP == findBy);
 
                         MessageBox.Show(cisiticAktivator.Nazev);
 
-                        dataGridDetailOutputOutput.DataSource = cisiticAktivator;
+                        dataGridDetailOutput.DataSource = cisiticAktivator;
 
                         break;
                     }
                 case "polymer/lepidlo":
                     {
-                        dataGridDetailOutputOutput.AutoGenerateColumns = true;
+                        dataGridDetailOutput.AutoGenerateColumns = true;
 
                         Granulat granulat = MainForm.Granulaty.Find(x => x.SAP == findBy);
 
-                        dataGridDetailOutputOutput.DataSource = granulat;
+                        dataGridDetailOutput.DataSource = granulat;
 
                         break;
                     }
                 case "kluzný lak":
                     {
-                        dataGridDetailOutputOutput.AutoGenerateColumns = true;
+                        dataGridDetailOutput.AutoGenerateColumns = true;
 
                         KluzkyLak lak = MainForm.KluzkeLaky.Find(x => x.SAP == findBy);
 
-                        dataGridDetailOutputOutput.DataSource = lak;
+                        dataGridDetailOutput.DataSource = lak;
 
                         break;
                     }
@@ -304,21 +403,21 @@ namespace SortifyDB
             };
             dataGridMainOutput.Columns.Add(imdsColumn);
 
-            dataGridDetailOutputOutput.DataSource = projekt;
+            dataGridDetailOutput.DataSource = projekt;
             #endregion
 
-            dataGridDetailOutputOutput.DataSource = projekt.Materials;
+            dataGridDetailOutput.DataSource = projekt.Materials;
 
             DataGridViewButtonColumn detailButtonColumn = new()
             {
                 HeaderText = "Detail",
                 Name = "Detail"
             };
-            dataGridDetailOutputOutput.Columns.Add(detailButtonColumn);
+            dataGridDetailOutput.Columns.Add(detailButtonColumn);
 
-            dataGridDetailOutputOutput.CellClick += dataGridMaterialOutput_CellClick;
+            dataGridDetailOutput.CellClick += dataGridMaterialOutput_CellClick;
 
-            dataGridDetailOutputOutput.DataBindingComplete += new DataGridViewBindingCompleteEventHandler(dataGridUCOutput_DataBindingComplete);
+            dataGridDetailOutput.DataBindingComplete += new DataGridViewBindingCompleteEventHandler(dataGridUCOutput_DataBindingComplete);
         }
 
         #region x or detail button
@@ -326,7 +425,7 @@ namespace SortifyDB
         {
             try
             {
-                foreach (DataGridViewRow row in dataGridDetailOutputOutput.Rows)
+                foreach (DataGridViewRow row in dataGridDetailOutput.Rows)
                 {
                     if (row.IsNewRow) continue; // Skip the new row placeholder
 
@@ -359,11 +458,11 @@ namespace SortifyDB
         {
             MainUserControl mainUserControl = new();
 
-            if (dataGridDetailOutputOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+            if (dataGridDetailOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
             {
-                if (dataGridDetailOutputOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                if (dataGridDetailOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
                 {
-                    DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dataGridDetailOutputOutput.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dataGridDetailOutput.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     string buttonText = buttonCell.Value.ToString();
 
                     if (buttonText == "X")
@@ -372,7 +471,7 @@ namespace SortifyDB
                         return;
                     }
 
-                    string findingParemater = dataGridDetailOutputOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string findingParemater = dataGridDetailOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                     mainUserControl.AddToHistory("Materialy", findingParemater);
 

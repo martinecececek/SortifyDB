@@ -302,7 +302,7 @@
 
         #endregion
 
-        #region varnish show methods + detail button
+        #region KluzkyLak show methods + detail button
 
         private void VarnishMet()
         {
