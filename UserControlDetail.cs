@@ -22,7 +22,7 @@ namespace SortifyDB
             ListDataGridVypis();
 
             dataGridMainOutput.ReadOnly = true;
-            dataGridDetailOutputOutput.ReadOnly = true;
+            dataGridDetailOutput.ReadOnly = true;
         }
 
         private void ListDataGridVypis()

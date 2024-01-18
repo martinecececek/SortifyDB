@@ -45,7 +45,6 @@
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
-            cCechMenusM = new CCheckMenu.CCechMenus();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -222,7 +221,6 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(cCechMenusM);
             panel1.Controls.Add(BtnVarnish);
             panel1.Controls.Add(BtnGran);
             panel1.Controls.Add(BtnBack);
@@ -322,23 +320,14 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
-            // cCechMenusM
-            // 
-            cCechMenusM.BackColor = Color.FromArgb(142, 220, 229);
-            cCechMenusM.Location = new Point(110, 181);
-            cCechMenusM.Margin = new Padding(0);
-            cCechMenusM.Name = "cCechMenusM";
-            cCechMenusM.Size = new Size(964, 50);
-            cCechMenusM.TabIndex = 15;
-            // 
             // MainUserControl
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);
-            Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panel3);
+            Controls.Add(panel1);
             Name = "MainUserControl";
             Size = new Size(1920, 1015);
             panel1.ResumeLayout(false);
