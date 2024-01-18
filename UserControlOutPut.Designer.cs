@@ -34,19 +34,23 @@
             // 
             // dataGridUCOutput
             // 
+            dataGridUCOutput.Anchor = AnchorStyles.Top;
+            dataGridUCOutput.BackgroundColor = Color.CornflowerBlue;
+            dataGridUCOutput.BorderStyle = BorderStyle.None;
             dataGridUCOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUCOutput.Location = new Point(0, 0);
+            dataGridUCOutput.Location = new Point(9, 8);
+            dataGridUCOutput.Margin = new Padding(9, 8, 9, 8);
             dataGridUCOutput.Name = "dataGridUCOutput";
-            dataGridUCOutput.Size = new Size(1168, 528);
+            dataGridUCOutput.RowHeadersWidth = 51;
+            dataGridUCOutput.Size = new Size(1270, 491);
             dataGridUCOutput.TabIndex = 0;
             // 
             // UserControlOutPut
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(dataGridUCOutput);
             Name = "UserControlOutPut";
-            Size = new Size(1168, 528);
+            Size = new Size(1288, 506);
             ((System.ComponentModel.ISupportInitialize)dataGridUCOutput).EndInit();
             ResumeLayout(false);
         }

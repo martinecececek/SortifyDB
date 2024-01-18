@@ -31,54 +31,90 @@
             dataGridMainOutput = new DataGridView();
             dataGridDetailOutputOutput = new DataGridView();
             panelColorUCD = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridMainOutput).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridDetailOutputOutput).BeginInit();
+            labelUCDetailContains = new Label();
+            labelUCDetailMainName = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridProjectOutput).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridMaterialOutput).BeginInit();
+            panelColorUCD.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridProjectOutput
             // 
-            dataGridMainOutput.Anchor = AnchorStyles.Top;
-            dataGridMainOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridMainOutput.Location = new Point(20, 20);
-            dataGridMainOutput.Margin = new Padding(20);
-            dataGridMainOutput.Name = "dataGridMainOutput";
-            dataGridMainOutput.RowHeadersWidth = 51;
-            dataGridMainOutput.Size = new Size(1128, 106);
-            dataGridMainOutput.TabIndex = 0;
+            dataGridProjectOutput.Anchor = AnchorStyles.Top;
+            dataGridProjectOutput.BackgroundColor = Color.CornflowerBlue;
+            dataGridProjectOutput.BorderStyle = BorderStyle.None;
+            dataGridProjectOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridProjectOutput.Location = new Point(20, 33);
+            dataGridProjectOutput.Margin = new Padding(20);
+            dataGridProjectOutput.Name = "dataGridProjectOutput";
+            dataGridProjectOutput.RowHeadersWidth = 51;
+            dataGridProjectOutput.Size = new Size(1440, 88);
+            dataGridProjectOutput.TabIndex = 0;
             // 
             // dataGridMaterialOutput
             // 
-            dataGridDetailOutputOutput.Anchor = AnchorStyles.Top;
-            dataGridDetailOutputOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridDetailOutputOutput.Location = new Point(20, 150);
-            dataGridDetailOutputOutput.Margin = new Padding(20);
-            dataGridDetailOutputOutput.Name = "dataGridDetailOutputOutput";
-            dataGridDetailOutputOutput.RowHeadersWidth = 51;
-            dataGridDetailOutputOutput.Size = new Size(1128, 358);
-            dataGridDetailOutputOutput.TabIndex = 1;
+            dataGridMaterialOutput.Anchor = AnchorStyles.Top;
+            dataGridMaterialOutput.BackgroundColor = Color.CornflowerBlue;
+            dataGridMaterialOutput.BorderStyle = BorderStyle.None;
+            dataGridMaterialOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridMaterialOutput.Location = new Point(20, 149);
+            dataGridMaterialOutput.Margin = new Padding(20);
+            dataGridMaterialOutput.Name = "dataGridMaterialOutput";
+            dataGridMaterialOutput.RowHeadersWidth = 51;
+            dataGridMaterialOutput.Size = new Size(1432, 506);
+            dataGridMaterialOutput.TabIndex = 1;
             // 
             // panelColorUCD
             // 
-            panelColorUCD.BackColor = Color.CadetBlue;
+            panelColorUCD.BackColor = Color.CornflowerBlue;
+            panelColorUCD.Controls.Add(dataGridProjectOutput);
+            panelColorUCD.Controls.Add(dataGridMaterialOutput);
+            panelColorUCD.Controls.Add(labelUCDetailContains);
+            panelColorUCD.Controls.Add(labelUCDetailMainName);
             panelColorUCD.Location = new Point(0, 0);
             panelColorUCD.Margin = new Padding(0);
             panelColorUCD.Name = "panelColorUCD";
-            panelColorUCD.Size = new Size(1168, 528);
+            panelColorUCD.Size = new Size(1472, 675);
             panelColorUCD.TabIndex = 2;
+            // 
+            // labelUCDetailContains
+            // 
+            labelUCDetailContains.Anchor = AnchorStyles.Top;
+            labelUCDetailContains.AutoSize = true;
+            labelUCDetailContains.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
+            labelUCDetailContains.ForeColor = Color.White;
+            labelUCDetailContains.Location = new Point(20, 121);
+            labelUCDetailContains.Margin = new Padding(2, 0, 2, 0);
+            labelUCDetailContains.Name = "labelUCDetailContains";
+            labelUCDetailContains.Size = new Size(169, 30);
+            labelUCDetailContains.TabIndex = 1;
+            labelUCDetailContains.Text = "PlaceholderText";
+            // 
+            // labelUCDetailMainName
+            // 
+            labelUCDetailMainName.Anchor = AnchorStyles.Top;
+            labelUCDetailMainName.AutoSize = true;
+            labelUCDetailMainName.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
+            labelUCDetailMainName.ForeColor = Color.White;
+            labelUCDetailMainName.Location = new Point(20, 5);
+            labelUCDetailMainName.Margin = new Padding(2, 0, 2, 0);
+            labelUCDetailMainName.Name = "labelUCDetailMainName";
+            labelUCDetailMainName.Size = new Size(169, 30);
+            labelUCDetailMainName.TabIndex = 0;
+            labelUCDetailMainName.Text = "PlaceholderText";
             // 
             // UserControlDetail
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            Controls.Add(dataGridDetailOutputOutput);
-            Controls.Add(dataGridMainOutput);
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(panelColorUCD);
             Margin = new Padding(2);
             Name = "UserControlDetail";
-            Size = new Size(1168, 528);
+            Size = new Size(1472, 675);
             Load += UserControlDetail_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridMainOutput).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridDetailOutputOutput).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridProjectOutput).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridMaterialOutput).EndInit();
+            panelColorUCD.ResumeLayout(false);
+            panelColorUCD.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -87,5 +123,7 @@
         private DataGridView dataGridMainOutput;
         private DataGridView dataGridDetailOutputOutput;
         private Panel panelColorUCD;
+        private Label labelUCDetailContains;
+        private Label labelUCDetailMainName;
     }
 }

@@ -152,6 +152,8 @@ namespace SortifyDB
             {
                 dataGridDetailOutputOutput.Rows.Add(pair.Key, pair.Value);
             }
+            labelUCDetailMainName.Text = "Projekt";
+            labelUCDetailContains.Text = "Materiály";
 
             #endregion
 

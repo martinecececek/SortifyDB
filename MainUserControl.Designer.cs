@@ -45,6 +45,7 @@
             panelMainShower = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
+            cCechMenusM = new CCheckMenu.CCechMenus();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -54,12 +55,12 @@
             // 
             searchBox.Anchor = AnchorStyles.Top;
             searchBox.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            searchBox.Location = new Point(110, 224);
-            searchBox.Margin = new Padding(3, 4, 3, 4);
+            searchBox.Location = new Point(110, 231);
+            searchBox.Margin = new Padding(5, 0, 5, 5);
             searchBox.Multiline = true;
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "TL číslo, SAP číslo";
-            searchBox.Size = new Size(964, 71);
+            searchBox.Size = new Size(964, 63);
             searchBox.TabIndex = 2;
             // 
             // BtnProjekty
@@ -75,7 +76,7 @@
             BtnProjekty.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnProjekty.ForeColor = Color.White;
             BtnProjekty.Location = new Point(30, 28);
-            BtnProjekty.Margin = new Padding(3, 4, 3, 4);
+            BtnProjekty.Margin = new Padding(22, 5, 5, 0);
             BtnProjekty.Name = "BtnProjekty";
             BtnProjekty.Size = new Size(220, 153);
             BtnProjekty.TabIndex = 8;
@@ -97,7 +98,7 @@
             BtnMat.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnMat.ForeColor = Color.White;
             BtnMat.Location = new Point(256, 28);
-            BtnMat.Margin = new Padding(3, 4, 3, 4);
+            BtnMat.Margin = new Padding(5, 5, 5, 0);
             BtnMat.Name = "BtnMat";
             BtnMat.Size = new Size(220, 153);
             BtnMat.TabIndex = 9;
@@ -119,7 +120,7 @@
             BtnCleanActive.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 238);
             BtnCleanActive.ForeColor = Color.White;
             BtnCleanActive.Location = new Point(482, 28);
-            BtnCleanActive.Margin = new Padding(3, 4, 3, 4);
+            BtnCleanActive.Margin = new Padding(5, 5, 5, 0);
             BtnCleanActive.Name = "BtnCleanActive";
             BtnCleanActive.Size = new Size(220, 153);
             BtnCleanActive.TabIndex = 10;
@@ -141,7 +142,7 @@
             BtnVarnish.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnVarnish.ForeColor = Color.White;
             BtnVarnish.Location = new Point(708, 28);
-            BtnVarnish.Margin = new Padding(3, 4, 3, 4);
+            BtnVarnish.Margin = new Padding(5, 5, 5, 0);
             BtnVarnish.Name = "BtnVarnish";
             BtnVarnish.Size = new Size(220, 153);
             BtnVarnish.TabIndex = 11;
@@ -163,7 +164,7 @@
             BtnGran.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
             BtnGran.ForeColor = Color.White;
             BtnGran.Location = new Point(934, 28);
-            BtnGran.Margin = new Padding(3, 4, 3, 4);
+            BtnGran.Margin = new Padding(5, 5, 22, 0);
             BtnGran.Name = "BtnGran";
             BtnGran.Size = new Size(220, 153);
             BtnGran.TabIndex = 12;
@@ -185,10 +186,10 @@
             BtnBack.FlatAppearance.BorderSize = 0;
             BtnBack.FlatStyle = FlatStyle.Flat;
             BtnBack.ForeColor = Color.White;
-            BtnBack.Location = new Point(13, 212);
-            BtnBack.Margin = new Padding(3, 4, 3, 4);
+            BtnBack.Location = new Point(35, 224);
+            BtnBack.Margin = new Padding(22, 0, 0, 0);
             BtnBack.Name = "BtnBack";
-            BtnBack.Size = new Size(91, 91);
+            BtnBack.Size = new Size(70, 70);
             BtnBack.TabIndex = 13;
             BtnBack.TextColor = Color.White;
             BtnBack.UseVisualStyleBackColor = false;
@@ -207,10 +208,10 @@
             BtnSearch.FlatAppearance.BorderSize = 0;
             BtnSearch.FlatStyle = FlatStyle.Flat;
             BtnSearch.ForeColor = Color.White;
-            BtnSearch.Location = new Point(1080, 212);
-            BtnSearch.Margin = new Padding(3, 4, 3, 4);
+            BtnSearch.Location = new Point(1079, 224);
+            BtnSearch.Margin = new Padding(0, 0, 22, 0);
             BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(91, 91);
+            BtnSearch.Size = new Size(70, 70);
             BtnSearch.TabIndex = 14;
             BtnSearch.TextColor = Color.White;
             BtnSearch.UseVisualStyleBackColor = false;
@@ -221,6 +222,7 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.PowderBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(cCechMenusM);
             panel1.Controls.Add(BtnVarnish);
             panel1.Controls.Add(BtnGran);
             panel1.Controls.Add(BtnBack);
@@ -260,7 +262,6 @@
             BtnMainFormsAdd.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
             BtnMainFormsAdd.ForeColor = Color.White;
             BtnMainFormsAdd.Location = new Point(41, 37);
-            BtnMainFormsAdd.Margin = new Padding(3, 4, 3, 4);
             BtnMainFormsAdd.Name = "BtnMainFormsAdd";
             BtnMainFormsAdd.Size = new Size(234, 131);
             BtnMainFormsAdd.TabIndex = 23;
@@ -282,7 +283,6 @@
             BtnParser.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold);
             BtnParser.ForeColor = Color.White;
             BtnParser.Location = new Point(41, 184);
-            BtnParser.Margin = new Padding(3, 4, 3, 4);
             BtnParser.Name = "BtnParser";
             BtnParser.Size = new Size(234, 131);
             BtnParser.TabIndex = 22;
@@ -306,7 +306,7 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.BackColor = Color.SlateGray;
             flowLayoutPanel1.Location = new Point(5, 11);
-            flowLayoutPanel1.Margin = new Padding(9, 11, 9, 11);
+            flowLayoutPanel1.Margin = new Padding(8);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(424, 993);
             flowLayoutPanel1.TabIndex = 22;
@@ -322,16 +322,23 @@
             panel3.Size = new Size(438, 1015);
             panel3.TabIndex = 24;
             // 
+            // cCechMenusM
+            // 
+            cCechMenusM.BackColor = Color.FromArgb(142, 220, 229);
+            cCechMenusM.Location = new Point(110, 181);
+            cCechMenusM.Margin = new Padding(0);
+            cCechMenusM.Name = "cCechMenusM";
+            cCechMenusM.Size = new Size(964, 50);
+            cCechMenusM.TabIndex = 15;
+            // 
             // MainUserControl
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Lavender;
             Controls.Add(panelMainShower);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(panel3);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "MainUserControl";
             Size = new Size(1920, 1015);
             panel1.ResumeLayout(false);
@@ -357,5 +364,6 @@
         private Panel panelMainShower;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel3;
+        private CCheckMenu.CCechMenus cCechMenusM;
     }
 }
