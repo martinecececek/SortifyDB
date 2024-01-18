@@ -51,6 +51,7 @@
             Controls.Add(dataGridUCOutput);
             Name = "UserControlOutPut";
             Size = new Size(1288, 506);
+            Load += UserControlOutPut_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridUCOutput).EndInit();
             ResumeLayout(false);
         }

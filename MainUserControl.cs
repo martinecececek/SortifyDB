@@ -13,7 +13,7 @@ namespace SortifyDB
         public void ChangeUI(UserControl userControl, Panel panel)
         {
             panel.Controls.Clear();
-            userControl.Location = new Point(5,5);
+            userControl.Location = new Point(5, 5);
             panel.Controls.Add(userControl);
         }
 
@@ -88,7 +88,7 @@ namespace SortifyDB
                             break;
                         }
 
-                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
 
                         break;
                     }
@@ -100,24 +100,45 @@ namespace SortifyDB
                             break;
                         }
 
-                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
 
 
                         break;
                     }
                 case "CisticeAktivatory":
                     {
-                        ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 case "KluzkeLaky":
                     {
-                        ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 case "Granulaty":
                     {
-                        ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 default:

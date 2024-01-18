@@ -23,6 +23,14 @@
             dataGridUCOutput.ReadOnly = true;
         }
 
+        private void UserControlOutPut_Load(object sender, EventArgs e)
+        {
+            dataGridUCOutput.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            dataGridUCOutput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+
         private readonly MainUserControl mainUserControl;
         readonly Panel panel;
         private readonly string typVypsaniListu;
@@ -81,12 +89,12 @@
         {
             try
             {
-                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= 0)
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex >= -1)
                 {
                     string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                     mainUserControl.AddToHistory("Projekty", findingParemater.ToString());
-                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel), panel);
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "P", panel, mainUserControl), panel);
                 }
             }
             catch
@@ -177,7 +185,7 @@
         {
             try
             {
-                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > -1)
                 {
                     DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dataGridUCOutput.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     string buttonText = buttonCell.Value.ToString();
@@ -192,7 +200,7 @@
 
                     mainUserControl.AddToHistory("Materialy", findingParemater);
 
-                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel), panel);
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "M", panel, mainUserControl), panel);
                 }
             }
             catch
@@ -271,6 +279,7 @@
             DataGridViewButtonColumn detailButtonColumn = new()
             {
                 HeaderText = "Detail",
+                Text = "Detail",
                 Name = "Detail",
                 UseColumnTextForButtonValue = true
             };
@@ -285,13 +294,13 @@
         {
             try
             {
-                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > -1)
                 {
-                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                     mainUserControl.AddToHistory("CisticeAktivatory", findingParemater);
 
-                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "C", panel), panel);
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "C", panel, mainUserControl), panel);
                 }
             }
             catch
@@ -373,6 +382,7 @@
             {
                 HeaderText = "Detail",
                 Name = "Detail",
+                Text = "Detail",
                 UseColumnTextForButtonValue = true
             };
             dataGridUCOutput.Columns.Add(detailButtonColumn);
@@ -386,13 +396,13 @@
         {
             try
             {
-                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > -1)
                 {
-                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                    mainUserControl.AddToHistory("CisticeAktivatory", findingParemater);
+                    mainUserControl.AddToHistory("KluzkeLaky", findingParemater);
 
-                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "G", panel), panel);
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "K", panel, mainUserControl), panel);
                 }
             }
             catch
@@ -505,6 +515,7 @@
             {
                 HeaderText = "Detail",
                 Name = "Detail",
+                Text = "Detail",
                 UseColumnTextForButtonValue = true
             };
             dataGridUCOutput.Columns.Add(detailButtonColumn);
@@ -514,18 +525,17 @@
             dataGridUCOutput.CellClick += dataGridOutputGranulat_CellClick;
         }
 
-
         private void dataGridOutputGranulat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+                if (dataGridUCOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > -1)
                 {
-                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string findingParemater = dataGridUCOutput.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                     mainUserControl.AddToHistory("Granulaty", findingParemater);
 
-                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "G", panel), panel);
+                    mainUserControl.ChangeUI(new UserControlDetail(findingParemater, "G", panel, mainUserControl), panel);
                 }
             }
             catch
@@ -535,5 +545,7 @@
         }
 
         #endregion
+
+
     }
 }
