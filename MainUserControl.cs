@@ -139,7 +139,34 @@ namespace SortifyDB
                 MessageBox.Show("Zadejte hledaný výraz");
                 return;
             }
+            else
+            {
+                switch (cCechMenus1.vyber)
+                {
+                    case 1:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                    case 2:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                    case 3:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                    case 4:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                    case 5:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                    case 0:
+                    default:
+                        MessageBox.Show(cCechMenus1.vyber.ToString());
+                        break;
+                }
+            }
 
+
+            /*
             //check if searchBox.Text is in any of granulaty
             if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||
                                                    granulat.Vyrobce == searchBox.Text ||
@@ -171,7 +198,7 @@ namespace SortifyDB
                                                  projekt.TL == searchBox.Text ||
                                                  projekt.IMDS == searchBox.Text))
             {
-
+                
             }
 
             //check if searchBox.Text is in any of materials
@@ -181,7 +208,7 @@ namespace SortifyDB
 
 
 
-            }
+            }*/
 
         }
 
