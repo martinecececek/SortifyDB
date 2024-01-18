@@ -16,13 +16,13 @@ namespace SortifyDB
         readonly Panel panel;
 
         private readonly string findBy;
-        private string whatOpen;
+        private readonly string whatOpen;
         private void UserControlDetail_Load(object sender, EventArgs e)
         {
             ListDataGridVypis();
 
-            dataGridProjectOutput.ReadOnly = true;
-            dataGridMaterialOutput.ReadOnly = true;
+            dataGridMainOutput.ReadOnly = true;
+            dataGridDetailOutput.ReadOnly = true;
         }
 
         private void ListDataGridVypis()
@@ -44,7 +44,7 @@ namespace SortifyDB
         {
             Material material = MainForm.Materials.Find(x => x.SAP == findBy);
 
-            dataGridProjectOutput.DataSource = material;
+            dataGridMainOutput.DataSource = material;
 
             #region add material data to dataGridProjectOutput by manually adding columns and rows
 
@@ -54,7 +54,7 @@ namespace SortifyDB
                 HeaderText = "SAP",
                 DataPropertyName = "SAP"
             };
-            dataGridProjectOutput.Columns.Add(sapColumn);
+            dataGridMainOutput.Columns.Add(sapColumn);
 
             DataGridViewTextBoxColumn nazevColumn = new()
             {
@@ -62,7 +62,7 @@ namespace SortifyDB
                 HeaderText = "Nazev",
                 DataPropertyName = "Nazev"
             };
-            dataGridProjectOutput.Columns.Add(nazevColumn);
+            dataGridMainOutput.Columns.Add(nazevColumn);
 
             DataGridViewTextBoxColumn typPripravkuColumn = new()
             {
@@ -70,20 +70,20 @@ namespace SortifyDB
                 HeaderText = "TypPripravku",
                 DataPropertyName = "TypPripravku"
             };
-            dataGridProjectOutput.Columns.Add(typPripravkuColumn);
+            dataGridMainOutput.Columns.Add(typPripravkuColumn);
 
             #endregion
 
             switch (material.TypPripravku)
             {
                 case "aktivátor/čistič":
-                    dataGridMaterialOutput.DataSource = MainForm.CisticeAktivatory.Find(x => x.SAP == findBy);
+                    dataGridDetailOutput.DataSource = MainForm.CisticeAktivatory.Find(x => x.SAP == findBy);
                     break;
                 case "polymer/lepidlo":
-                    dataGridMaterialOutput.DataSource = MainForm.Granulaty.Find(x => x.SAP == findBy);
+                    dataGridDetailOutput.DataSource = MainForm.Granulaty.Find(x => x.SAP == findBy);
                     break;
                 case "kluzný lak":
-                    dataGridMaterialOutput.DataSource = MainForm.KluzkeLaky.Find(x => x.SAP == findBy);
+                    dataGridDetailOutput.DataSource = MainForm.KluzkeLaky.Find(x => x.SAP == findBy);
                     break;
                 default:
                     break;
@@ -94,8 +94,8 @@ namespace SortifyDB
         {
             Projekt projekt = MainForm.Projekty.Find(x => x.TL == findBy);
 
-            dataGridProjectOutput.AutoGenerateColumns = false;
-            dataGridProjectOutput.DataSource = projekt;
+            dataGridMainOutput.AutoGenerateColumns = false;
+            dataGridMainOutput.DataSource = projekt;
 
             #region add project data to dataGridProjectOutput by manually adding columns and rows
 
@@ -105,7 +105,7 @@ namespace SortifyDB
                 HeaderText = "TL",
                 DataPropertyName = "TL"
             };
-            dataGridProjectOutput.Columns.Add(tlColumn);
+            dataGridMainOutput.Columns.Add(tlColumn);
 
             DataGridViewTextBoxColumn nazevColumn = new()
             {
@@ -113,7 +113,7 @@ namespace SortifyDB
                 HeaderText = "Nazev",
                 DataPropertyName = "Nazev"
             };
-            dataGridProjectOutput.Columns.Add(nazevColumn);
+            dataGridMainOutput.Columns.Add(nazevColumn);
 
             DataGridViewTextBoxColumn zkracenyPopisColumn = new()
             {
@@ -121,7 +121,7 @@ namespace SortifyDB
                 HeaderText = "ZkracenyPopis",
                 DataPropertyName = "ZkracenyPopis"
             };
-            dataGridProjectOutput.Columns.Add(zkracenyPopisColumn);
+            dataGridMainOutput.Columns.Add(zkracenyPopisColumn);
 
             DataGridViewTextBoxColumn skloColumn = new()
             {
@@ -129,7 +129,7 @@ namespace SortifyDB
                 HeaderText = "Sklo",
                 DataPropertyName = "Sklo"
             };
-            dataGridProjectOutput.Columns.Add(skloColumn);
+            dataGridMainOutput.Columns.Add(skloColumn);
 
             DataGridViewTextBoxColumn tempColumn = new()
             {
@@ -137,7 +137,7 @@ namespace SortifyDB
                 HeaderText = "Temp",
                 DataPropertyName = "Temp"
             };
-            dataGridProjectOutput.Columns.Add(tempColumn);
+            dataGridMainOutput.Columns.Add(tempColumn);
 
             DataGridViewTextBoxColumn trhColumn = new()
             {
@@ -145,7 +145,7 @@ namespace SortifyDB
                 HeaderText = "Trh",
                 DataPropertyName = "Trh"
             };
-            dataGridProjectOutput.Columns.Add(trhColumn);
+            dataGridMainOutput.Columns.Add(trhColumn);
 
             DataGridViewTextBoxColumn imdsColumn = new()
             {
@@ -153,12 +153,12 @@ namespace SortifyDB
                 HeaderText = "IMDS",
                 DataPropertyName = "IMDS"
             };
-            dataGridProjectOutput.Columns.Add(imdsColumn);
+            dataGridMainOutput.Columns.Add(imdsColumn);
 
 
             #endregion
 
-            dataGridMaterialOutput.DataSource = projekt.Materials;
+            dataGridDetailOutput.DataSource = projekt.Materials;
 
             DataGridViewButtonColumn detailButtonColumn = new()
             {
@@ -166,18 +166,18 @@ namespace SortifyDB
                 Text = "Detail",
                 UseColumnTextForButtonValue = true
             };
-            dataGridMaterialOutput.Columns.Add(detailButtonColumn);
+            dataGridDetailOutput.Columns.Add(detailButtonColumn);
 
-            dataGridMaterialOutput.CellClick += dataGridMaterialOutput_CellClick;
+            dataGridDetailOutput.CellClick += dataGridMaterialOutput_CellClick;
         }
 
         private void dataGridMaterialOutput_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             MainUserControl mainUserControl = new();
 
-            if (dataGridMaterialOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
+            if (dataGridDetailOutput.Columns[e.ColumnIndex].HeaderText == "Detail" && e.RowIndex > 0)
             {
-                string findingParemater = dataGridMaterialOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string findingParemater = dataGridDetailOutput.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 mainUserControl.AddToHistory("Materials", findingParemater);
 
