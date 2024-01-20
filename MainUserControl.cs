@@ -345,10 +345,15 @@ namespace SortifyDB
 
         private void CheckCheckBoxes(string parametr)
         {
-            foreach (CheckBox checkBox in searchByPanel.Controls)
+            foreach (Control control in searchByPanel.Controls)
             {
-                if (checkBox.Checked && checkBox.Name != parametr)
+                if (control is CheckBox checkBox)
                 {
+                    if (checkBox.Name == parametr)
+                    {
+                        continue;
+                    }
+
                     checkBox.Checked = false;
                 }
             }
