@@ -16,8 +16,6 @@ namespace SortifyDB
         private void MainUserControl_Load(object sender, EventArgs e)
         {
             MsTodoAPI.ExecuteAsync();
-
-
         }
 
         public void ChangeUI(UserControl userControl, Panel panel)
