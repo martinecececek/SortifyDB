@@ -552,18 +552,14 @@ namespace SortifyDB
 
         public void WriteProjektsFromSearch(List<Projekt> list)
         {
+            dataGridUCOutput.AutoGenerateColumns = false;
+
             ClearDataGrid();
 
             dataGridUCOutput.DataSource = list;
 
             #region columns
-            DataGridViewButtonColumn deleteButtonColumn = new()
-            {
-                HeaderText = "Detail",
-                Text = "Detail",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridUCOutput.Columns.Add(deleteButtonColumn);
+
             #endregion
 
             dataGridUCOutput.CellClick += dataGridOutputProject_CellClick;
@@ -571,44 +567,13 @@ namespace SortifyDB
 
         public void WriteMaterialsFromSearch(List<Material> list)
         {
+            dataGridUCOutput.AutoGenerateColumns = false;
+
             ClearDataGrid();
 
             dataGridUCOutput.DataSource = list;
 
-            #region columns
-            DataGridViewTextBoxColumn sapColumn = new()
-            {
-                Name = "SAP",
-                HeaderText = "SAP",
-                DataPropertyName = "SAP"
-            };
-            dataGridUCOutput.Columns.Add(sapColumn);
-
-            DataGridViewTextBoxColumn skloColumn = new()
-            {
-                Name = "Nazev",
-                HeaderText = "Název",
-                DataPropertyName = "Nazev"
-            };
-            dataGridUCOutput.Columns.Add(skloColumn);
-
-            DataGridViewTextBoxColumn tempColumn = new()
-            {
-                Name = "TypPripravku",
-                HeaderText = "Typ přípravku",
-                DataPropertyName = "TypPripravku"
-            };
-            dataGridUCOutput.Columns.Add(tempColumn);
-
-            DataGridViewButtonColumn detailButtonColumn = new()
-            {
-                HeaderText = "Detail",
-                Name = "Detail",
-            };
-            dataGridUCOutput.Columns.Add(detailButtonColumn);
-            #endregion
-
-            dataGridUCOutput.CellClick += dataGridOutputProject_CellClick;
+            dataGridUCOutput.CellClick += dataGridOutputMaterial_CellClick;
         }
 
         public void WriteLakyFromSearch(List<KluzkyLak> list)

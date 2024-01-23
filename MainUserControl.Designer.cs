@@ -246,6 +246,7 @@
             panel1.Controls.Add(BtnBack);
             panel1.Controls.Add(BtnCleanActive);
             panel1.Controls.Add(searchBox);
+            panel1.Controls.Add(panelColorCCMText);
             panel1.Controls.Add(BtnMat);
             panel1.Controls.Add(BtnSearch);
             panel1.Controls.Add(BtnProjekty);
@@ -263,7 +264,6 @@
             searchByPanel.Controls.Add(panelColorCCM4);
             searchByPanel.Controls.Add(panelColorCCM3);
             searchByPanel.Controls.Add(panelColorCCM2);
-            searchByPanel.Controls.Add(panelColorCCMText);
             searchByPanel.Location = new Point(109, 186);
             searchByPanel.Name = "searchByPanel";
             searchByPanel.Size = new Size(964, 50);
@@ -288,7 +288,7 @@
             checkBoxProjects.Location = new Point(23, 11);
             checkBoxProjects.Margin = new Padding(20, 0, 0, 10);
             checkBoxProjects.Name = "checkBoxProjects";
-            checkBoxProjects.Size = new Size(109, 32);
+            checkBoxProjects.Size = new Size(89, 25);
             checkBoxProjects.TabIndex = 5;
             checkBoxProjects.Text = "Projekty";
             checkBoxProjects.TextAlign = ContentAlignment.MiddleCenter;
@@ -314,7 +314,7 @@
             checkBoxGran.Location = new Point(21, 11);
             checkBoxGran.Margin = new Padding(10, 0, 0, 10);
             checkBoxGran.Name = "checkBoxGran";
-            checkBoxGran.Size = new Size(121, 32);
+            checkBoxGran.Size = new Size(98, 25);
             checkBoxGran.TabIndex = 9;
             checkBoxGran.Text = "Granuláty";
             checkBoxGran.TextAlign = ContentAlignment.MiddleCenter;
@@ -340,7 +340,7 @@
             checkBoxVarnish.Location = new Point(10, 11);
             checkBoxVarnish.Margin = new Padding(10, 0, 0, 10);
             checkBoxVarnish.Name = "checkBoxVarnish";
-            checkBoxVarnish.Size = new Size(136, 32);
+            checkBoxVarnish.Size = new Size(108, 25);
             checkBoxVarnish.TabIndex = 8;
             checkBoxVarnish.Text = "Kluzké laky";
             checkBoxVarnish.TextAlign = ContentAlignment.MiddleCenter;
@@ -366,7 +366,7 @@
             checkBoxCleanActive.Location = new Point(20, -3);
             checkBoxCleanActive.Margin = new Padding(20, 0, 0, 10);
             checkBoxCleanActive.Name = "checkBoxCleanActive";
-            checkBoxCleanActive.Size = new Size(125, 54);
+            checkBoxCleanActive.Size = new Size(100, 44);
             checkBoxCleanActive.TabIndex = 7;
             checkBoxCleanActive.Text = "Čističe\r\nAktivátory";
             checkBoxCleanActive.TextAlign = ContentAlignment.MiddleCenter;
@@ -392,7 +392,7 @@
             checkBoxMaterials.Location = new Point(20, 11);
             checkBoxMaterials.Margin = new Padding(20, 0, 0, 10);
             checkBoxMaterials.Name = "checkBoxMaterials";
-            checkBoxMaterials.Size = new Size(117, 32);
+            checkBoxMaterials.Size = new Size(97, 25);
             checkBoxMaterials.TabIndex = 6;
             checkBoxMaterials.Text = "Materiály";
             checkBoxMaterials.TextAlign = ContentAlignment.MiddleCenter;
@@ -403,7 +403,7 @@
             // 
             panelColorCCMText.BackColor = Color.FromArgb(142, 220, 229);
             panelColorCCMText.Controls.Add(labelCCMText);
-            panelColorCCMText.Location = new Point(0, 0);
+            panelColorCCMText.Location = new Point(111, 186);
             panelColorCCMText.Margin = new Padding(0);
             panelColorCCMText.Name = "panelColorCCMText";
             panelColorCCMText.Size = new Size(167, 50);
@@ -418,7 +418,7 @@
             labelCCMText.Location = new Point(0, 4);
             labelCCMText.Margin = new Padding(0);
             labelCCMText.Name = "labelCCMText";
-            labelCCMText.Size = new Size(164, 41);
+            labelCCMText.Size = new Size(133, 32);
             labelCCMText.TabIndex = 2;
             labelCCMText.Text = "Hledat dle:";
             labelCCMText.TextAlign = ContentAlignment.MiddleCenter;

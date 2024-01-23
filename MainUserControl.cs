@@ -160,7 +160,6 @@ namespace SortifyDB
 
         #endregion
 
-
         #region search
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -180,6 +179,8 @@ namespace SortifyDB
                     MessageBox.Show("Projekt nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
+
+                AddToHistory("Projekty", searchBox.Text);
 
                 UserControlOutPut userControlOutPut = new("P", panelMainShower, this);
 
@@ -343,46 +344,120 @@ namespace SortifyDB
 
         #endregion
 
-        private void CheckCheckBoxes(string parametr)
-        {
-            foreach (Control control in searchByPanel.Controls)
-            {
-                if (control is CheckBox checkBox)
-                {
-                    if (checkBox.Name == parametr)
-                    {
-                        continue;
-                    }
-
-                    checkBox.Checked = false;
-                }
-            }
-        }
-
         #region check boxes
         private void checkBoxProjects_CheckedChanged(object sender, EventArgs e)
         {
-            CheckCheckBoxes(this.Name);
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
         }
 
         private void checkBoxMaterials_CheckedChanged(object sender, EventArgs e)
         {
-            CheckCheckBoxes(this.Name);
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
         }
 
         private void checkBoxCleanActive_CheckedChanged(object sender, EventArgs e)
         {
-            CheckCheckBoxes(this.Name);
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
         }
 
         private void checkBoxVarnish_CheckedChanged(object sender, EventArgs e)
         {
-            CheckCheckBoxes(this.Name);
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
         }
 
         private void checkBoxGran_CheckedChanged(object sender, EventArgs e)
         {
-            CheckCheckBoxes(this.Name);
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
         }
         #endregion
 
