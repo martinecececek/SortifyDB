@@ -38,20 +38,19 @@
             panelColorUCD.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridProjectOutput
+            // dataGridMainOutput
             // 
             dataGridMainOutput.Anchor = AnchorStyles.Top;
             dataGridMainOutput.BackgroundColor = Color.CornflowerBlue;
             dataGridMainOutput.BorderStyle = BorderStyle.None;
             dataGridMainOutput.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridMainOutput.Location = new Point(20, 33);
-            dataGridDetailOutput.Margin = new Padding(20);
+            dataGridMainOutput.Location = new Point(20, 46);
             dataGridMainOutput.Name = "dataGridMainOutput";
             dataGridMainOutput.RowHeadersWidth = 51;
-            dataGridMainOutput.Size = new Size(1440, 88);
+            dataGridMainOutput.Size = new Size(1440, 71);
             dataGridMainOutput.TabIndex = 0;
             // 
-            // dataGridMaterialOutput
+            // dataGridDetailOutput
             // 
             dataGridDetailOutput.Anchor = AnchorStyles.Top;
             dataGridDetailOutput.BackgroundColor = Color.CornflowerBlue;
@@ -83,10 +82,10 @@
             labelUCDetailContains.AutoSize = true;
             labelUCDetailContains.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
             labelUCDetailContains.ForeColor = Color.White;
-            labelUCDetailContains.Location = new Point(20, 121);
+            labelUCDetailContains.Location = new Point(20, 109);
             labelUCDetailContains.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailContains.Name = "labelUCDetailContains";
-            labelUCDetailContains.Size = new Size(169, 30);
+            labelUCDetailContains.Size = new Size(220, 38);
             labelUCDetailContains.TabIndex = 1;
             labelUCDetailContains.Text = "PlaceholderText";
             // 
@@ -99,7 +98,7 @@
             labelUCDetailMainName.Location = new Point(20, 5);
             labelUCDetailMainName.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailMainName.Name = "labelUCDetailMainName";
-            labelUCDetailMainName.Size = new Size(169, 30);
+            labelUCDetailMainName.Size = new Size(220, 38);
             labelUCDetailMainName.TabIndex = 0;
             labelUCDetailMainName.Text = "PlaceholderText";
             // 

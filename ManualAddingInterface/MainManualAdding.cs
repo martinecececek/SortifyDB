@@ -337,5 +337,11 @@ namespace SortifyDB.ManualAddingInterface
         #endregion
 
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new();
+
+            mainForm.ChangeUI(new MainUserControl());
+        }
     }
 }

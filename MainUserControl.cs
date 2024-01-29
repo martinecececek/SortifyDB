@@ -1,4 +1,7 @@
-﻿using SortifyDB.PDF_parser;
+﻿using SortifyDB.ManualAddingInterface;
+using SortifyDB.Ms_Todo;
+using SortifyDB.Objects;
+using SortifyDB.PDF_parser;
 
 namespace SortifyDB
 {
@@ -10,10 +13,15 @@ namespace SortifyDB
             InitializeComponent();
         }
 
+        private void MainUserControl_Load(object sender, EventArgs e)
+        {
+            MsTodoAPI.ExecuteAsync();
+        }
+
         public void ChangeUI(UserControl userControl, Panel panel)
         {
             panel.Controls.Clear();
-            userControl.Location = new Point(5,5);
+            userControl.Location = new Point(5, 5);
             panel.Controls.Add(userControl);
         }
 
@@ -88,7 +96,7 @@ namespace SortifyDB
                             break;
                         }
 
-                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
 
                         break;
                     }
@@ -100,24 +108,45 @@ namespace SortifyDB
                             break;
                         }
 
-                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower), panelMainShower);
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
 
 
                         break;
                     }
                 case "CisticeAktivatory":
                     {
-                        ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("C", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 case "KluzkeLaky":
                     {
-                        ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("K", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 case "Granulaty":
                     {
-                        ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
+                        if (history.Last().Value == "All")
+                        {
+                            ChangeUI(new UserControlOutPut("G", panelMainShower, this), panelMainShower);
+                            break;
+                        }
+
+                        ChangeUI(new UserControlDetail(history.Last().Value, "P", panelMainShower, this), panelMainShower);
+
                         break;
                     }
                 default:
@@ -131,6 +160,7 @@ namespace SortifyDB
 
         #endregion
 
+        #region search
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             if (searchBox.Text == string.Empty)
@@ -139,83 +169,305 @@ namespace SortifyDB
                 MessageBox.Show("Zadejte hledaný výraz");
                 return;
             }
-            else
+
+            if (checkBoxProjects.Checked)
             {
-                switch (cCechMenus1.vyber)
+                List<Projekt> projetky = SearchInProjects();
+
+                if (projetky.Count == 0)
                 {
-                    case 1:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
-                    case 2:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
-                    case 3:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
-                    case 4:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
-                    case 5:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
-                    case 0:
-                    default:
-                        MessageBox.Show(cCechMenus1.vyber.ToString());
-                        break;
+                    MessageBox.Show("Projekt nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                AddToHistory("Projekty", searchBox.Text);
+
+                UserControlOutPut userControlOutPut = new("P", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteProjektsFromSearch(projetky);
+            }
+
+
+            if (checkBoxMaterials.Checked)
+            {
+                List<Material> materials = SearchInMaterials();
+
+                if (materials.Count == 0)
+                {
+                    MessageBox.Show("Material nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("M", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteMaterialsFromSearch(materials);
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                List<CisiticAktivator> cisiticAktivators = SearchInCistice();
+
+                if (cisiticAktivators.Count == 0)
+                {
+                    MessageBox.Show("Čistič nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("C", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteCisticeFromSearch(cisiticAktivators);
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                List<KluzkyLak> kluzkyLaks = SearchInVarnish();
+
+                if (kluzkyLaks.Count == 0)
+                {
+                    MessageBox.Show("Lak nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("K", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteLakyFromSearch(kluzkyLaks);
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                List<Granulat> granulats = SearchInGranulat();
+
+                if (granulats.Count == 0)
+                {
+                    MessageBox.Show("Granulat nebyl nalezen", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                UserControlOutPut userControlOutPut = new("G", panelMainShower, this);
+
+                ChangeUI(userControlOutPut, panelMainShower);
+
+                userControlOutPut.WriteGranulatyFromSearch(granulats);
+            }
+
+        }
+
+        #region search in
+        private List<Projekt> SearchInProjects()
+        {
+            List<Projekt> projects = [];
+
+            foreach (Projekt projekt in MainForm.Projekty)
+            {
+                if (projekt.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    projekt.TL.ToLower() == searchBox.Text.ToLower() ||
+                    projekt.IMDS == searchBox.Text)
+                {
+                    projects.Add(projekt);
                 }
             }
 
-
-            /*
-            //check if searchBox.Text is in any of granulaty
-            if (MainForm.Granulaty.Any(granulat => granulat.Nazev == searchBox.Text ||
-                                                   granulat.Vyrobce == searchBox.Text ||
-                                                   granulat.Typ == searchBox.Text))
-            {
-
-
-
-
-
-            }
-
-            //check if searchBox.Text is in any of kluzke laky
-            if (MainForm.KluzkeLaky.Any(lak => lak.Nazev == searchBox.Text ||
-                                               lak.Vyrobce == searchBox.Text))
-            {
-
-            }
-
-            //check if searchBox.Text is in any of cistice aktivatory
-            if (MainForm.CisticeAktivatory.Any(cistice => cistice.Nazev == searchBox.Text ||
-                                                          cistice.Vyrobce == searchBox.Text))
-            {
-
-            }
-
-            //check if searchBox.Text is in any of projects
-            if (MainForm.Projekty.Any(projekt => projekt.Nazev == searchBox.Text ||
-                                                 projekt.TL == searchBox.Text ||
-                                                 projekt.IMDS == searchBox.Text))
-            {
-                
-            }
-
-            //check if searchBox.Text is in any of materials
-            if (MainForm.Materials.Any(material => material.Nazev == searchBox.Text ||
-                                                   material.SAP == searchBox.Text))
-            {
-
-
-
-            }*/
-
+            return projects;
         }
+
+        private List<Material> SearchInMaterials()
+        {
+            List<Material> materials = [];
+
+            foreach (Material material in MainForm.Materials)
+            {
+                if (material.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    material.SAP == searchBox.Text)
+                {
+                    materials.Add(material);
+                }
+            }
+
+            return materials;
+        }
+
+        private List<CisiticAktivator> SearchInCistice()
+        {
+            List<CisiticAktivator> cisiticAktivators = [];
+
+            foreach (CisiticAktivator cisiticAktivator in MainForm.CisticeAktivatory)
+            {
+                if (cisiticAktivator.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                    cisiticAktivator.SAP == searchBox.Text)
+                {
+                    cisiticAktivators.Add(cisiticAktivator);
+                }
+            }
+
+            return cisiticAktivators;
+        }
+
+        private List<KluzkyLak> SearchInVarnish()
+        {
+            List<KluzkyLak> kluzkeLaks = [];
+
+            foreach (KluzkyLak kluzkeLak in MainForm.KluzkeLaky)
+            {
+                if (kluzkeLak.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                                       kluzkeLak.SAP == searchBox.Text)
+                {
+                    kluzkeLaks.Add(kluzkeLak);
+                }
+            }
+
+            return kluzkeLaks;
+        }
+
+        private List<Granulat> SearchInGranulat()
+        {
+            List<Granulat> granulats = [];
+
+            foreach (Granulat granulat in MainForm.Granulaty)
+            {
+                if (granulat.Nazev.ToLower() == searchBox.Text.ToLower() ||
+                                       granulat.SAP == searchBox.Text)
+                {
+                    granulats.Add(granulat);
+                }
+            }
+
+            return granulats;
+        }
+
+        #endregion
+
+        #region check boxes
+        private void checkBoxProjects_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
+        }
+
+        private void checkBoxMaterials_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
+        }
+
+        private void checkBoxCleanActive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
+        }
+
+        private void checkBoxVarnish_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxGran.Checked)
+            {
+                checkBoxGran.Checked = false;
+            }
+        }
+
+        private void checkBoxGran_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxProjects.Checked)
+            {
+                checkBoxProjects.Checked = false;
+            }
+
+            if (checkBoxMaterials.Checked)
+            {
+                checkBoxMaterials.Checked = false;
+            }
+
+            if (checkBoxCleanActive.Checked)
+            {
+                checkBoxCleanActive.Checked = false;
+            }
+
+            if (checkBoxVarnish.Checked)
+            {
+                checkBoxVarnish.Checked = false;
+            }
+        }
+        #endregion
+
+        #endregion
 
         #region open 3th party 
         private void BtnMainFormsAdd_Click(object sender, EventArgs e)
         {
-
+            MainForm mainForm = new();
+            mainForm.ChangeUI(new MainManualAdding());
         }
 
         private void BtnParser_Click(object sender, EventArgs e)
@@ -223,8 +475,8 @@ namespace SortifyDB
             PdfParsing.ParsePDF();
         }
         #endregion
+
+
+
     }
-
-
-
 }
