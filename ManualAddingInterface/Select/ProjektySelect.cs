@@ -64,9 +64,9 @@ namespace TechnoWizz.ManualAddingForm.Select
             {
                 DataGridViewRow selectedRow = dataGridProject.Rows[e.RowIndex];
 
-                string tlValue = (string)selectedRow.Cells["TL"].Value;
-                string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string imdsValue = (string)selectedRow.Cells["IMDS"].Value;
+                string tlValue = (string)selectedRow.Cells["tlColumn"].Value;
+                string nameValue = (string)selectedRow.Cells["nameColumn"].Value;
+                string imdsValue = (string)selectedRow.Cells["imdsColumn"].Value;
 
                 int positioInList;
                 try

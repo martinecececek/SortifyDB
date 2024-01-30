@@ -269,6 +269,7 @@
             btnProjekt.TabIndex = 5;
             btnProjekt.Text = "Projekt";
             btnProjekt.UseVisualStyleBackColor = false;
+            btnProjekt.Click += btnProjekt_Click;
             // 
             // panel6
             // 
@@ -701,6 +702,7 @@
             // 
             // projectTimer
             // 
+            projectTimer.Interval = 10;
             projectTimer.Tick += projectTimer_Tick;
             // 
             // granulatyTimer

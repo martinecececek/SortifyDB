@@ -100,10 +100,16 @@ namespace SortifyDB
 
             string tl = todoTask.TL;
 
+            MessageBox.Show(tl);
+
             MainManualAdding mainManualAdding = new();
             ChangeMainFormUI(mainManualAdding);
 
-            mainManualAdding.ChangeUI(new ProjektyEdit(MainForm.Projekty.Find(x => x.TL == tl)));
+            Projekt projekt = MainForm.Projekty.Find(x => x.TL == tl);
+
+            MessageBox.Show(projekt.TL);
+
+            mainManualAdding.ChangeUI(new ProjektyEdit(projekt));
         }
 
         #endregion

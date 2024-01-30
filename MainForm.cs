@@ -50,7 +50,7 @@ namespace SortifyDB
                     materials.Add(Materials[random.Next(0, Materials.Count)]);
                 }
 
-                Projekt projekt = new("TL" + i, "Nazev" + i, materials, "ZkracenyPopis" + i, "Sklo" + i, "Temp" + i, "Trh" + i, "IMDS" + i);
+                Projekt projekt = new(i.ToString(), "Nazev" + i, materials, "ZkracenyPopis" + i, "Sklo" + i, "Temp" + i, "Trh" + i, "IMDS" + i);
                 Projekty.Add(projekt);
             }
 

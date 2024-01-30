@@ -32,25 +32,25 @@
             bntDeleteMaterial = new Button();
             btnAddMaterial = new Button();
             materialsContainers = new FlowLayoutPanel();
-            textBox5 = new TextBox();
+            txtTrh = new TextBox();
             label5 = new Label();
             tableLayoutPanel6 = new TableLayoutPanel();
-            textBox4 = new TextBox();
+            txtIMDS = new TextBox();
             label4 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
-            textBox2 = new TextBox();
+            txtSklo = new TextBox();
             label2 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
-            textBox1 = new TextBox();
+            txtTemp = new TextBox();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            textBox7 = new TextBox();
+            txtTL = new TextBox();
             label7 = new Label();
             tableLayoutPanel8 = new TableLayoutPanel();
-            textBox6 = new TextBox();
+            txtPopis = new TextBox();
             label6 = new Label();
             tableLayoutPanel7 = new TableLayoutPanel();
-            textBox3 = new TextBox();
+            txtName = new TextBox();
             label3 = new Label();
             tableLayoutPanel4 = new TableLayoutPanel();
             btnSave = new Button();
@@ -110,15 +110,16 @@
             materialsContainers.Size = new Size(292, 474);
             materialsContainers.TabIndex = 29;
             // 
-            // textBox5
+            // txtTrh
             // 
-            textBox5.Dock = DockStyle.Fill;
-            textBox5.Location = new Point(4, 37);
-            textBox5.Margin = new Padding(4, 3, 4, 3);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(348, 60);
-            textBox5.TabIndex = 0;
+            txtTrh.Dock = DockStyle.Fill;
+            txtTrh.Font = new Font("Segoe UI", 18F);
+            txtTrh.Location = new Point(4, 37);
+            txtTrh.Margin = new Padding(4, 3, 4, 3);
+            txtTrh.Multiline = true;
+            txtTrh.Name = "txtTrh";
+            txtTrh.Size = new Size(348, 60);
+            txtTrh.TabIndex = 0;
             // 
             // label5
             // 
@@ -137,7 +138,7 @@
             tableLayoutPanel6.ColumnCount = 1;
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.Controls.Add(textBox5, 0, 1);
+            tableLayoutPanel6.Controls.Add(txtTrh, 0, 1);
             tableLayoutPanel6.Controls.Add(label5, 0, 0);
             tableLayoutPanel6.Location = new Point(52, 588);
             tableLayoutPanel6.Margin = new Padding(35, 3, 4, 3);
@@ -148,15 +149,16 @@
             tableLayoutPanel6.Size = new Size(356, 100);
             tableLayoutPanel6.TabIndex = 27;
             // 
-            // textBox4
+            // txtIMDS
             // 
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(4, 37);
-            textBox4.Margin = new Padding(4, 3, 4, 3);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(348, 60);
-            textBox4.TabIndex = 0;
+            txtIMDS.Dock = DockStyle.Fill;
+            txtIMDS.Font = new Font("Segoe UI", 18F);
+            txtIMDS.Location = new Point(4, 37);
+            txtIMDS.Margin = new Padding(4, 3, 4, 3);
+            txtIMDS.Multiline = true;
+            txtIMDS.Name = "txtIMDS";
+            txtIMDS.Size = new Size(348, 60);
+            txtIMDS.TabIndex = 0;
             // 
             // label4
             // 
@@ -175,7 +177,7 @@
             tableLayoutPanel5.ColumnCount = 1;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Controls.Add(textBox4, 0, 1);
+            tableLayoutPanel5.Controls.Add(txtIMDS, 0, 1);
             tableLayoutPanel5.Controls.Add(label4, 0, 0);
             tableLayoutPanel5.Location = new Point(52, 692);
             tableLayoutPanel5.Margin = new Padding(35, 3, 4, 3);
@@ -186,15 +188,16 @@
             tableLayoutPanel5.Size = new Size(356, 100);
             tableLayoutPanel5.TabIndex = 28;
             // 
-            // textBox2
+            // txtSklo
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(4, 37);
-            textBox2.Margin = new Padding(4, 3, 4, 3);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(348, 60);
-            textBox2.TabIndex = 0;
+            txtSklo.Dock = DockStyle.Fill;
+            txtSklo.Font = new Font("Segoe UI", 18F);
+            txtSklo.Location = new Point(4, 37);
+            txtSklo.Margin = new Padding(4, 3, 4, 3);
+            txtSklo.Multiline = true;
+            txtSklo.Name = "txtSklo";
+            txtSklo.Size = new Size(348, 60);
+            txtSklo.TabIndex = 0;
             // 
             // label2
             // 
@@ -213,7 +216,7 @@
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(textBox2, 0, 1);
+            tableLayoutPanel3.Controls.Add(txtSklo, 0, 1);
             tableLayoutPanel3.Controls.Add(label2, 0, 0);
             tableLayoutPanel3.Location = new Point(52, 381);
             tableLayoutPanel3.Margin = new Padding(35, 3, 4, 3);
@@ -225,15 +228,16 @@
             tableLayoutPanel3.Size = new Size(356, 100);
             tableLayoutPanel3.TabIndex = 25;
             // 
-            // textBox1
+            // txtTemp
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(4, 37);
-            textBox1.Margin = new Padding(4, 3, 4, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(348, 60);
-            textBox1.TabIndex = 0;
+            txtTemp.Dock = DockStyle.Fill;
+            txtTemp.Font = new Font("Segoe UI", 18F);
+            txtTemp.Location = new Point(4, 37);
+            txtTemp.Margin = new Padding(4, 3, 4, 3);
+            txtTemp.Multiline = true;
+            txtTemp.Name = "txtTemp";
+            txtTemp.Size = new Size(348, 60);
+            txtTemp.TabIndex = 0;
             // 
             // label1
             // 
@@ -252,7 +256,7 @@
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(textBox1, 0, 1);
+            tableLayoutPanel2.Controls.Add(txtTemp, 0, 1);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
             tableLayoutPanel2.Location = new Point(52, 485);
             tableLayoutPanel2.Margin = new Padding(35, 3, 4, 3);
@@ -263,15 +267,16 @@
             tableLayoutPanel2.Size = new Size(356, 100);
             tableLayoutPanel2.TabIndex = 26;
             // 
-            // textBox7
+            // txtTL
             // 
-            textBox7.Dock = DockStyle.Fill;
-            textBox7.Location = new Point(4, 37);
-            textBox7.Margin = new Padding(4, 3, 4, 3);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(348, 60);
-            textBox7.TabIndex = 0;
+            txtTL.Dock = DockStyle.Fill;
+            txtTL.Font = new Font("Segoe UI", 18F);
+            txtTL.Location = new Point(4, 37);
+            txtTL.Margin = new Padding(4, 3, 4, 3);
+            txtTL.Multiline = true;
+            txtTL.Name = "txtTL";
+            txtTL.Size = new Size(348, 60);
+            txtTL.TabIndex = 0;
             // 
             // label7
             // 
@@ -290,7 +295,7 @@
             tableLayoutPanel8.ColumnCount = 1;
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel8.Controls.Add(textBox7, 0, 1);
+            tableLayoutPanel8.Controls.Add(txtTL, 0, 1);
             tableLayoutPanel8.Controls.Add(label7, 0, 0);
             tableLayoutPanel8.Location = new Point(52, 69);
             tableLayoutPanel8.Margin = new Padding(52, 69, 4, 3);
@@ -301,15 +306,16 @@
             tableLayoutPanel8.Size = new Size(356, 100);
             tableLayoutPanel8.TabIndex = 23;
             // 
-            // textBox6
+            // txtPopis
             // 
-            textBox6.Dock = DockStyle.Fill;
-            textBox6.Location = new Point(4, 37);
-            textBox6.Margin = new Padding(4, 3, 4, 3);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(348, 60);
-            textBox6.TabIndex = 0;
+            txtPopis.Dock = DockStyle.Fill;
+            txtPopis.Font = new Font("Segoe UI", 18F);
+            txtPopis.Location = new Point(4, 37);
+            txtPopis.Margin = new Padding(4, 3, 4, 3);
+            txtPopis.Multiline = true;
+            txtPopis.Name = "txtPopis";
+            txtPopis.Size = new Size(348, 60);
+            txtPopis.TabIndex = 0;
             // 
             // label6
             // 
@@ -328,7 +334,7 @@
             tableLayoutPanel7.ColumnCount = 1;
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel7.Controls.Add(textBox6, 0, 1);
+            tableLayoutPanel7.Controls.Add(txtPopis, 0, 1);
             tableLayoutPanel7.Controls.Add(label6, 0, 0);
             tableLayoutPanel7.Location = new Point(52, 277);
             tableLayoutPanel7.Margin = new Padding(35, 3, 4, 3);
@@ -339,15 +345,16 @@
             tableLayoutPanel7.Size = new Size(356, 100);
             tableLayoutPanel7.TabIndex = 24;
             // 
-            // textBox3
+            // txtName
             // 
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(4, 37);
-            textBox3.Margin = new Padding(4, 3, 4, 3);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(348, 60);
-            textBox3.TabIndex = 0;
+            txtName.Dock = DockStyle.Fill;
+            txtName.Font = new Font("Segoe UI", 18F);
+            txtName.Location = new Point(4, 37);
+            txtName.Margin = new Padding(4, 3, 4, 3);
+            txtName.Multiline = true;
+            txtName.Name = "txtName";
+            txtName.Size = new Size(348, 60);
+            txtName.TabIndex = 0;
             // 
             // label3
             // 
@@ -366,7 +373,7 @@
             tableLayoutPanel4.ColumnCount = 1;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(textBox3, 0, 1);
+            tableLayoutPanel4.Controls.Add(txtName, 0, 1);
             tableLayoutPanel4.Controls.Add(label3, 0, 0);
             tableLayoutPanel4.Location = new Point(52, 173);
             tableLayoutPanel4.Margin = new Padding(35, 3, 4, 3);
@@ -388,6 +395,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Uložit";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -400,6 +408,7 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Zrušit";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // panel1
             // 
@@ -446,6 +455,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "ProjektyEdit";
             Size = new Size(1620, 1015);
+            Load += ProjektyEdit_Load;
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel6.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
@@ -472,25 +482,25 @@
         private System.Windows.Forms.Button bntDeleteMaterial;
         private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.FlowLayoutPanel materialsContainers;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTrh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtIMDS;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSklo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtTL;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPopis;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnSave;

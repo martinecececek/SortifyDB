@@ -67,7 +67,7 @@ namespace TechnoWizz.ManualAddingForm.Select
                 DataGridViewRow selectedRow = dataGridGranulat.Rows[e.RowIndex];
 
                 string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string sapValue = (string)selectedRow.Cells["Pouziti"].Value;
+                string sapValue = (string)selectedRow.Cells["SAP"].Value;
                 string vyrobceValue = (string)selectedRow.Cells["Vyrobce"].Value;
 
                 foreach (Granulat lak in MainForm.Granulaty)

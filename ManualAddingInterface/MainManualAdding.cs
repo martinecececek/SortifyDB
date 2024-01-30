@@ -160,6 +160,10 @@ namespace SortifyDB.ManualAddingInterface
                 }
             }
         }
+        private void btnProjekt_Click(object sender, EventArgs e)
+        {
+            projectTimer.Start();
+        }
 
         private void btnAddProjekt_Click(object sender, EventArgs e)
         {
@@ -356,5 +360,7 @@ namespace SortifyDB.ManualAddingInterface
 
             }
         }
+
+
     }
 }
