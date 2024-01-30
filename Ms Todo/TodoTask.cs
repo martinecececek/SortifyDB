@@ -4,9 +4,19 @@
     {
         public void ExtractTlFromTitle()
         {
-            string[] splited = Title.Split('_');
+            string extracted = null;
 
-            TL = splited[0];
+            for (int i = 7; i < Title.Length; i++)
+            {
+                if (Title[i] == '_')
+                {
+                    break;
+                }
+
+                extracted += Title[i];
+            }
+
+            TL = extracted.ToString();
         }
 
         public string TL { get; set; }
