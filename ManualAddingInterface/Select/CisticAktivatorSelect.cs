@@ -81,7 +81,17 @@ namespace TechnoWizz.ManualAddingForm.Select
                         MainManualAdding mainForm = new();
 
                         CisticAktivatorEdit editinglak = new(cistic);
-                        mainForm.ClearUserControl();
+
+                        Control currentControl = this;
+                        while (currentControl != null)
+                        {
+                            if (currentControl is MainManualAdding main)
+                            {
+                                main.ChangeUI(editinglak);
+                                break;
+                            }
+                            currentControl = currentControl.Parent; // Move up to the next parent control
+                        }
 
                     }
                 }

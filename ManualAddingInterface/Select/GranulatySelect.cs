@@ -78,10 +78,18 @@ namespace TechnoWizz.ManualAddingForm.Select
                     {
                         textBoxSearch.Text = null;
 
-                        MainManualAdding mainForm = new();
-
                         GranulatEdit editingGranulat = new(lak);
-                        mainForm.ChangeUI(editingGranulat);
+
+                        Control currentControl = this;
+                        while (currentControl != null)
+                        {
+                            if (currentControl is MainManualAdding main)
+                            {
+                                main.ChangeUI(editingGranulat);
+                                break;
+                            }
+                            currentControl = currentControl.Parent; // Move up to the next parent control
+                        }
 
                     }
                 }

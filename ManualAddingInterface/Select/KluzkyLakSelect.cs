@@ -81,7 +81,17 @@ namespace TechnoWizz.ManualAddingForm.Select
                         MainManualAdding mainManualAdding = new();
 
                         KluzkyLakEdit editinglak = new(lak);
-                        mainManualAdding.ChangeUI(editinglak);
+
+                        Control currentControl = this;
+                        while (currentControl != null)
+                        {
+                            if (currentControl is MainManualAdding main)
+                            {
+                                main.ChangeUI(editinglak);
+                                break;
+                            }
+                            currentControl = currentControl.Parent; // Move up to the next parent control
+                        }
                     }
 
                 }

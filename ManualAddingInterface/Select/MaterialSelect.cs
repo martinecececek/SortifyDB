@@ -52,8 +52,17 @@ namespace TechnoWizz.ManualAddingForm.Select
                 MainManualAdding mainForm = new();
 
                 txtBoxSearch.Text = string.Empty;
-                mainForm.ChangeUI(editingMaterial);
 
+                Control currentControl = this;
+                while (currentControl != null)
+                {
+                    if (currentControl is MainManualAdding main)
+                    {
+                        main.ChangeUI(editingMaterial);
+                        break;
+                    }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
+                }
             }
         }
 

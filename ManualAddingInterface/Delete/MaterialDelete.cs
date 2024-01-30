@@ -63,7 +63,6 @@ namespace TechnoWizz.ManualAddingForm.Delete
                     {
                         if (currentControl is MainManualAdding main)
                         {
-                            MessageBox.Show("Parent is MainManualAdding", "Smazán", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             main.ClearUserControl();
                             break; // Exit the loop once the MainManualAdding form is found and actions are performed
                         }

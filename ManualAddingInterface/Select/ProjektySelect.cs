@@ -104,7 +104,17 @@ namespace TechnoWizz.ManualAddingForm.Select
                             MainManualAdding mainForm = new();
 
                             ProjektyEdit editingProject = new(project);
-                            mainForm.ChangeUI(editingProject);
+
+                            Control currentControl = this;
+                            while (currentControl != null)
+                            {
+                                if (currentControl is MainManualAdding main)
+                                {
+                                    main.ChangeUI(editingProject);
+                                    break;
+                                }
+                                currentControl = currentControl.Parent; // Move up to the next parent control
+                            }
 
                         }
                     }
