@@ -32,7 +32,6 @@ namespace SortifyDB
             dataGridMainOutput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridDetailOutput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            dataGridDetailOutput.DefaultCellStyle.Font = new Font("Segoe UI", 10);
         }
 
         private void ListDataGridVypis()
