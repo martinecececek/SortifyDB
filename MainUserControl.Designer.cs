@@ -39,6 +39,8 @@
             BtnBack = new Cbtn.CBtn();
             BtnSearch = new Cbtn.CBtn();
             panel1 = new Panel();
+            panelColorCCMText = new Panel();
+            labelCCMText = new Label();
             searchByPanel = new Panel();
             panelColorCCM1 = new Panel();
             checkBoxProjects = new CheckBox();
@@ -50,22 +52,20 @@
             checkBoxCleanActive = new CheckBox();
             panelColorCCM2 = new Panel();
             checkBoxMaterials = new CheckBox();
-            panelColorCCMText = new Panel();
-            labelCCMText = new Label();
             panel2 = new Panel();
             BtnMainFormsAdd = new Cbtn.CBtn();
             BtnParser = new Cbtn.CBtn();
             panelMainShower = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanelToDo = new FlowLayoutPanel();
             panel3 = new Panel();
             panel1.SuspendLayout();
+            panelColorCCMText.SuspendLayout();
             searchByPanel.SuspendLayout();
             panelColorCCM1.SuspendLayout();
             panelColorCCM5.SuspendLayout();
             panelColorCCM4.SuspendLayout();
             panelColorCCM3.SuspendLayout();
             panelColorCCM2.SuspendLayout();
-            panelColorCCMText.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -257,6 +257,30 @@
             panel1.Size = new Size(1182, 331);
             panel1.TabIndex = 19;
             // 
+            // panelColorCCMText
+            // 
+            panelColorCCMText.BackColor = Color.FromArgb(142, 220, 229);
+            panelColorCCMText.Controls.Add(labelCCMText);
+            panelColorCCMText.Location = new Point(111, 186);
+            panelColorCCMText.Margin = new Padding(0);
+            panelColorCCMText.Name = "panelColorCCMText";
+            panelColorCCMText.Size = new Size(167, 50);
+            panelColorCCMText.TabIndex = 12;
+            // 
+            // labelCCMText
+            // 
+            labelCCMText.AutoSize = true;
+            labelCCMText.BackColor = Color.Transparent;
+            labelCCMText.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelCCMText.ForeColor = Color.White;
+            labelCCMText.Location = new Point(16, 9);
+            labelCCMText.Margin = new Padding(0);
+            labelCCMText.Name = "labelCCMText";
+            labelCCMText.Size = new Size(133, 32);
+            labelCCMText.TabIndex = 2;
+            labelCCMText.Text = "Hledat dle:";
+            labelCCMText.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // searchByPanel
             // 
             searchByPanel.Controls.Add(panelColorCCM1);
@@ -285,7 +309,7 @@
             checkBoxProjects.AutoSize = true;
             checkBoxProjects.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             checkBoxProjects.ForeColor = Color.White;
-            checkBoxProjects.Location = new Point(23, 11);
+            checkBoxProjects.Location = new Point(38, 11);
             checkBoxProjects.Margin = new Padding(20, 0, 0, 10);
             checkBoxProjects.Name = "checkBoxProjects";
             checkBoxProjects.Size = new Size(89, 25);
@@ -311,7 +335,7 @@
             checkBoxGran.AutoSize = true;
             checkBoxGran.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             checkBoxGran.ForeColor = Color.White;
-            checkBoxGran.Location = new Point(21, 11);
+            checkBoxGran.Location = new Point(30, 9);
             checkBoxGran.Margin = new Padding(10, 0, 0, 10);
             checkBoxGran.Name = "checkBoxGran";
             checkBoxGran.Size = new Size(98, 25);
@@ -337,7 +361,7 @@
             checkBoxVarnish.AutoSize = true;
             checkBoxVarnish.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             checkBoxVarnish.ForeColor = Color.White;
-            checkBoxVarnish.Location = new Point(10, 11);
+            checkBoxVarnish.Location = new Point(25, 11);
             checkBoxVarnish.Margin = new Padding(10, 0, 0, 10);
             checkBoxVarnish.Name = "checkBoxVarnish";
             checkBoxVarnish.Size = new Size(108, 25);
@@ -363,7 +387,7 @@
             checkBoxCleanActive.AutoSize = true;
             checkBoxCleanActive.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 238);
             checkBoxCleanActive.ForeColor = Color.White;
-            checkBoxCleanActive.Location = new Point(20, -3);
+            checkBoxCleanActive.Location = new Point(30, 2);
             checkBoxCleanActive.Margin = new Padding(20, 0, 0, 10);
             checkBoxCleanActive.Name = "checkBoxCleanActive";
             checkBoxCleanActive.Size = new Size(100, 44);
@@ -389,7 +413,7 @@
             checkBoxMaterials.AutoSize = true;
             checkBoxMaterials.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             checkBoxMaterials.ForeColor = Color.White;
-            checkBoxMaterials.Location = new Point(20, 11);
+            checkBoxMaterials.Location = new Point(31, 11);
             checkBoxMaterials.Margin = new Padding(20, 0, 0, 10);
             checkBoxMaterials.Name = "checkBoxMaterials";
             checkBoxMaterials.Size = new Size(97, 25);
@@ -398,30 +422,6 @@
             checkBoxMaterials.TextAlign = ContentAlignment.MiddleCenter;
             checkBoxMaterials.UseVisualStyleBackColor = true;
             checkBoxMaterials.CheckedChanged += checkBoxMaterials_CheckedChanged;
-            // 
-            // panelColorCCMText
-            // 
-            panelColorCCMText.BackColor = Color.FromArgb(142, 220, 229);
-            panelColorCCMText.Controls.Add(labelCCMText);
-            panelColorCCMText.Location = new Point(111, 186);
-            panelColorCCMText.Margin = new Padding(0);
-            panelColorCCMText.Name = "panelColorCCMText";
-            panelColorCCMText.Size = new Size(167, 50);
-            panelColorCCMText.TabIndex = 12;
-            // 
-            // labelCCMText
-            // 
-            labelCCMText.AutoSize = true;
-            labelCCMText.BackColor = Color.Transparent;
-            labelCCMText.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelCCMText.ForeColor = Color.White;
-            labelCCMText.Location = new Point(0, 4);
-            labelCCMText.Margin = new Padding(0);
-            labelCCMText.Name = "labelCCMText";
-            labelCCMText.Size = new Size(133, 32);
-            labelCCMText.TabIndex = 2;
-            labelCCMText.Text = "Hledat dle:";
-            labelCCMText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -487,21 +487,21 @@
             panelMainShower.Size = new Size(1482, 685);
             panelMainShower.TabIndex = 25;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelToDo
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top;
-            flowLayoutPanel1.BackColor = Color.SlateGray;
-            flowLayoutPanel1.Location = new Point(5, 11);
-            flowLayoutPanel1.Margin = new Padding(8);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(424, 993);
-            flowLayoutPanel1.TabIndex = 22;
+            flowLayoutPanelToDo.Anchor = AnchorStyles.Top;
+            flowLayoutPanelToDo.BackColor = Color.SlateGray;
+            flowLayoutPanelToDo.Location = new Point(5, 11);
+            flowLayoutPanelToDo.Margin = new Padding(8);
+            flowLayoutPanelToDo.Name = "flowLayoutPanelToDo";
+            flowLayoutPanelToDo.Size = new Size(424, 993);
+            flowLayoutPanelToDo.TabIndex = 22;
             // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top;
             panel3.BackColor = Color.SteelBlue;
-            panel3.Controls.Add(flowLayoutPanel1);
+            panel3.Controls.Add(flowLayoutPanelToDo);
             panel3.Location = new Point(0, 0);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
@@ -521,6 +521,8 @@
             Load += MainUserControl_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelColorCCMText.ResumeLayout(false);
+            panelColorCCMText.PerformLayout();
             searchByPanel.ResumeLayout(false);
             panelColorCCM1.ResumeLayout(false);
             panelColorCCM1.PerformLayout();
@@ -532,8 +534,6 @@
             panelColorCCM3.PerformLayout();
             panelColorCCM2.ResumeLayout(false);
             panelColorCCM2.PerformLayout();
-            panelColorCCMText.ResumeLayout(false);
-            panelColorCCMText.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -553,7 +553,7 @@
         private Cbtn.CBtn BtnMainFormsAdd;
         private Cbtn.CBtn BtnParser;
         private Panel panelMainShower;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanelToDo;
         private Panel panel3;
         private Panel searchByPanel;
         private Panel panelColorCCM1;

@@ -1,7 +1,9 @@
-﻿using SortifyDB.ManualAddingInterface;
+﻿using SortifyDB.Cbtn;
+using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
 using SortifyDB.Objects;
 using SortifyDB.PDF_parser;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace SortifyDB
 {
@@ -24,6 +26,51 @@ namespace SortifyDB
             userControl.Location = new Point(5, 5);
             panel.Controls.Add(userControl);
         }
+
+        #region ToDo Buttons
+
+        private void CreateButtons()
+        {
+            flowLayoutPanelToDo.Controls.Clear();
+            int buttonWidth = 190;
+            int buttonHeight = 60;
+            int spacing = 10;
+            int startXst = 10;
+            int startX = startXst;
+            int startY = 10;
+
+            foreach (TodoTask tasks in MainForm.TodoTask)
+            {
+                CBtn buttonXToDo = new CBtn();
+                buttonXToDo.Text = tasks.Title;
+                buttonXToDo.Width = buttonWidth;
+                buttonXToDo.Height = buttonHeight;
+                buttonXToDo.Location = new System.Drawing.Point(startX, startY);
+                buttonXToDo.BackColor = Color.FromArgb(0, 142, 255);
+                buttonXToDo.BackgroundColor = Color.FromArgb(0, 142, 255);
+                buttonXToDo.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
+                startX += buttonWidth + spacing;
+
+                CBtn buttonYToDo = new CBtn();
+                buttonYToDo.Text = "Označit jako hotové";
+                buttonYToDo.Width = buttonWidth;
+                buttonYToDo.Height = buttonHeight;
+                buttonYToDo.Location = new System.Drawing.Point(startX, startY);
+                buttonYToDo.BackColor = Color.FromArgb(0, 142, 255);
+                buttonYToDo.BackgroundColor = Color.FromArgb(0, 142, 255);
+                buttonYToDo.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
+                //buttonXToDo.Click += MsTodoAPI.TodoTaskCompleted(tasks); // pls jediné co udělat.
+
+                flowLayoutPanelToDo.Controls.Add(buttonXToDo);
+                flowLayoutPanelToDo.Controls.Add(buttonYToDo);
+
+                startY += buttonHeight + spacing;
+                startX = startXst;
+            }
+        }
+
+
+        #endregion
 
         #region basic buttons
         private void BtnProjekty_Click(object sender, EventArgs e)

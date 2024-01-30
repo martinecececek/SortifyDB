@@ -46,9 +46,10 @@
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1920, 1080);
             Controls.Add(mainUserControl1);
+            Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238);
             Margin = new Padding(3, 7, 3, 7);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "SortifyDB";
             Load += MainForm_Load;
             ResumeLayout(false);
         }
