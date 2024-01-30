@@ -82,10 +82,10 @@
             labelUCDetailContains.AutoSize = true;
             labelUCDetailContains.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic);
             labelUCDetailContains.ForeColor = Color.White;
-            labelUCDetailContains.Location = new Point(20, 109);
+            labelUCDetailContains.Location = new Point(20, 120);
             labelUCDetailContains.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailContains.Name = "labelUCDetailContains";
-            labelUCDetailContains.Size = new Size(220, 38);
+            labelUCDetailContains.Size = new Size(169, 30);
             labelUCDetailContains.TabIndex = 1;
             labelUCDetailContains.Text = "PlaceholderText";
             // 
@@ -98,7 +98,7 @@
             labelUCDetailMainName.Location = new Point(20, 5);
             labelUCDetailMainName.Margin = new Padding(2, 0, 2, 0);
             labelUCDetailMainName.Name = "labelUCDetailMainName";
-            labelUCDetailMainName.Size = new Size(220, 38);
+            labelUCDetailMainName.Size = new Size(169, 30);
             labelUCDetailMainName.TabIndex = 0;
             labelUCDetailMainName.Text = "PlaceholderText";
             // 

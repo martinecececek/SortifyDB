@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -18,17 +17,16 @@ namespace SortifyDB.Cbtn
         private int borderRadius = 40;
         private Color borderColor = Color.PaleVioletRed;
 
-        [Category("Custo m Buttons")]
-        public int BorderSize 
+        [Category("Custom Buttons")]
+        public int BorderSize
         {
             get => borderSize;
-            set 
-            { 
+            set
+            {
                 borderSize = value;
                 this.Invalidate();
             }
         }
-        [Category("Custom Buttons")]
         public int BorderRadius 
         { 
             get => borderRadius;
