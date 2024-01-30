@@ -7,21 +7,18 @@
             InitializeComponent();
         }
 
-        public string dirName
-        {
-            get { return txtDirName.Text; }
-        }
+        public string dirName;
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtDirName.Text == "")
             {
-                MessageBox.Show("Zadejte název složky", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                dirName = "Tasks";
+                this.Close();
             }
             else
             {
-                this.DialogResult = DialogResult.OK;
+                dirName = txtDirName.Text;
                 this.Close();
             }
         }
