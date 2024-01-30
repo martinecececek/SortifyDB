@@ -37,11 +37,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(14, 66);
+            label1.Location = new Point(14, 32);
             label1.Name = "label1";
-            label1.Size = new Size(474, 37);
+            label1.Size = new Size(474, 74);
             label1.TabIndex = 0;
-            label1.Text = "Zadejte v jaké složce se úkoly nachází";
+            label1.Text = "Zadejte v jaké složce se úkoly nachází\r\n(pokud v žádné nechte pole prázdné)";
             // 
             // txtDirName
             // 
