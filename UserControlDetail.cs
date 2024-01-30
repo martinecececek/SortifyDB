@@ -14,7 +14,7 @@ namespace SortifyDB
             this.mainUserControl = mainUserControl;
         }
 
-        readonly Panel panel;
+        private readonly Panel panel;
 
         private readonly MainUserControl mainUserControl;
         private readonly string findBy;

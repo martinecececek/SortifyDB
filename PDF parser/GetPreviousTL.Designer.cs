@@ -1,6 +1,6 @@
-﻿namespace SortifyDB.Ms_Todo
+﻿namespace SortifyDB.PDF_parser
 {
-    partial class GetDirName
+    partial class GetPreviousTL
     {
         /// <summary>
         /// Required designer variable.
@@ -29,52 +29,49 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            txtDirName = new TextBox();
+            textBox1 = new TextBox();
             btnSave = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(14, 32);
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(96, 32);
             label1.Name = "label1";
-            label1.Size = new Size(474, 74);
+            label1.Size = new Size(258, 28);
             label1.TabIndex = 0;
-            label1.Text = "Zadejte v jaké složce se úkoly nachází\r\n(pokud v žádné nechte pole prázdné)";
+            label1.Text = "Zadejte původní TL projektu";
             // 
-            // txtDirName
+            // textBox1
             // 
-            txtDirName.Font = new Font("Segoe UI", 22F);
-            txtDirName.Location = new Point(55, 106);
-            txtDirName.Multiline = true;
-            txtDirName.Name = "txtDirName";
-            txtDirName.PlaceholderText = "Název složky";
-            txtDirName.Size = new Size(393, 52);
-            txtDirName.TabIndex = 1;
+            textBox1.Location = new Point(75, 63);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(297, 40);
+            textBox1.TabIndex = 1;
             // 
             // btnSave
             // 
-            btnSave.Font = new Font("Segoe UI", 15F);
-            btnSave.Location = new Point(150, 189);
+            btnSave.Font = new Font("Segoe UI", 12F);
+            btnSave.Location = new Point(115, 109);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(200, 99);
+            btnSave.Size = new Size(200, 100);
             btnSave.TabIndex = 2;
-            btnSave.Text = "Uložit";
+            btnSave.Text = "Potvrdit";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
-            // GetDirName
+            // GetPreviousTL
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 300);
+            ClientSize = new Size(459, 217);
             Controls.Add(btnSave);
-            Controls.Add(txtDirName);
+            Controls.Add(textBox1);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "GetDirName";
-            Text = "GetDirName";
+            Name = "GetPreviousTL";
+            Text = "GetPreviousTL";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -82,7 +79,7 @@
         #endregion
 
         private Label label1;
-        private TextBox txtDirName;
+        private TextBox textBox1;
         private Button btnSave;
     }
 }

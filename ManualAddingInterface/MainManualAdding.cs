@@ -339,9 +339,22 @@ namespace SortifyDB.ManualAddingInterface
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new();
+            ChangeMainFormUI(new MainUserControl());
+        }
 
-            mainForm.ChangeUI(new MainUserControl());
+        public void ChangeMainFormUI(UserControl userControl)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.Controls.Clear();
+
+                userControl.Location = new Point(0, 65);
+
+                mainForm.Controls.Add(userControl);
+
+
+            }
         }
     }
 }

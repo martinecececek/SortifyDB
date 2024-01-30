@@ -1,4 +1,7 @@
-﻿namespace SortifyDB.PDF_parser
+﻿using SortifyDB.ManualAddingInterface;
+using TechnoWizz.ManualAddingForm.Edit;
+
+namespace SortifyDB.PDF_parser
 {
     public class PdfParsing
     {
@@ -24,6 +27,25 @@
             processingPDF.ShowDialog();
 
             processingPDF.Dispose();
+
+            if (addOrEdit == "edit")
+            {
+                GetPreviousTL getPreviousTL = new();
+                getPreviousTL.ShowDialog();
+
+                string previousTL = getPreviousTL.TL;
+
+                getPreviousTL.Dispose();
+
+                MainManualAdding mainManualAdding = new();
+                mainManualAdding.ChangeMainFormUI(new MainManualAdding());
+
+                mainManualAdding.ChangeUI(new ProjektyEdit(MainForm.Projekty.Find(x => x.TL == previousTL)));
+
+                return;
+            }
+
+
         }
     }
 }

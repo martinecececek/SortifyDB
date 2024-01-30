@@ -75,15 +75,14 @@
             btnEditCistic = new Button();
             panel20 = new Panel();
             btnDeleteCisitic = new Button();
-            mainContainer = new FlowLayoutPanel();
+            panel21 = new Panel();
+            btnBack = new Button();
             materialTimer = new System.Windows.Forms.Timer(components);
             projectTimer = new System.Windows.Forms.Timer(components);
             granulatyTimer = new System.Windows.Forms.Timer(components);
             lakTimer = new System.Windows.Forms.Timer(components);
             cisticeTimer = new System.Windows.Forms.Timer(components);
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            panel21 = new Panel();
-            btnBack = new Button();
+            mainContainer = new Panel();
             flowLayoutPanel1.SuspendLayout();
             materialConatainer.SuspendLayout();
             panel1.SuspendLayout();
@@ -673,13 +672,27 @@
             btnDeleteCisitic.UseVisualStyleBackColor = false;
             btnDeleteCisitic.Click += btnDeleteCisitic_Click;
             // 
-            // mainContainer
+            // panel21
             // 
-            mainContainer.Dock = DockStyle.Fill;
-            mainContainer.Location = new Point(300, 0);
-            mainContainer.Name = "mainContainer";
-            mainContainer.Size = new Size(1620, 1015);
-            mainContainer.TabIndex = 1;
+            panel21.Controls.Add(btnBack);
+            panel21.Location = new Point(0, 530);
+            panel21.Margin = new Padding(0);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(302, 100);
+            panel21.TabIndex = 2;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(0, 38, 255);
+            btnBack.Font = new Font("Segoe UI", 20F);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(-22, -18);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(350, 130);
+            btnBack.TabIndex = 5;
+            btnBack.Text = "Zpět";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // materialTimer
             // 
@@ -705,41 +718,19 @@
             cisticeTimer.Interval = 10;
             cisticeTimer.Tick += cisticeTimer_Tick;
             // 
-            // flowLayoutPanel2
+            // mainContainer
             // 
-            flowLayoutPanel2.Location = new Point(810, 457);
-            flowLayoutPanel2.Margin = new Padding(0);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(300, 100);
-            flowLayoutPanel2.TabIndex = 10;
-            // 
-            // panel21
-            // 
-            panel21.Controls.Add(btnBack);
-            panel21.Location = new Point(0, 530);
-            panel21.Margin = new Padding(0);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(302, 100);
-            panel21.TabIndex = 2;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.FromArgb(0, 38, 255);
-            btnBack.Font = new Font("Segoe UI", 20F);
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(-22, -18);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(350, 130);
-            btnBack.TabIndex = 5;
-            btnBack.Text = "Zpět";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
+            mainContainer.Dock = DockStyle.Fill;
+            mainContainer.Location = new Point(300, 0);
+            mainContainer.Margin = new Padding(0);
+            mainContainer.Name = "mainContainer";
+            mainContainer.Size = new Size(1620, 1015);
+            mainContainer.TabIndex = 3;
             // 
             // MainManualAdding
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(mainContainer);
             Controls.Add(flowLayoutPanel1);
             Name = "MainManualAdding";
@@ -822,14 +813,13 @@
         private Button btnEditCistic;
         private Panel panel20;
         private Button btnDeleteCisitic;
-        private FlowLayoutPanel mainContainer;
         private System.Windows.Forms.Timer materialTimer;
         private System.Windows.Forms.Timer projectTimer;
         private System.Windows.Forms.Timer granulatyTimer;
         private System.Windows.Forms.Timer lakTimer;
         private System.Windows.Forms.Timer cisticeTimer;
-        private FlowLayoutPanel flowLayoutPanel2;
         private Panel panel21;
         private Button btnBack;
+        private Panel mainContainer;
     }
 }
