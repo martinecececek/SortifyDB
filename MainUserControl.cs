@@ -466,8 +466,18 @@ namespace SortifyDB
         #region open 3th party 
         private void BtnMainFormsAdd_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new();
-            mainForm.ChangeUI(new MainManualAdding());
+            ChangeMainFormUI(new MainManualAdding());
+        }
+
+        private void ChangeMainFormUI(UserControl userControl)
+        {
+            MainForm mainForm = this.ParentForm as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.Controls.Clear();
+
+                mainForm.Controls.Add(userControl);
+            }
         }
 
         private void BtnParser_Click(object sender, EventArgs e)

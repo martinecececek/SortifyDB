@@ -34,7 +34,7 @@ namespace SortifyDB
 
 
         private readonly MainUserControl mainUserControl;
-        readonly Panel panel;
+        public Panel panel { get; set; }
         private readonly string typVypsaniListu;
 
         private void ClearDataGrid()

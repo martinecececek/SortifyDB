@@ -104,17 +104,6 @@ namespace SortifyDB
             #endregion
 
             #endregion
-
-
         }
-
-        public void ChangeUI(UserControl userControl)
-        {
-            this.Controls.Clear();
-
-            this.Controls.Add(userControl);
-        }
-
-
     }
 }
