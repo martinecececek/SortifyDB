@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Utilities.Bzip2;
-using SortifyDB.Cbtn;
+﻿using SortifyDB.Cbtn;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
 using SortifyDB.Objects;
@@ -51,7 +50,7 @@ namespace SortifyDB
             {
                 CBtn buttonXToDo = new();
                 buttonXToDo.Text = tasks.Title;
-                buttonXToDo.Name = tasks.Id;
+                buttonXToDo.Name = string.Format("Cbtnnd{0}", tasks.Id);
                 buttonXToDo.Width = buttonWidth;
                 buttonXToDo.Height = buttonHeight;
                 buttonXToDo.Location = new System.Drawing.Point(startX, startY);
@@ -62,7 +61,7 @@ namespace SortifyDB
 
                 CBtn buttonYToDo = new();
                 buttonYToDo.Text = "Označit jako hotové";
-                buttonYToDo.Name = string.Format("Cbtnnd{0}",tasks.Id);
+                buttonXToDo.Name = tasks.Id;
                 buttonYToDo.Width = buttonWidth;
                 buttonYToDo.Height = buttonHeight;
                 buttonYToDo.Location = new System.Drawing.Point(startX, startY);
@@ -83,8 +82,7 @@ namespace SortifyDB
 
         public void ButtonToDoTaskComp(object sender, EventArgs e)
         {
-            //TodoTask todoTask = MainForm.TodoTask.Find(x => x.Id == )
-            MsTodoAPI.TodoTaskCompleted(tasks);
+            MsTodoAPI.TodoTaskCompleted(MainForm.TodoTask.Find(x => x.Id == (sender as CBtn).Name));
         }
 
         #endregion
