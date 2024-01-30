@@ -3,7 +3,6 @@ using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
 using SortifyDB.Objects;
 using SortifyDB.PDF_parser;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace SortifyDB
 {
@@ -18,6 +17,12 @@ namespace SortifyDB
         private void MainUserControl_Load(object sender, EventArgs e)
         {
             MsTodoAPI.ExecuteAsync();
+
+            if (MsTodoAPI.GraphClient != null)
+            {
+                CreateButtons();
+            }
+
         }
 
         public void ChangeUI(UserControl userControl, Panel panel)
@@ -41,7 +46,7 @@ namespace SortifyDB
 
             foreach (TodoTask tasks in MainForm.TodoTask)
             {
-                CBtn buttonXToDo = new CBtn();
+                CBtn buttonXToDo = new();
                 buttonXToDo.Text = tasks.Title;
                 buttonXToDo.Width = buttonWidth;
                 buttonXToDo.Height = buttonHeight;
@@ -51,7 +56,7 @@ namespace SortifyDB
                 buttonXToDo.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
                 startX += buttonWidth + spacing;
 
-                CBtn buttonYToDo = new CBtn();
+                CBtn buttonYToDo = new();
                 buttonYToDo.Text = "Označit jako hotové";
                 buttonYToDo.Width = buttonWidth;
                 buttonYToDo.Height = buttonHeight;
