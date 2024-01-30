@@ -83,6 +83,10 @@ namespace SortifyDB
         public void ButtonToDoTaskComp(object sender, EventArgs e)
         {
             MsTodoAPI.TodoTaskCompleted(MainForm.TodoTask.Find(x => x.Id == (sender as CBtn).Name));
+
+            MainForm.TodoTask.Remove(MainForm.TodoTask.Find(x => x.Id == (sender as CBtn).Name));
+
+            CreateButtons();
         }
 
         #endregion
