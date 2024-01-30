@@ -92,7 +92,6 @@
             txtBoxSlozDle.Name = "txtBoxSlozDle";
             txtBoxSlozDle.Size = new Size(348, 60);
             txtBoxSlozDle.TabIndex = 0;
-            txtBoxSlozDle.Text = "adasd";
             // 
             // label4
             // 

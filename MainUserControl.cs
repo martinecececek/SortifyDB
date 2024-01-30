@@ -17,11 +17,17 @@ namespace SortifyDB
 
         private void MainUserControl_Load(object sender, EventArgs e)
         {
-            MsTodoAPI.ExecuteAsync();
-
-            if (MsTodoAPI.GraphClient != null)
+            if (this.ParentForm is MainForm main)
             {
-                CreateButtons();
+                MsTodoAPI.ExecuteAsync();
+
+                if (MsTodoAPI.GraphClient != null && !main.done)
+                {
+                    CreateButtons();
+                }
+
+
+                main.done = true;
             }
         }
 

@@ -28,383 +28,397 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.txtBoxName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBoxAktivni = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBoxVyrobce = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxPouziti = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBoxNevhodKomb = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBoxSlozeniDle = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBoxSAP = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.SuspendLayout();
+            btnCancel = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btnSave = new Button();
+            dataGrid = new DataGridView();
+            txtBoxName = new TextBox();
+            label7 = new Label();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            txtBoxAktivni = new TextBox();
+            label6 = new Label();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            txtBoxVyrobce = new TextBox();
+            label2 = new Label();
+            txtBoxPouziti = new TextBox();
+            label1 = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            txtBoxNevhodKomb = new TextBox();
+            label5 = new Label();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            txtBoxSlozeniDle = new TextBox();
+            label4 = new Label();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            txtBoxSAP = new TextBox();
+            label3 = new Label();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
+            tableLayoutPanel8.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.btnCancel.Location = new System.Drawing.Point(548, 3);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(200, 102);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Zrušit";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            btnCancel.Dock = DockStyle.Left;
+            btnCancel.Font = new Font("Segoe UI", 15F);
+            btnCancel.Location = new Point(640, 3);
+            btnCancel.Margin = new Padding(4, 3, 4, 12);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(233, 118);
+            btnCancel.TabIndex = 1;
+            btnCancel.Text = "Zrušit";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click_1;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSave, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancel, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 773);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1090, 115);
-            this.tableLayoutPanel1.TabIndex = 47;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(btnSave, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnCancel, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 892);
+            tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1272, 133);
+            tableLayoutPanel1.TabIndex = 47;
             // 
             // btnSave
             // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.btnSave.Location = new System.Drawing.Point(342, 3);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 102);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Uložit";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            btnSave.Dock = DockStyle.Right;
+            btnSave.Font = new Font("Segoe UI", 15F);
+            btnSave.Location = new Point(399, 3);
+            btnSave.Margin = new Padding(4, 3, 4, 12);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(233, 118);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "Uložit";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click_1;
             // 
             // dataGrid
             // 
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(685, 60);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(3, 3, 80, 3);
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.Size = new System.Drawing.Size(325, 150);
-            this.dataGrid.TabIndex = 46;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGrid.Location = new Point(799, 69);
+            dataGrid.Margin = new Padding(4, 3, 93, 3);
+            dataGrid.Name = "dataGrid";
+            dataGrid.Size = new Size(379, 173);
+            dataGrid.TabIndex = 46;
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxName.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxName.Multiline = true;
-            this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxName.TabIndex = 0;
+            txtBoxName.Dock = DockStyle.Fill;
+            txtBoxName.Location = new Point(4, 37);
+            txtBoxName.Margin = new Padding(4, 3, 4, 3);
+            txtBoxName.Multiline = true;
+            txtBoxName.Name = "txtBoxName";
+            txtBoxName.Size = new Size(348, 60);
+            txtBoxName.TabIndex = 0;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 30);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Název";
+            label7.AutoSize = true;
+            label7.Dock = DockStyle.Left;
+            label7.Font = new Font("Segoe UI", 15F);
+            label7.Location = new Point(4, 0);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(66, 34);
+            label7.TabIndex = 1;
+            label7.Text = "Název";
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.txtBoxName, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(45, 153);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel8.TabIndex = 40;
+            tableLayoutPanel8.ColumnCount = 1;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.Controls.Add(txtBoxName, 0, 1);
+            tableLayoutPanel8.Controls.Add(label7, 0, 0);
+            tableLayoutPanel8.Location = new Point(52, 177);
+            tableLayoutPanel8.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 2;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel8.Size = new Size(356, 100);
+            tableLayoutPanel8.TabIndex = 40;
             // 
             // txtBoxAktivni
             // 
-            this.txtBoxAktivni.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxAktivni.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxAktivni.Multiline = true;
-            this.txtBoxAktivni.Name = "txtBoxAktivni";
-            this.txtBoxAktivni.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxAktivni.TabIndex = 0;
+            txtBoxAktivni.Dock = DockStyle.Fill;
+            txtBoxAktivni.Location = new Point(4, 37);
+            txtBoxAktivni.Margin = new Padding(4, 3, 4, 3);
+            txtBoxAktivni.Multiline = true;
+            txtBoxAktivni.Name = "txtBoxAktivni";
+            txtBoxAktivni.Size = new Size(348, 60);
+            txtBoxAktivni.TabIndex = 0;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(235, 30);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Aktivní (aktivní/neaktivní)";
+            label6.AutoSize = true;
+            label6.Dock = DockStyle.Left;
+            label6.Font = new Font("Segoe UI", 15F);
+            label6.Location = new Point(4, 0);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(235, 34);
+            label6.TabIndex = 1;
+            label6.Text = "Aktivní (aktivní/neaktivní)";
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.txtBoxAktivni, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(45, 246);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel7.TabIndex = 41;
+            tableLayoutPanel7.ColumnCount = 1;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.Controls.Add(txtBoxAktivni, 0, 1);
+            tableLayoutPanel7.Controls.Add(label6, 0, 0);
+            tableLayoutPanel7.Location = new Point(52, 284);
+            tableLayoutPanel7.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 2;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.Size = new Size(356, 100);
+            tableLayoutPanel7.TabIndex = 41;
             // 
             // txtBoxVyrobce
             // 
-            this.txtBoxVyrobce.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxVyrobce.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxVyrobce.Multiline = true;
-            this.txtBoxVyrobce.Name = "txtBoxVyrobce";
-            this.txtBoxVyrobce.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxVyrobce.TabIndex = 0;
+            txtBoxVyrobce.Dock = DockStyle.Fill;
+            txtBoxVyrobce.Location = new Point(4, 37);
+            txtBoxVyrobce.Margin = new Padding(4, 3, 4, 3);
+            txtBoxVyrobce.Multiline = true;
+            txtBoxVyrobce.Name = "txtBoxVyrobce";
+            txtBoxVyrobce.Size = new Size(348, 60);
+            txtBoxVyrobce.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Výrobce/Dodavatel";
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Left;
+            label2.Font = new Font("Segoe UI", 15F);
+            label2.Location = new Point(4, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(182, 34);
+            label2.TabIndex = 1;
+            label2.Text = "Výrobce/Dodavatel";
             // 
             // txtBoxPouziti
             // 
-            this.txtBoxPouziti.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxPouziti.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxPouziti.Multiline = true;
-            this.txtBoxPouziti.Name = "txtBoxPouziti";
-            this.txtBoxPouziti.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxPouziti.TabIndex = 0;
+            txtBoxPouziti.Dock = DockStyle.Fill;
+            txtBoxPouziti.Location = new Point(4, 37);
+            txtBoxPouziti.Margin = new Padding(4, 3, 4, 3);
+            txtBoxPouziti.Multiline = true;
+            txtBoxPouziti.Name = "txtBoxPouziti";
+            txtBoxPouziti.Size = new Size(348, 60);
+            txtBoxPouziti.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Použití";
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Left;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(4, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 34);
+            label1.TabIndex = 1;
+            label1.Text = "Použití";
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.txtBoxPouziti, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(45, 432);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel2.TabIndex = 43;
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(txtBoxPouziti, 0, 1);
+            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Location = new Point(52, 498);
+            tableLayoutPanel2.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel2.Size = new Size(356, 100);
+            tableLayoutPanel2.TabIndex = 43;
             // 
             // txtBoxNevhodKomb
             // 
-            this.txtBoxNevhodKomb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxNevhodKomb.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxNevhodKomb.Multiline = true;
-            this.txtBoxNevhodKomb.Name = "txtBoxNevhodKomb";
-            this.txtBoxNevhodKomb.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxNevhodKomb.TabIndex = 0;
+            txtBoxNevhodKomb.Dock = DockStyle.Fill;
+            txtBoxNevhodKomb.Location = new Point(4, 37);
+            txtBoxNevhodKomb.Margin = new Padding(4, 3, 4, 3);
+            txtBoxNevhodKomb.Multiline = true;
+            txtBoxNevhodKomb.Name = "txtBoxNevhodKomb";
+            txtBoxNevhodKomb.Size = new Size(348, 60);
+            txtBoxNevhodKomb.TabIndex = 0;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 30);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nevhodné kombinace s";
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Left;
+            label5.Font = new Font("Segoe UI", 15F);
+            label5.Location = new Point(4, 0);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(217, 34);
+            label5.TabIndex = 1;
+            label5.Text = "Nevhodné kombinace s";
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.txtBoxNevhodKomb, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(45, 525);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel6.TabIndex = 44;
+            tableLayoutPanel6.ColumnCount = 1;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.Controls.Add(txtBoxNevhodKomb, 0, 1);
+            tableLayoutPanel6.Controls.Add(label5, 0, 0);
+            tableLayoutPanel6.Location = new Point(52, 606);
+            tableLayoutPanel6.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 2;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel6.Size = new Size(356, 100);
+            tableLayoutPanel6.TabIndex = 44;
             // 
             // txtBoxSlozeniDle
             // 
-            this.txtBoxSlozeniDle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxSlozeniDle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxSlozeniDle.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxSlozeniDle.Multiline = true;
-            this.txtBoxSlozeniDle.Name = "txtBoxSlozeniDle";
-            this.txtBoxSlozeniDle.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxSlozeniDle.TabIndex = 0;
-            this.txtBoxSlozeniDle.Text = "adasd";
+            txtBoxSlozeniDle.Dock = DockStyle.Fill;
+            txtBoxSlozeniDle.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            txtBoxSlozeniDle.Location = new Point(4, 37);
+            txtBoxSlozeniDle.Margin = new Padding(4, 3, 4, 3);
+            txtBoxSlozeniDle.Multiline = true;
+            txtBoxSlozeniDle.Name = "txtBoxSlozeniDle";
+            txtBoxSlozeniDle.Size = new Size(348, 60);
+            txtBoxSlozeniDle.TabIndex = 0;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 30);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Složení dle";
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Left;
+            label4.Font = new Font("Segoe UI", 15F);
+            label4.Location = new Point(4, 0);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(107, 34);
+            label4.TabIndex = 1;
+            label4.Text = "Složení dle";
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.txtBoxSlozeniDle, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(48, 618);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel5.TabIndex = 45;
+            tableLayoutPanel5.ColumnCount = 1;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(txtBoxSlozeniDle, 0, 1);
+            tableLayoutPanel5.Controls.Add(label4, 0, 0);
+            tableLayoutPanel5.Location = new Point(56, 713);
+            tableLayoutPanel5.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 2;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel5.Size = new Size(356, 100);
+            tableLayoutPanel5.TabIndex = 45;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.txtBoxVyrobce, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(45, 339);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel3.TabIndex = 42;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(txtBoxVyrobce, 0, 1);
+            tableLayoutPanel3.Controls.Add(label2, 0, 0);
+            tableLayoutPanel3.Location = new Point(52, 391);
+            tableLayoutPanel3.Margin = new Padding(35, 3, 4, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel3.Size = new Size(356, 100);
+            tableLayoutPanel3.TabIndex = 42;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.txtBoxSAP, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(45, 60);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(45, 60, 3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.48276F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 87);
-            this.tableLayoutPanel4.TabIndex = 48;
+            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(txtBoxSAP, 0, 1);
+            tableLayoutPanel4.Controls.Add(label3, 0, 0);
+            tableLayoutPanel4.Location = new Point(52, 69);
+            tableLayoutPanel4.Margin = new Padding(52, 69, 4, 3);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 34.48276F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 65.51724F));
+            tableLayoutPanel4.Size = new Size(356, 100);
+            tableLayoutPanel4.TabIndex = 48;
             // 
             // txtBoxSAP
             // 
-            this.txtBoxSAP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxSAP.Location = new System.Drawing.Point(3, 33);
-            this.txtBoxSAP.Multiline = true;
-            this.txtBoxSAP.Name = "txtBoxSAP";
-            this.txtBoxSAP.Size = new System.Drawing.Size(299, 51);
-            this.txtBoxSAP.TabIndex = 0;
+            txtBoxSAP.Dock = DockStyle.Fill;
+            txtBoxSAP.Location = new Point(4, 37);
+            txtBoxSAP.Margin = new Padding(4, 3, 4, 3);
+            txtBoxSAP.Multiline = true;
+            txtBoxSAP.Name = "txtBoxSAP";
+            txtBoxSAP.Size = new Size(348, 60);
+            txtBoxSAP.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 30);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "SAP";
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Left;
+            label3.Font = new Font("Segoe UI", 15F);
+            label3.Location = new Point(4, 0);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(47, 34);
+            label3.TabIndex = 1;
+            label3.Text = "SAP";
             // 
             // CisticAktivatorAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.dataGrid);
-            this.Controls.Add(this.tableLayoutPanel8);
-            this.Controls.Add(this.tableLayoutPanel7);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel6);
-            this.Controls.Add(this.tableLayoutPanel5);
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Name = "CisticAktivatorAdd";
-            this.Size = new System.Drawing.Size(1090, 888);
-            this.Load += new System.EventHandler(this.CisticAktivatorAdd_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tableLayoutPanel4);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dataGrid);
+            Controls.Add(tableLayoutPanel8);
+            Controls.Add(tableLayoutPanel7);
+            Controls.Add(tableLayoutPanel2);
+            Controls.Add(tableLayoutPanel6);
+            Controls.Add(tableLayoutPanel5);
+            Controls.Add(tableLayoutPanel3);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "CisticAktivatorAdd";
+            Size = new Size(1272, 1025);
+            Load += CisticAktivatorAdd_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGrid).EndInit();
+            tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel8.PerformLayout();
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

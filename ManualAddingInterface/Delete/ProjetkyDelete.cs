@@ -1,5 +1,4 @@
 ﻿using SortifyDB;
-using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
 
@@ -63,76 +62,27 @@ namespace TechnoWizz.ManualAddingForm.Delete
         {
             if (dataGridProject.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
             {
+
                 DataGridViewRow selectedRow = dataGridProject.Rows[e.RowIndex];
 
-                string tlValue = (string)selectedRow.Cells["TL"].Value;
-                string nameValue = (string)selectedRow.Cells["Nazev"].Value;
-                string imdsValue = (string)selectedRow.Cells["IMDS"].Value;
+                string tlValue = (string)selectedRow.Cells["tlColumn"].Value;
 
-                int positioInList;
-                try
+                Projekt projekt = MainForm.Projekty.Find(x => x.TL == tlValue);
+
+                MainForm.Projekty.Remove(projekt);
+
+
+                Control currentControl = this;
+                while (currentControl != null)
                 {
-                    positioInList = int.Parse(tlValue);
-                }
-                catch
-                {
-                    positioInList = -1;
-                }
-
-                if (positioInList != -1 &&
-                    MainForm.Projekty[positioInList].TL == tlValue &&
-                    MainForm.Projekty[positioInList].Nazev == nameValue &&
-                    MainForm.Projekty[positioInList].IMDS == imdsValue)
-                {
-                    textBoxSearch.Text = null;
-
-                    MainManualAdding mainForm = new();
-
-                    mainForm.ClearUserControl();
-
-                }
-                else
-                {
-                    foreach (Projekt project in MainForm.Projekty)
+                    if (currentControl is MainManualAdding main)
                     {
-                        if (project.TL == tlValue &&
-                            project.Nazev == nameValue &&
-                            project.IMDS == imdsValue)
-                        {
-
-
-                            DialogResult dialogResult = MessageBox.Show("Opravdu chcete zrušit přidávání materiálu?", "Zrušit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                MainManualAdding mainManualForm = new();
-
-                                DeleteItem(project);
-
-                                MessageBox.Show("Projekt byl úspěšně smazán", "Smazán", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                mainManualForm.ClearUserControl();
-                            }
-                        }
+                        main.ClearUserControl();
+                        break; // Exit the loop once the MainManualAdding form is found and actions are performed
                     }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
                 }
             }
-        }
-
-        private void DeleteItem(Projekt project)
-        {
-
-            MainForm.Projekty.Remove(project);
-
-            #region delete from db  
-
-            DatabaseConnection databaseConnection = new();
-
-            databaseConnection.DeleteProject(project.TL);
-
-            databaseConnection.DeleteProjectMaterial(project.TL);
-
-            #endregion
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

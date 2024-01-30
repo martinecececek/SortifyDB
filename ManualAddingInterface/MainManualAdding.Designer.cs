@@ -722,6 +722,7 @@
             // 
             // mainContainer
             // 
+            mainContainer.AutoScroll = true;
             mainContainer.Dock = DockStyle.Fill;
             mainContainer.Location = new Point(300, 0);
             mainContainer.Margin = new Padding(0);

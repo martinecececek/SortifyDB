@@ -146,7 +146,7 @@
             typContainer.Location = new Point(1053, 456);
             typContainer.Margin = new Padding(4, 3, 4, 3);
             typContainer.Name = "typContainer";
-            typContainer.Size = new Size(291, 57);
+            typContainer.Size = new Size(291, 58);
             typContainer.TabIndex = 2;
             // 
             // panel8

@@ -88,7 +88,17 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
                             MessageBox.Show("Projekt byl úspěšně smazán", "Smazán", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            mainManualForm.ClearUserControl();
+                            Control currentControl = this;
+                            while (currentControl != null)
+                            {
+                                if (currentControl is MainManualAdding main)
+                                {
+                                    MessageBox.Show("Parent is MainManualAdding", "Smazán", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    main.ClearUserControl();
+                                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                                }
+                                currentControl = currentControl.Parent; // Move up to the next parent control
+                            }
                         }
                     }
                 }

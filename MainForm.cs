@@ -23,6 +23,8 @@ namespace SortifyDB
 
         }
 
+        public bool done = false;
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             #region dummy data

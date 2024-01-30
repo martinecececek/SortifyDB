@@ -382,7 +382,7 @@ namespace TechnoWizz.ManualAddingForm.Add
             if (expanded == false)
             {
                 typContainer.Height += 10;
-                if (typContainer.Height >= 400)
+                if (typContainer.Height >= 457)
                 {
                     TypTimer.Stop();
                     expanded = true;
@@ -391,14 +391,12 @@ namespace TechnoWizz.ManualAddingForm.Add
             else
             {
                 typContainer.Height -= 10;
-                if (typContainer.Height <= 50)
+                if (typContainer.Height <= 59)
                 {
                     TypTimer.Stop();
                     expanded = false;
                 }
             }
-
-            TypTimer.Start();
         }
 
         private void btnSelecterTyp_Click(object sender, EventArgs e)
