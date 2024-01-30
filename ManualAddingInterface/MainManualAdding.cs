@@ -342,7 +342,7 @@ namespace SortifyDB.ManualAddingInterface
             ChangeMainFormUI(new MainUserControl());
         }
 
-        private void ChangeMainFormUI(UserControl userControl)
+        public void ChangeMainFormUI(UserControl userControl)
         {
             MainForm mainForm = this.ParentForm as MainForm;
             if (mainForm != null)
