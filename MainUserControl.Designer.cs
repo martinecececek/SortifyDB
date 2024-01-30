@@ -490,6 +490,7 @@
             // flowLayoutPanelToDo
             // 
             flowLayoutPanelToDo.Anchor = AnchorStyles.Top;
+            flowLayoutPanelToDo.AutoScroll = true;
             flowLayoutPanelToDo.BackColor = Color.SlateGray;
             flowLayoutPanelToDo.Location = new Point(5, 11);
             flowLayoutPanelToDo.Margin = new Padding(8);

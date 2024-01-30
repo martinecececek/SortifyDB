@@ -3,6 +3,7 @@ using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
 using SortifyDB.Objects;
 using SortifyDB.PDF_parser;
+using TechnoWizz.ManualAddingForm.Edit;
 
 namespace SortifyDB
 {
@@ -22,7 +23,6 @@ namespace SortifyDB
             {
                 CreateButtons();
             }
-
         }
 
         public void ChangeUI(UserControl userControl, Panel panel)
@@ -46,8 +46,12 @@ namespace SortifyDB
 
             int csl = 0;
 
-            foreach (TodoTask tasks in MainForm.TodoTask)
+            MessageBox.Show(MainForm.TodoTask.Count.ToString());
+
+            foreach (Ms_Todo.TodoTask tasks in MainForm.TodoTask)
             {
+                MessageBox.Show(tasks.Title);
+
                 CBtn buttonXToDo = new();
                 buttonXToDo.Text = tasks.Title;
                 buttonXToDo.Name = string.Format("Cbtnnd{0}", tasks.Id);
@@ -58,9 +62,10 @@ namespace SortifyDB
                 buttonXToDo.BackgroundColor = Color.FromArgb(0, 142, 255);
                 buttonXToDo.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
                 startX += buttonWidth + spacing;
+                buttonXToDo.Click += BtnAddToDoTask_Click;
 
                 CBtn buttonYToDo = new();
-                buttonYToDo.Text = "Označit jako hotové";
+                buttonYToDo.Text = "Hotovo";
                 buttonXToDo.Name = tasks.Id;
                 buttonYToDo.Width = buttonWidth;
                 buttonYToDo.Height = buttonHeight;
@@ -87,6 +92,18 @@ namespace SortifyDB
             MainForm.TodoTask.Remove(MainForm.TodoTask.Find(x => x.Id == (sender as CBtn).Name));
 
             CreateButtons();
+        }
+
+        private void BtnAddToDoTask_Click(object sender, EventArgs e)
+        {
+            TodoTask todoTask = MainForm.TodoTask.Find(x => x.Id == (sender as CBtn).Name);
+
+            string tl = todoTask.TL;
+
+            MainManualAdding mainManualAdding = new();
+            ChangeMainFormUI(mainManualAdding);
+
+            mainManualAdding.ChangeUI(new ProjektyEdit(MainForm.Projekty.Find(x => x.TL == tl)));
         }
 
         #endregion

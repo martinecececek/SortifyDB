@@ -30,9 +30,7 @@
     <Compile Update="ManualAddingInterface\Add\MaterialAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ManualAddingInterface\Add\ProjectAdd.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="ManualAddingInterface\Add\ProjectAdd.cs" />
     <Compile Update="ManualAddingInterface\Add\ToProject\AddMaterialToProject.cs">
       <SubType>Form</SubType>
     </Compile>
