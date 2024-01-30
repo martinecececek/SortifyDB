@@ -349,7 +349,11 @@ namespace SortifyDB.ManualAddingInterface
             {
                 mainForm.Controls.Clear();
 
+                userControl.Location = new Point(0, 65);
+
                 mainForm.Controls.Add(userControl);
+
+
             }
         }
     }
