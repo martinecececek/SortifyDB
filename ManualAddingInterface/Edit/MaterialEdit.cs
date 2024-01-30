@@ -98,10 +98,16 @@ namespace TechnoWizz.ManualAddingForm.Edit
                     }
                 }
 
-                MainManualAdding mainManualForm = new();
-                MaterialSelect materialSelect = new();
-
-                mainManualForm.ChangeUI(materialSelect);
+                Control currentControl = this;
+                while (currentControl != null)
+                {
+                    if (currentControl is MainManualAdding main)
+                    {
+                        main.ChangeUI(new MaterialSelect());
+                        break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                    }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
+                }
             }
 
             return;
@@ -111,9 +117,16 @@ namespace TechnoWizz.ManualAddingForm.Edit
         {
             if (txtBoxNazev.Text == string.Empty && txtBoxSap.Text == string.Empty && btnSelecterTyp.Text == btnSelecterPlaceholder)
             {
-                MainManualAdding mainManualForm = new();
-
-                mainManualForm.ClearUserControl();
+                Control currentControl = this;
+                while (currentControl != null)
+                {
+                    if (currentControl is MainManualAdding main)
+                    {
+                        main.ChangeUI(new CisticAktivatorSelect());
+                        break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                    }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
+                }
             }
             else
             {
@@ -121,9 +134,16 @@ namespace TechnoWizz.ManualAddingForm.Edit
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    MainManualAdding mainManualForm = new();
-
-                    mainManualForm.ClearUserControl();
+                    Control currentControl = this;
+                    while (currentControl != null)
+                    {
+                        if (currentControl is MainManualAdding main)
+                        {
+                            main.ChangeUI(new MaterialSelect());
+                            break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                        }
+                        currentControl = currentControl.Parent; // Move up to the next parent control
+                    }
                 }
             }
         }

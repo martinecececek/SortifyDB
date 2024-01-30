@@ -33,7 +33,7 @@ namespace TechnoWizz.ManualAddingForm.Select
             {
                 Name = "nameColumn",
                 HeaderText = "Název",
-                DataPropertyName = "Název",
+                DataPropertyName = "Nazev",
             };
             dataGridProject.Columns.Add(nameColumn);
 
@@ -88,7 +88,17 @@ namespace TechnoWizz.ManualAddingForm.Select
                     MainManualAdding mainForm = new();
 
                     ProjektyEdit editingProject = new(MainForm.Projekty[positioInList]);
-                    mainForm.ChangeUI(editingProject);
+
+                    Control currentControl = this;
+                    while (currentControl != null)
+                    {
+                        if (currentControl is MainManualAdding main)
+                        {
+                            main.ChangeUI(editingProject);
+                            break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                        }
+                        currentControl = currentControl.Parent; // Move up to the next parent control
+                    }
 
                 }
                 else

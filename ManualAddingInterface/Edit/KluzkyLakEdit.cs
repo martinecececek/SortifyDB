@@ -2,6 +2,7 @@
 using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
+using TechnoWizz.ManualAddingForm.Select;
 
 
 namespace TechnoWizz.ManualAddingForm.Edit
@@ -76,6 +77,17 @@ namespace TechnoWizz.ManualAddingForm.Edit
             DatabaseConnection databaseConnection = new();
 
             databaseConnection.UpdateKluzkyLak(lak);
+
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ChangeUI(new CisticAktivatorSelect());
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
 
         private void BtnCancel_Click(object sender, System.EventArgs e)
@@ -98,9 +110,16 @@ namespace TechnoWizz.ManualAddingForm.Edit
 
             if (CheckTextBoxes())
             {
-                MainManualAdding mainManualForm = new();
-
-                mainManualForm.ClearUserControl();
+                Control currentControl = this;
+                while (currentControl != null)
+                {
+                    if (currentControl is MainManualAdding main)
+                    {
+                        main.ChangeUI(new GranulatySelect());
+                        break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                    }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
+                }
             }
             else
             {
@@ -108,9 +127,16 @@ namespace TechnoWizz.ManualAddingForm.Edit
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    MainManualAdding mainManualForm = new();
-
-                    mainManualForm.ClearUserControl();
+                    Control currentControl = this;
+                    while (currentControl != null)
+                    {
+                        if (currentControl is MainManualAdding main)
+                        {
+                            main.ChangeUI(new GranulatySelect());
+                            break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                        }
+                        currentControl = currentControl.Parent; // Move up to the next parent control
+                    }
                 }
             }
         }

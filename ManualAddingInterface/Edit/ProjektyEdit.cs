@@ -104,15 +104,31 @@ namespace TechnoWizz.ManualAddingForm.Edit
 
                 MainForm.Projekty.Add(projekt);
 
-                MainManualAdding mainManualAdding = new();
-                mainManualAdding.ChangeUI(new ProjektySelect());
+                Control currentControl = this;
+                while (currentControl != null)
+                {
+                    if (currentControl is MainManualAdding main)
+                    {
+                        main.ChangeUI(new ProjektySelect());
+                        break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                    }
+                    currentControl = currentControl.Parent; // Move up to the next parent control
+                }
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            MainManualAdding mainManualAdding = new();
-            mainManualAdding.ChangeUI(new ProjektySelect());
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ChangeUI(new CisticAktivatorSelect());
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
         //TODO: Add code & visual here
     }

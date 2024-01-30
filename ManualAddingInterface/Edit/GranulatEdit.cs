@@ -1,5 +1,7 @@
 ﻿using SortifyDB.DatabaseConnect;
+using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
+using TechnoWizz.ManualAddingForm.Select;
 
 
 namespace TechnoWizz.ManualAddingForm.Edit
@@ -70,11 +72,31 @@ namespace TechnoWizz.ManualAddingForm.Edit
             DatabaseConnection databaseConnection = new();
 
             databaseConnection.UpdateGranulat(granulat);
+
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ChangeUI(new GranulatySelect());
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
-
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ChangeUI(new GranulatySelect());
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
     }
 }

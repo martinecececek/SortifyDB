@@ -53,6 +53,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             btnCancel = new Button();
             dataGrid = new DataGridView();
+            Slozeni = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -379,11 +381,22 @@
             // dataGrid
             // 
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGrid.Columns.AddRange(new DataGridViewColumn[] { Slozeni, Column1 });
             dataGrid.Location = new Point(1003, 71);
             dataGrid.Margin = new Padding(4, 3, 93, 3);
             dataGrid.Name = "dataGrid";
             dataGrid.Size = new Size(379, 173);
             dataGrid.TabIndex = 55;
+            // 
+            // Slozeni
+            // 
+            Slozeni.HeaderText = "Slozeni";
+            Slozeni.Name = "Slozeni";
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "";
+            Column1.Name = "Column1";
             // 
             // CisticAktivatorEdit
             // 
@@ -448,5 +461,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridView dataGrid;
+        private DataGridViewTextBoxColumn Slozeni;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

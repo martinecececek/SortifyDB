@@ -160,8 +160,16 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainManualAdding mainForm = new();
-            mainForm.ClearUserControl();
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ClearUserControl();
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
     }
 }

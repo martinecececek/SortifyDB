@@ -42,7 +42,6 @@
             txtBoxCisteni = new TextBox();
             label10 = new Label();
             dataGrid = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnSave = new Button();
             btnCancel = new Button();
@@ -66,6 +65,8 @@
             label6 = new Label();
             tableLayoutPanel12 = new TableLayoutPanel();
             tableLayoutPanel8 = new TableLayoutPanel();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             label11 = new Label();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
@@ -248,18 +249,12 @@
             // dataGrid
             // 
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGrid.Columns.AddRange(new DataGridViewColumn[] { Column1 });
+            dataGrid.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dataGrid.Location = new Point(1026, 42);
             dataGrid.Margin = new Padding(4, 3, 93, 3);
             dataGrid.Name = "dataGrid";
             dataGrid.Size = new Size(379, 173);
             dataGrid.TabIndex = 45;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Column1";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -571,6 +566,17 @@
             tableLayoutPanel8.Size = new Size(356, 100);
             tableLayoutPanel8.TabIndex = 35;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "Slozeni";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "";
+            Column2.Name = "Column2";
+            // 
             // GranulatEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -658,5 +664,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

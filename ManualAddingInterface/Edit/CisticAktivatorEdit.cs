@@ -2,6 +2,7 @@
 using SortifyDB.DatabaseConnect;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Objects;
+using TechnoWizz.ManualAddingForm.Select;
 
 namespace TechnoWizz.ManualAddingForm.Edit
 {
@@ -29,6 +30,7 @@ namespace TechnoWizz.ManualAddingForm.Edit
             txtBoxPouziti.Text = CisticAktivator.Pouziti;
             txtBoxNevhodKomb.Text = CisticAktivator.NevhodneKombinace;
             txtBoxSlozeniDle.Text = CisticAktivator.SlozeniDle;
+
 
             foreach (KeyValuePair<string, string> keyValuePair in CisticAktivator.Slozeni)
             {
@@ -135,6 +137,17 @@ namespace TechnoWizz.ManualAddingForm.Edit
             DatabaseConnection databaseConnection = new();
 
             databaseConnection.UpdateCisticAktivator(cistic);
+
+            Control currentControl = this;
+            while (currentControl != null)
+            {
+                if (currentControl is MainManualAdding main)
+                {
+                    main.ChangeUI(new CisticAktivatorSelect());
+                    break; // Exit the loop once the MainManualAdding form is found and actions are performed
+                }
+                currentControl = currentControl.Parent; // Move up to the next parent control
+            }
         }
     }
 }

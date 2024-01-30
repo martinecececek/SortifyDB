@@ -44,8 +44,8 @@ namespace TechnoWizz.ManualAddingForm.Select
 
             DataGridViewButtonColumn editButtonColumn = new()
             {
-                HeaderText = "Smazat",
-                Text = "Smazat",
+                HeaderText = "Upravit",
+                Text = "Upravit",
                 UseColumnTextForButtonValue = true
             };
 
@@ -62,7 +62,7 @@ namespace TechnoWizz.ManualAddingForm.Select
 
         private void CisticeDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridCistice.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
+            if (dataGridCistice.Columns[e.ColumnIndex].HeaderText == "Upravit" && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridCistice.Rows[e.RowIndex];
 
