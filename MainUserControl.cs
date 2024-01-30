@@ -72,6 +72,7 @@ namespace SortifyDB
                 startY += buttonHeight + spacing;
                 startX = startXst;
             }
+
         }
 
 
