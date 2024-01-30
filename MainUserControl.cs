@@ -1,4 +1,5 @@
-﻿using SortifyDB.Cbtn;
+﻿using Org.BouncyCastle.Utilities.Bzip2;
+using SortifyDB.Cbtn;
 using SortifyDB.ManualAddingInterface;
 using SortifyDB.Ms_Todo;
 using SortifyDB.Objects;
@@ -34,7 +35,7 @@ namespace SortifyDB
 
         #region ToDo Buttons
 
-        private void CreateButtons()
+        public void CreateButtons()
         {
             flowLayoutPanelToDo.Controls.Clear();
             int buttonWidth = 190;
@@ -44,10 +45,13 @@ namespace SortifyDB
             int startX = startXst;
             int startY = 10;
 
+            int csl = 0;
+
             foreach (TodoTask tasks in MainForm.TodoTask)
             {
                 CBtn buttonXToDo = new();
                 buttonXToDo.Text = tasks.Title;
+                buttonXToDo.Name = tasks.Id;
                 buttonXToDo.Width = buttonWidth;
                 buttonXToDo.Height = buttonHeight;
                 buttonXToDo.Location = new System.Drawing.Point(startX, startY);
@@ -58,23 +62,30 @@ namespace SortifyDB
 
                 CBtn buttonYToDo = new();
                 buttonYToDo.Text = "Označit jako hotové";
+                buttonYToDo.Name = string.Format("Cbtnnd{0}",tasks.Id);
                 buttonYToDo.Width = buttonWidth;
                 buttonYToDo.Height = buttonHeight;
                 buttonYToDo.Location = new System.Drawing.Point(startX, startY);
                 buttonYToDo.BackColor = Color.FromArgb(0, 142, 255);
                 buttonYToDo.BackgroundColor = Color.FromArgb(0, 142, 255);
                 buttonYToDo.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold);
-                //buttonXToDo.Click += MsTodoAPI.TodoTaskCompleted(tasks); // pls jediné co udělat.
+                buttonXToDo.Click += ButtonToDoTaskComp;
 
                 flowLayoutPanelToDo.Controls.Add(buttonXToDo);
                 flowLayoutPanelToDo.Controls.Add(buttonYToDo);
 
                 startY += buttonHeight + spacing;
+                csl++;
                 startX = startXst;
             }
 
         }
 
+        public void ButtonToDoTaskComp(object sender, EventArgs e)
+        {
+            //TodoTask todoTask = MainForm.TodoTask.Find(x => x.Id == )
+            MsTodoAPI.TodoTaskCompleted(tasks);
+        }
 
         #endregion
 
