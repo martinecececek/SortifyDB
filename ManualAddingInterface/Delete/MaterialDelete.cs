@@ -21,8 +21,30 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
         private void PopulateDataGrid()
         {
-            dataGridMaterials.Columns["Nazev"].HeaderText = "Název";
-            dataGridMaterials.Columns["TypPripravku"].HeaderText = "Typ";
+            dataGridMaterials.DataSource = MainForm.Materials;
+
+            dataGridMaterials.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn sapColumn = new()
+            {
+                HeaderText = "SAP",
+                DataPropertyName = "SAP",
+                Name = "SAP"
+            };
+
+            DataGridViewTextBoxColumn nameColumn = new()
+            {
+                HeaderText = "Název",
+                DataPropertyName = "Nazev",
+                Name = "Nazev"
+            };
+
+            DataGridViewTextBoxColumn typColumn = new()
+            {
+                HeaderText = "Typ",
+                DataPropertyName = "TypPripravku",
+                Name = "TypPripravku"
+            };
 
             DataGridViewButtonColumn deleteButtonColumn = new()
             {
@@ -38,7 +60,7 @@ namespace TechnoWizz.ManualAddingForm.Delete
 
         private void MaterialDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridMaterials.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex > 0)
+            if (dataGridMaterials.Columns[e.ColumnIndex].HeaderText == "Smazat" && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridMaterials.Rows[e.RowIndex];
 

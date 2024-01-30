@@ -902,7 +902,9 @@ namespace SortifyDB
 
             #endregion
 
-            dataGridDetailOutput.DataSource = projekt.Materials;
+            BindingSource source1 = new();
+            source1.DataSource = projekts;
+            dataGridDetailOutput.DataSource = source1;
 
             DataGridViewButtonColumn detailButtonColumn = new()
             {
